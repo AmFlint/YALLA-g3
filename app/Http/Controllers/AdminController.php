@@ -35,6 +35,23 @@ class AdminController extends Controller
         return redirect(route('admin.posts'));
     }
 
+    public function viewPost($id)
+    {
+        $post = Post::find($id);
+        return view('admin.posts.details', compact('post'));
+    }
+
+    public function tag()
+    {
+        return view('admin.tag');
+    }
+
+    public function deletePost($id)
+    {
+        Post::find($id)->delete();
+        return redirect(route('admin.posts'));
+    }
+
     private function upload($file)
     {
         $destinationPath = 'img-content/uploads';
