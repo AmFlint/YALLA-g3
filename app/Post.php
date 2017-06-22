@@ -27,7 +27,7 @@ class Post extends Model
     public function setSlugAttribute($value)
     {
         if(empty($value)) {
-            $this->attributes['slug'] = Str::slug($this->name);
+            $this->attributes['slug'] = Str::slug($this->title);
         } else {
             $this->attributes['slug'] = $value;
         }

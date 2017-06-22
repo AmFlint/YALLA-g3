@@ -17,11 +17,24 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group(function() {
 
-    Route::get('/posts', ['as' => 'admin.posts', 'uses' => 'AdminController@listPosts']);
+    Route::get('tags', 'AdminController@tag');
 
-    Route::get('/posts/create', ['as' => 'admin.posts_create', 'uses' => 'AdminController@createPost']);
+    Route::post('tags', ['as' => 'admin.tag_add', 'uses' => 'ApiController@addTag']);
 
-    Route::post('/posts/create', ['as' => 'admin.posts_store', 'uses' => 'AdminController@storePost']);
+    Route::prefix('posts')->group(function() {
+
+        Route::get('/', ['as' => 'admin.posts', 'uses' => 'AdminController@listPosts']);
+
+        Route::get('create', ['as' => 'admin.posts_create', 'uses' => 'AdminController@createPost']);
+
+        Route::post('create', ['as' => 'admin.posts_store', 'uses' => 'AdminController@storePost']);
+
+        Route::get('/{id}', ['as' => 'admin.posts_details', 'uses' => 'AdminController@viewPost'])
+            ->where('id', '[0-9]+');
+
+        Route::get('/delete/{id}', ['as' => 'admin.post_delete', 'uses' => 'AdminController@deletePost'])
+            ->where('id', '[0-9]+');
+    });
 
 });
 
