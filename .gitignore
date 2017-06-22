@@ -44,6 +44,8 @@ Temporary Items
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 
+.idea/
+
 vendor/
 
 # Gradle:

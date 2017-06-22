@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('admin')->group(function() {
+
+    Route::get('/posts', ['as' => 'admin.posts', 'uses' => 'AdminController@listPosts']);
+
+    Route::get('/posts/create', ['as' => 'admin.posts_create', 'uses' => 'AdminController@createPost']);
+
+    Route::get('/posts/store', ['as' => 'admin.posts_store', 'uses' => 'AdminController@storePost']);
+
+});
+
+Route::get(Lang::get('routes.welcome'), function() {
+    return 'yoo';
+});
