@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Admin</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
-    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
 </head>
@@ -43,7 +42,7 @@
 
 
 
-    <div>
+    <div class="offset-md-2">
         @yield('content')
     </div>
 </main>

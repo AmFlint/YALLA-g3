@@ -128,3 +128,9 @@ Barre de nav aside
 .alignTop{
 	margin-top: 15vh;
 }
+
+
+.offset-md-2
+{
+    padding: 5%;!important;
+}
