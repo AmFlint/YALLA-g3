@@ -48,4 +48,9 @@ class AdminController extends Controller
 	{
 		return view('admin.dashboard.dashboard');
     }
+
+	public function addTag()
+	{
+
+    }
 }
