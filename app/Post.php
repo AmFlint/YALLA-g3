@@ -3,15 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {
-    protected $fillable = ['published', 'image', 'meta_id', 'category_id', 'locale', 'title', 'slug', 'content', 'summary'];
-
-    public function meta()
-    {
-        return $this->belongsTo('App\Meta');
-    }
+    protected $fillable = ['published', 'image', 'card', 'meta_robots', 'category_id', 'locale', 'title', 'slug', 'content', 'summary'];
 
     public function category()
     {
@@ -26,5 +22,14 @@ class Post extends Model
     public function medias()
     {
         return $this->belongsToMany('App\Media');
+    }
+
+    public function setSlugAttribute($value)
+    {
+        if(empty($value)) {
+            $this->attributes['slug'] = Str::slug($this->name);
+        } else {
+            $this->attributes['slug'] = $value;
+        }
     }
 }
