@@ -17,7 +17,9 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group(function() {
 
-    Route::get('/posts', ['as' => 'admin.posts', 'uses' => 'AdminController@listPosts']);
+	Route::get('/', ['as' => 'admin.dashboard', 'uses' => 'AdminController@dashBoard']);
+
+	Route::get('/posts', ['as' => 'admin.posts', 'uses' => 'AdminController@listPosts']);
 
     Route::get('/posts/create', ['as' => 'admin.posts_create', 'uses' => 'AdminController@createPost']);
 

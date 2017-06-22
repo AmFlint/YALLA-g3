@@ -19,4 +19,9 @@ class AdminController extends Controller
     {
         return view('admin.posts.create');
     }
+
+	public function dashBoard()
+	{
+		return view('admin.dashboard.dashboard');
+    }
 }
