@@ -19,6 +19,8 @@ Route::prefix('admin')->group(function() {
 
     Route::get('tags', 'AdminController@tag');
 
+	Route::get('/', ['as' => 'admin.dashboard', 'uses' => 'AdminController@dashBoard']);
+
     Route::post('tags', ['as' => 'admin.tag_add', 'uses' => 'ApiController@addTag']);
 
     Route::prefix('posts')->group(function() {

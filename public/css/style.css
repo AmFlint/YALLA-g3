@@ -1,0 +1,192 @@
+body{
+    overflow-x: hidden;
+}
+
+/* 
+
+Barre de nav top
+
+*/
+nav ul{
+    list-style: none;
+}
+
+.backgroundNav{
+    z-index: 5;
+    height: 8vh;
+    background-color: white;
+    overflow: auto;
+    position: fixed;
+    -webkit-box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
+    -moz-box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
+    box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
+}
+
+.backgroundNav nav ul li:first-child{
+    position: absolute;
+    left: 18%;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.liNavBar{
+    position: absolute;
+    top: 1.5vh;
+    right: 0px;
+    margin-right: 6%;
+}
+
+.liNavBar button{
+    -webkit-box-shadow: -5px 4px 15px 0px rgba(0,0,0,0.07);
+    -moz-box-shadow: -5px 4px 15px 0px rgba(0,0,0,0.07);
+    box-shadow: -5px 4px 15px 0px rgba(0,0,0,0.07);
+    background-color: white;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    position: absolute;
+    right: -10px;
+    top: -20%;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.liNavBar button img{
+    width: 18px;
+    height: 18px;
+}
+
+.form-wrapper input:focus + .underline{
+    width: 100%;
+    left: 0%;
+    transition: 0.4s;
+}
+
+.underline{
+    z-index: 3;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    height: 1px;
+    width: 0%;
+    background-color: lightgreen;
+    transition: 0.4s;
+}
+
+input{
+    outline: none;
+}
+
+input[name="searchBar"]{
+    border:none;
+    border-bottom: 1px solid #ededed;
+    padding: 3px 25px 3px 6px;
+    font-size: 1em;
+}
+
+/* 
+
+
+Barre de nav aside
+
+
+*/
+
+.backgroundNavAside{
+    height: 100vh;
+    position: fixed;
+    z-index: 6;
+    background-color: #3A3F52;
+    overflow: auto;
+}
+.list-group-item:first-child{
+    border-radius: 0px;
+    margin-bottom: 15vh;
+}
+.paddingFix{
+    padding: 0px;
+}
+.list-group-item{
+    background-color: transparent;
+    color: rgb(190,190,210);
+    transition: 0.3s;
+    border-radius: 0px;
+    border: none;
+    cursor: pointer;
+}
+.list-group-item:hover{
+    color: white;
+}
+.active{
+    background-color: #13DAFD !important;
+}
+.list-group-item span{
+    background-color: #B3B4E1;
+    transition: 0.3s
+}
+
+/* 
+
+
+Style des carte material design 
+
+
+*/
+
+.card{
+    background-color: white;
+    -webkit-box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
+    -moz-box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
+    box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
+    overflow: hidden;
+    padding: 20px;
+    margin-left: 2.5%;
+    border: 0px !important;
+}
+
+.descriptionCard .strong{
+    font-weight: 600;
+    font-size: 2em;
+    margin-left: 5%;
+}
+
+
+
+.white-box{
+    margin-top: 5vh;
+}
+
+.alignTop{
+    margin-top: 15vh;
+}
+.behindFix{
+    position: relative;
+    z-index: 2;
+}
+
+.alignTopSelect{
+    margin-top: 5vh;
+}
+
+.alignLeftTag{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* 
+
+
+Pagination
+
+
+
+*/
+
+.page-link{
+    color: rgb(190,190,210);
+}
+.alignTopPagination{
+    margin-top: 10vh;
+}
+

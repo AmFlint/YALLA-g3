@@ -13,6 +13,6 @@ class ApiController extends Controller
             $props = $request->all();
             $props['slug'] = null;
             Tag::create($props);
-            return response(Tag::where('locale', $props['locale'])->get(), 200);
+            return response(Tag::orderBy('id', 'desc')->first(), 200);
     }
 }

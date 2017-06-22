@@ -60,4 +60,9 @@ class AdminController extends Controller
         $file->move($destinationPath, $fileName); // uploading file to given pat
         return $fileName;
     }
+
+	public function dashBoard()
+	{
+		return view('admin.dashboard.dashboard');
+    }
 }
