@@ -1,5 +1,5 @@
 body{
-	overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 /* 
@@ -8,23 +8,31 @@ Barre de nav top
 
 */
 nav ul{
-	list-style: none;
+    list-style: none;
 }
 
 .backgroundNav{
-	height: 60px;
-	background-color: white;
-	overflow: auto;
-	position: fixed;
-	-webkit-box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
+    z-index: 5;
+    height: 8vh;
+    background-color: white;
+    overflow: auto;
+    position: fixed;
+    -webkit-box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
     -moz-box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
     box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
 }
 
+.backgroundNav nav ul li:first-child{
+    position: absolute;
+    left: 18%;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
 .liNavBar{
-    position: relative;
-    top: 0px;
-    float: right;
+    position: absolute;
+    top: 1.5vh;
+    right: 0px;
     margin-right: 6%;
 }
 
@@ -45,8 +53,8 @@ nav ul{
 }
 
 .liNavBar button img{
-	width: 18px;
-	height: 18px;
+    width: 18px;
+    height: 18px;
 }
 
 .form-wrapper input:focus + .underline{
@@ -86,51 +94,99 @@ Barre de nav aside
 */
 
 .backgroundNavAside{
-	height: 100vh;
-	position: fixed;
-	background-color: #3A3F52;
-	overflow: auto;
+    height: 100vh;
+    position: fixed;
+    z-index: 6;
+    background-color: #3A3F52;
+    overflow: auto;
 }
 .list-group-item:first-child{
-	border-radius: 0px;
-	margin-bottom: 15vh;
+    border-radius: 0px;
+    margin-bottom: 15vh;
 }
 .paddingFix{
-	padding: 0px;
+    padding: 0px;
 }
 .list-group-item{
-	background-color: transparent;
-	color: rgb(190,190,210);
-	transition: 0.3s;
-	border-radius: 0px;
-	border: none;
-	cursor: pointer;
+    background-color: transparent;
+    color: rgb(190,190,210);
+    transition: 0.3s;
+    border-radius: 0px;
+    border: none;
+    cursor: pointer;
 }
 .list-group-item:hover{
-	color: white;
+    color: white;
 }
 .active{
-	background-color: #13DAFD !important;
+    background-color: #13DAFD !important;
 }
 .list-group-item span{
-	background-color: #B3B4E1;
-	transition: 0.3s
+    background-color: #B3B4E1;
+    transition: 0.3s
 }
 
+/* 
 
+
+Style des carte material design 
+
+
+*/
+
+.card{
+    background-color: white;
+    -webkit-box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
+    -moz-box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
+    box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
+    overflow: hidden;
+    padding: 20px;
+    margin-left: 2.5%;
+    border: 0px !important;
+}
+
+.descriptionCard .strong{
+    font-weight: 600;
+    font-size: 2em;
+    margin-left: 5%;
+}
 
 
 
 .white-box{
-	margin-top: 5vh;
+    margin-top: 5vh;
 }
 
 .alignTop{
-	margin-top: 15vh;
+    margin-top: 15vh;
+}
+.behindFix{
+    position: relative;
+    z-index: 2;
 }
 
-
-.offset-md-2
-{
-    padding: 5%;!important;
+.alignTopSelect{
+    margin-top: 5vh;
 }
+
+.alignLeftTag{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* 
+
+
+Pagination
+
+
+
+*/
+
+.page-link{
+    color: rgb(190,190,210);
+}
+.alignTopPagination{
+    margin-top: 10vh;
+}
+
