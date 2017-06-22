@@ -2,6 +2,9 @@ body{
     overflow-x: hidden;
 }
 
+button {
+    cursor: pointer;
+}
 /* 
 
 Barre de nav top
@@ -190,3 +193,7 @@ Pagination
     margin-top: 10vh;
 }
 
+.offset-md-2
+{
+    padding: 10% 5%;
+}

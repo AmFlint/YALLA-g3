@@ -21,7 +21,7 @@ class AdminController extends Controller
     public function createPost()
     {
         $categories = Category::where('locale', App::getLocale())->pluck('name', 'id');
-        $tags = Tag::where('locale', 'fr_FR')->pluck('name', 'id');
+        $tags = Tag::where('locale', 'fr_FR')->get();
         return view('admin.posts.create', compact('tags', 'categories'));
     }
 

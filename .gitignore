@@ -46,6 +46,8 @@ Temporary Items
 
 .idea/
 
+img-content/uploads/
+
 vendor/
 
 # Gradle:
