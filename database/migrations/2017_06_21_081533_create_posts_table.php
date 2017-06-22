@@ -15,14 +15,15 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->tinyInteger('published');
+            $table->tinyInteger('published')->default(0);
             $table->string('locale', 10);
             $table->string('image', 50);
             $table->string('title', 100);
             $table->text('content');
             $table->string('slug', 110);
             $table->string('summary', 150);
-            $table->integer('meta_id')->unsigned()->index();
+            $table->string('card', 100);
+            $table->tinyInteger('meta_robots')->default(1);
             $table->integer('category_id')->unsigned()->index();
             $table->integer('views')->default(0);
             $table->timestamps();
