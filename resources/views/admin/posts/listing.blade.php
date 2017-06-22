@@ -4,13 +4,13 @@
     <div class="spacer"></div>
     <a href="{{route('admin.posts_create')}}"><input type="button" value="Add" class="btn btn-primary btn-sm"></a>
     <div class="spacer"></div>
-    <table class="table table-bordered" ng-app="App" ng-controller="MainCtrl" ng-cloak>
+    <table class="table" ng-app="App" ng-controller="MainCtrl" ng-cloak>
         <tr>
-            <td>Id</td>
-            <td>Titre</td>
-            <td>Résumé</td>
-            <td>Visible</td>
-            <td>Action</td>
+            <th>Id</th>
+            <th>Titre</th>
+            <th>Résumé</th>
+            <th>Visible</th>
+            <th>Action</th>
         </tr>
 
         <tr ng-repeat="post in posts">
