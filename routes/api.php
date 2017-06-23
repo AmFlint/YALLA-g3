@@ -20,5 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::prefix('admin')->group(function() {
     Route::post('tags/add', ['as' => 'api.tags_add', 'uses' => 'ApiController@addTag']);
 
+    Route::get('tags', ['as' => 'api.tags_get_by_locale', 'uses' => 'ApiController@getTagsByLocale'])
+        ->where('locale', '[a-zA-Z\_]+');
+
 });
 

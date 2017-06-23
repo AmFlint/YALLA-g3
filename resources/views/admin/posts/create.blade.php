@@ -7,7 +7,9 @@
         <div class="row">
             <div class="col-md-6 col-lg-6">
                 {!! Form::label('locale', 'Langue de l\'article') !!}
-                {!! Form::select('locale', ['fr_FR' => 'Français', 'en_EN' => 'English', 'ar_AR' => 'Arabic'], App::getLocale(), ['class' => 'form-control']) !!}
+                <select ng-change="getTags(languages)" name="locale" ng-model="languages" ng-options="locale.locale as locale.language for locale in locales track by locale.locale" class="form-control"></select>
+            </div>
+            <div class="spacer">
             </div>
             <div class="spacer"></div>
             <div class="col-md-6 col-lg-6">
@@ -78,7 +80,6 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
                 </div>
             </div>
         </div>
@@ -93,11 +94,19 @@
     <script src="{{asset('js/angular.js')}}"></script>
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=mudnu9qj1yp6k3zmxh17y5ltrjwydufkkoxlre701kcz297y"></script>
     <script>tinymce.init({ selector:'textarea' });</script>
+    <script>
+        tinymce.init({
+            selector: '[name="summary"]',
+        });
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="{{asset('js/laroute.js')}}"></script>
     <script>
         var tags = {!! $tags !!};
+        var post = {
+            locale: 'fr_FR'
+        };
     </script>
     <script src="{{asset('js/admin/tags.js')}}"></script>
 @endsection

@@ -36,6 +36,9 @@ Route::prefix('admin')->group(function() {
 
         Route::get('/delete/{id}', ['as' => 'admin.post_delete', 'uses' => 'AdminController@deletePost'])
             ->where('id', '[0-9]+');
+
+        Route::get('/edit/{id}', ['as' => 'admin.post_edit', 'uses' => 'AdminController@EditPost'])
+        ->where('id', '[0-9]+');
     });
 
 });
