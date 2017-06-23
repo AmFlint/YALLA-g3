@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Http\Requests\PostRequest;
+use App\Http\Requests\PostRequestEdit;
 use App\Post;
 use App\Tag;
 use Illuminate\Http\Request;
@@ -90,7 +91,7 @@ class AdminController extends Controller
 	    return view('admin.posts.edit', compact('post', 'categories', 'tags'));
     }
 
-    public function updatePost($id, Request $request)
+    public function updatePost($id, PostRequestEdit $request)
     {
         $props = $request->all();
         if ($request->image) {
