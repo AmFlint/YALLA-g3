@@ -76,7 +76,8 @@ class AdminController extends Controller
 
 	public function dashBoard()
 	{
-		return view('admin.dashboard.dashboard');
+		$posts = Post::orderBy('created_at', 'desc')->get();
+		return view('admin.dashboard.dashboard', compact('posts'));
     }
 
 	public function editPost($id)

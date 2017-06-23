@@ -1,7 +1,8 @@
 @extends('admin.layout_admin')
 
 @section('content')
-    <div id="page-wrapper" style="min-height: 315px;">
+
+    <div id="page-wrapper" style="min-height: 315px;" ng-app="App" ng-controller="MainCtrl">
         <!-- row -->
         <div class="row">
             <div class="col-md-9 col-xs-8 col-md-10 col-lg-10 col-xl-10">
@@ -30,12 +31,9 @@
         <div class="row">
             <div class="col-md-9 col-xs-8 col-md-10 col-lg-10 col-xl-10 offset-md-1 behindFix">
                 <div class="col-md-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 alignTopSelect">
-                    <button type="button" class="btn btn-info">Tag1</button>
-                    <button type="button" class="btn btn-info alignLeftTag">Tag2</button>
-                    <button type="button" class="btn btn-info alignLeftTag">Tag3</button>
-                    <button type="button" class="btn btn-info alignLeftTag">Tag4</button>
-                    <button type="button" class="btn btn-info alignLeftTag">Tag5</button>
-                    <button type="button" class="btn btn-info alignLeftTag">Tag6</button>
+                    <button type="button" class="btn btn-info" id="postCat" ng-click="getPost()">Post</button>
+                    <button type="button" class="btn btn-info alignLeftTag" id="categoryCat" ng-click="getCategory()">Category</button>
+                    <button type="button" class="btn btn-info alignLeftTag" id="tagCat" ng-click="getTag()">Tag</button>
                 </div>
                 <div class="white-box">
                     <div class="table-responsive">
@@ -43,19 +41,15 @@
                             <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Article</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                                <th>Role</th>
+                                <th>Nom</th>
+                                <th>nb Vue</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody ng-repeat="post in posts">
                             <tr>
-                                <td>1</td>
-                                <td>Deshmukh</td>
-                                <td>Prohaska</td>
-                                <td><button type="button" class="btn btn-danger test" data-toggle="modal" data-target="#myModal">Suppr</button></td>
-                                <td>admin</td>
+                                <td>@{{ post.id }}</td>
+                                <td>@{{ post.title }} @{{ post.name }}</td>
+                                <td>@{{ post.views }}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -87,41 +81,17 @@
             <!-- /.container-fluid -->
         </div>
     </div>
-    <script type="text/javascript">
-        var table = document.getElementsByTagName("table")[0];
-        var tbody = table.getElementsByTagName("tbody")[0];
-        var button = document.querySelectorAll('.test');
-        var modalTitle = document.querySelector(".modal-body h5");
-        var modalCore = document.querySelector(".modal-body p");
-        var modalId = document.querySelector('.modal-title');
-        var SuprRoute = document.querySelector('')
 
-
-        for (var i = 0; i < button.length; i++) {
-            button[i].onclick = function getCellValue(e) {
-                e = e || window.event;
-                var data = [];
-                var target = e.srcElement || e.target;
-                while (target && target.nodeName !== "TR") {
-                    target = target.parentNode;
-                }
-                if (target) {
-                    var cells = target.getElementsByTagName("td");
-                    for (var i = 0; i < cells.length; i++) {
-                        data.push(cells[i].innerHTML);
-                    }
-                }
-                modalId.innerHTML = "Supprimer l'article " + data[0] + " ?";
-                modalTitle.innerHTML = data[1];
-                modalCore.innerHTML = data[2];
-            };
-        }
-    </script>
 @endsection
 
 @section('scripts')
+    <script>
+        var posts = {!! $posts !!}
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="{{asset('js/angular.js')}}"></script>
+    <script src="{{asset('js/laroute.js')}}"></script>
+    <script src="{{asset('js/admin/listing.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 @endsection
