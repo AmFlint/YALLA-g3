@@ -19,6 +19,10 @@ button {
     cursor: pointer;
 }
 
+.invisible{
+    display: none;
+}
+
 /* 
 
 Barre de nav top

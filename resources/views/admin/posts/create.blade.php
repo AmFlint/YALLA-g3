@@ -2,7 +2,17 @@
 
 @section('content')
 <div class="row" ng-app="tagApp" ng-controller="TacosCtrl">
-    <div class="col-md-6 col-xs-6 col-md-6 col-lg-6 col-xl-6 offset-xl-1 alignTop">
+    <div class="col-md-8 col-xs-8 col-md-8 col-lg-8 col-xl-8 offset-xl-1 alignTop">
+
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         {!! Form::open(['url' => route('admin.posts_store'), 'class' => 'test', 'files' => true]) !!}
 
         <div class="cardPageAdd">
@@ -41,7 +51,7 @@
             <select name="tag_list[]" class="form-control paddingFix" multiple="multiple">
                 <option ng-repeat="tag in tags_selected" selected value="@{{ tag.id }}">@{{ tag.name }}</option>
             </select>
-            <div class="col-md-8 col-xs-8 col-md-8 col-lg-8 col-xl-8 paddingFix styleForm">
+            <div class="col-md-8 col-xs-8 col-md-8 col-lg-8 col-xl-8 paddingFix styleForm marginBottomAjoutArticle">
             {!! Form::label('category_id', 'Catégorie :') !!}
             {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
             </div>
@@ -59,14 +69,14 @@
         </div>
         </div>
     </div>
-    <div class="col-md-3 col-xs-3 col-md-3 col-lg-3 col-xl-3 offset-xl-1 alignTop">
+    <div class="col-xs-2 col-md-2 alignTop paddingFix">
         <div class="card">
             <div class="card-head">
-                <h4 class="text-center">Ajouter un tag</h4>
+                <h4 class="text-center">Gérer les tags</h4>
             </div>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-success marginTopAddTag" data-toggle="modal" data-target="#myModal">
-                Ajouter un tag
+                Gérer les tags
             </button>
             </div>
     </div>

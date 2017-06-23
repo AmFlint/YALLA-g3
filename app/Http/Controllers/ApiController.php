@@ -22,4 +22,11 @@ class ApiController extends Controller
         $tags = Tag::where('locale', $request->all())->get();
         return response($tags, 200);
     }
+
+    public function getViewsByType(Request $request)
+    {
+        $entity = 'App\\' . ucfirst($request->type);
+        $to_send = $entity::orderBy('created_at', 'desc')->get();
+        return response($to_send, 200);
+    }
 }
