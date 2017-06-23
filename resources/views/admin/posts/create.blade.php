@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row" ng-app="tagApp" ng-controller="TacosCtrl">
-    <div class="col-md-8 col-xs-8 col-md-8 col-lg-8 col-xl-8 offset-xl-1 alignTop">
+    <div class="col-xs-8Custom col-md-8Custom offset-xl-1 alignTop">
 
         @if($errors->any())
             <div class="alert alert-danger">
@@ -69,7 +69,7 @@
         </div>
         </div>
     </div>
-    <div class="col-xs-2 col-md-2 alignTop paddingFix">
+    <div class="col-xs-3 col-md-3 alignTop paddingFix">
         <div class="card">
             <div class="card-head">
                 <h4 class="text-center">Gérer les tags</h4>
