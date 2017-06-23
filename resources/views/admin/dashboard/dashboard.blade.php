@@ -6,19 +6,19 @@
         <div class="row">
             <div class="col-md-9 col-xs-8 col-md-10 col-lg-10 col-xl-10">
                 <div class="row alignTop">
-                    <div class="col-md-3 col-xs-3 col-md-3 col-lg-3 col-xl-3 offset-md-1">
+                    <div class="col-md-4 col-xs-4 col-md-4 col-lg-4 col-xl-4 offset-md-1">
                         <div class="card">
                             <img src="img-content/ic_message_black_48px.svg" alt="">
                             <p class="descriptionCard"><span class="strong">125</span> nouveau messages</p>
                         </div>
                     </div>
-                    <div class="col-md-3 col-xs-3 col-md-3 col-lg-3 col-xl-3">
+                    <div class="col-md-4 col-xs-4 col-md-4 col-lg-4 col-xl-4">
                         <div class="card">
                             <img src="{{ asset('image/')  }}" alt="">
                             <p class="descriptionCard"><span class="strong">54%</span> unique visiteurs</p>
                         </div>
                     </div>
-                    <div class="col-md-3col-xs-3 col-md-3 col-lg-3 col-xl-3">
+                    <div class="col-md-3  col-xs-3  col-md-3  col-lg-3  col-xl-3 ">
                         <div class="card">
                             <img src="img-content/ic_filter_none_black_48px.svg" alt="">
                             <p class="descriptionCard"><span class="strong">154</span> page view</p>
@@ -54,7 +54,7 @@
                                 <td>1</td>
                                 <td>Deshmukh</td>
                                 <td>Prohaska</td>
-                                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Suppr</button></td>
+                                <td><button type="button" class="btn btn-danger test" data-toggle="modal" data-target="#myModal">Suppr</button></td>
                                 <td>admin</td>
                             </tr>
                             </tbody>
@@ -83,29 +83,40 @@
                     </li>
                 </ul>
             </nav>
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Etes vous sûre de supprimer</h4>
-                        </div>
-                        <div class="modal-body">
-                            <h5>Le titre de l'article</h5>
 
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Supprimer</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- /.container-fluid -->
         </div>
     </div>
+    <script type="text/javascript">
+        var table = document.getElementsByTagName("table")[0];
+        var tbody = table.getElementsByTagName("tbody")[0];
+        var button = document.querySelectorAll('.test');
+        var modalTitle = document.querySelector(".modal-body h5");
+        var modalCore = document.querySelector(".modal-body p");
+        var modalId = document.querySelector('.modal-title');
+        var SuprRoute = document.querySelector('')
+
+
+        for (var i = 0; i < button.length; i++) {
+            button[i].onclick = function getCellValue(e) {
+                e = e || window.event;
+                var data = [];
+                var target = e.srcElement || e.target;
+                while (target && target.nodeName !== "TR") {
+                    target = target.parentNode;
+                }
+                if (target) {
+                    var cells = target.getElementsByTagName("td");
+                    for (var i = 0; i < cells.length; i++) {
+                        data.push(cells[i].innerHTML);
+                    }
+                }
+                modalId.innerHTML = "Supprimer l'article " + data[0] + " ?";
+                modalTitle.innerHTML = data[1];
+                modalCore.innerHTML = data[2];
+            };
+        }
+    </script>
 @endsection
 
 @section('scripts')
