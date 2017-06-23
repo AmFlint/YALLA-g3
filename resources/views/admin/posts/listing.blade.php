@@ -27,7 +27,13 @@
                     <td>{{$post->id}}</td>
                     <td>{{$post->title}}</td>
                     <td>{!! $post->summary !!}</td>
-                    <td>{{$post->published}}</td>
+                    <td>
+                    @if($post->published)
+                        <a class="btn btn-danger" href="{{route('admin.post_publish', $post->id)}}">Dépublié</a>
+                    @else
+                        <a href="{{route('admin.post_publish', $post->id)}}" class="btn btn-success">Publié</a>
+                    @endif
+                    </td>
                     <td><button type="button" class="btn btn-danger test" data-toggle="modal" data-target="#myModal">Suppr</button></td>
                 </tr>
             </tbody>
@@ -65,6 +71,10 @@
 <script src="{{asset('js/laroute.js')}}"></script>
 <script type="text/javascript">
 
+/*Fonction pour actualiser 
+les données dans le modal 
+depuis la page list*/
+
     var table = document.getElementsByTagName("table")[0];
     var tbody = table.getElementsByTagName("tbody")[0];
     var button = document.querySelectorAll('.test');
@@ -94,6 +104,14 @@
             modalCore.innerHTML = data[2];
         };
     }
+
+/*Fonction toggle 
+class published
+page list*/
+
+ 
+
+
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="{{asset('js/angular.js')}}"></script>
