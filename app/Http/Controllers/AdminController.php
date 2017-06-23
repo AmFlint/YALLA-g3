@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\PostRequest;
 use App\Post;
 use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
@@ -25,19 +27,24 @@ class AdminController extends Controller
         return view('admin.posts.create', compact('tags', 'categories'));
     }
 
-    public function storePost(Request $request)
+    public function storePost(PostRequest $request)
     {
         $props = $request->all();
         $image = $this->upload($request->file('image'));
         $props['image'] = $image;
         $post = Post::create($props);
         $post->tags()->sync($request->tag_list);
+        Session::flash('error', 'Votre article a bien été ajouté');
+        Session::flash('errorClass', 'success');
         return redirect(route('admin.posts'));
     }
 
     public function viewPost($id)
     {
         $post = Post::find($id);
+        if (!$this->checkIfEntityExists($post, 'Le poste recherché n\'existe pas ! Vous ne pouvez le voir !', 'danger')) {
+            return redirect(route('admin.posts'));
+        };
         return view('admin.posts.details', compact('post'));
     }
 
@@ -48,7 +55,13 @@ class AdminController extends Controller
 
     public function deletePost($id)
     {
-        Post::find($id)->delete();
+        $post = Post::find($id);
+        if (!$this->checkIfEntityExists($post, 'Impossible de supprimer, l\'article demandé n\'existe pas !', 'danger')) {
+            return redirect(route('admin.posts'));
+        }
+        $post->delete();
+        Session::flash('error', 'Votre article a bien été supprimé');
+        Session::flash('errorClass', 'success');
         return redirect(route('admin.posts'));
     }
 
@@ -69,6 +82,9 @@ class AdminController extends Controller
 	public function editPost($id)
 	{
 	    $post = Post::where('id', $id)->get()->first();
+	    if (!$this->checkIfEntityExists($post, 'Le poste recherché n\'existe pas !', 'danger')) {
+	        return redirect(route('admin.posts'));
+        };
         $categories = Category::where('locale', App::getLocale())->pluck('name', 'id');
         $tags = Tag::where('locale', $post->locale)->get();
 	    return view('admin.posts.edit', compact('post', 'categories', 'tags'));

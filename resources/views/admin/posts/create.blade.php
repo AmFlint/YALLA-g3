@@ -3,6 +3,15 @@
 @section('content')
 <div class="row" ng-app="tagApp" ng-controller="TacosCtrl">
     <div class="col-md-8">
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         {!! Form::open(['url' => route('admin.posts_store'), 'class' => 'test', 'files' => true]) !!}
         <div class="row">
             <div class="col-md-6 col-lg-6">

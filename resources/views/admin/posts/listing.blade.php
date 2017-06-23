@@ -1,6 +1,9 @@
 @extends('admin.layout_admin')
 
 @section('content')
+    @if(\Illuminate\Support\Facades\Session::has('error'))
+        <div class="alert alert-{{\Illuminate\Support\Facades\Session::get('errorClass')}}">{{\Illuminate\Support\Facades\Session::get('error')}}</div>
+    @endif
 <div>
     <div class="spacer"></div>
     <a href="{{route('admin.posts_create')}}"><input type="button" value="Add" class="btn btn-primary btn-sm"></a>
