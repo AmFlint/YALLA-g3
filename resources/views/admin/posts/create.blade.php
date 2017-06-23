@@ -54,6 +54,7 @@
             <div class="col-md-8 col-xs-8 col-md-8 col-lg-8 col-xl-8 paddingFix styleForm marginBottomAjoutArticle">
             {!! Form::label('category_id', 'Catégorie :') !!}
             {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
+            <input type="hidden" ng-init="published = 0" name="published" ng-model="published">
             </div>
         </div>
         <div class="row">
@@ -74,12 +75,21 @@
             <div class="card-head">
                 <h4 class="text-center">Gérer les tags</h4>
             </div>
-            <!-- Button trigger modal -->
             <button type="button" class="btn btn-success marginTopAddTag" data-toggle="modal" data-target="#myModal">
                 Gérer les tags
             </button>
             </div>
+        <div class="card margin-top-published">
+            <div class="card-head">
+                <h4 class="text-center">Publier l'article</h4>
+            </div>
+            <button type="button" ng-click="publish()" class="btn btn-success marginTopAddTag" ng-class="{'btn-danger': published == 1}" ng-cloak>
+                @{{publishMessage}}
+            </button>
+            </div>
     </div>
+
+
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
