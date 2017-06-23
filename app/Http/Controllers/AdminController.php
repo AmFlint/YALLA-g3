@@ -68,11 +68,22 @@ class AdminController extends Controller
 
 	public function editPost($id)
 	{
-
 	    $post = Post::where('id', $id)->get()->first();
         $categories = Category::where('locale', App::getLocale())->pluck('name', 'id');
         $tags = Tag::where('locale', $post->locale)->get();
 	    return view('admin.posts.edit', compact('post', 'categories', 'tags'));
+    }
 
+    public function updatePost($id, Request $request)
+    {
+        $props = $request->all();
+        if ($request->image) {
+            $image = $this->upload($request->file('image'));
+            $props['image'] = $image;
+        }
+        $post = Post::findOrFail($id);
+        $post->update($props);
+        $post->tags()->sync($request->tag_list);
+        return redirect(route('admin.posts'));
     }
 }
