@@ -3,7 +3,7 @@
 @section('content')
     <div class="row" ng-app="tagApp" ng-controller="TacosCtrl">
         <div class="col-md-8">
-            {!! Form::open(['url' => route('admin.posts_store'), 'class' => 'test', 'files' => true]) !!}
+            {!! Form::open(['method' => 'put', 'url' => route('admin.post_update', $post->id), 'class' => 'test', 'files' => true]) !!}
             <div class="row">
                 <div class="col-md-6 col-lg-6">
                     {!! Form::label('locale', 'Langue de l\'article') !!}
@@ -42,7 +42,6 @@
             <div class="spacer"></div>
             {!! Form::file('image') !!}
             <div class="spacer"></div>
-
             {!! Form::submit('Ajouter', ['class' => 'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
