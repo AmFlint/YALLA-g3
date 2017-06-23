@@ -103,4 +103,22 @@ class AdminController extends Controller
         $post->tags()->sync($request->tag_list);
         return redirect(route('admin.posts'));
     }
+
+    public function publishPost($id)
+    {
+        $post = Post::find($id);
+        if (!$this->checkIfEntityExists($post, 'Impossible de changer la visibilité de l\'article : article inexistant', 'danger')) {
+            return redirect(route('admin.posts'));
+        }
+        if ($post->published) {
+            $post->published = 0;
+            Session::flash('error', 'L\'article a été dépublié avec succès. Bravo.');
+        } else {
+            $post->published = 1;
+            Session::flash('error', 'L\'article a été publié avec succès. Bravo.');
+        }
+        $post->save();
+        Session::flash('errorClass', 'success');
+        return redirect(route('admin.posts'));
+    }
 }
