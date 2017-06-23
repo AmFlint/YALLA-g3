@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostRequest extends FormRequest
+class PostRequestEdit extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,8 +28,7 @@ class PostRequest extends FormRequest
             'category_id' => 'required',
             'summary' => 'required|max:150',
             'card' => 'required',
-            'locale' => 'required',
-            'image' => 'required'
+            'locale' => 'required'
         ];
     }
 
@@ -39,9 +38,8 @@ class PostRequest extends FormRequest
             'title.required' => 'Vous devez indiquer un titre pour l\'Article.',
             'category_id.required'  => 'Vous devez associer une catégorie à votre article',
             'summary.required' => 'Vous devez indiquer un résumé de l\'Article',
-            'image.required' => 'Vous devez assigner une image qui représentera l\'Article',
             'summary.max' => 'Votre résumé ne doit pas comprendre plus de 150 caractères.',
-            'title.max' => 'Votre titre ne doit pas comprendre plus de 150 caractères.'
+            'title.max' => 'Votre titre ne doit pas comprendre plus de 100 caractères.'
         ];
     }
 }

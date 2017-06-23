@@ -239,6 +239,11 @@ Page add
 
 */
 
+.col-xs-8Custom,
+.col-md-8Custom{
+    width: 64.5%;
+}
+
 .styleForm{
     margin-top: 20px;
     font-size: 1.2em;
