@@ -21,6 +21,21 @@ app.controller('TacosCtrl', function ($scope, $http)
         }
     ];
 
+    $scope.published = 0;
+    $scope.publishMessage = "Publier";
+    
+    $scope.publish = function() {
+        
+        if ($scope.published) {
+            $scope.published = 0;
+            $scope.publishMessage = "Publier";
+        }
+        else{
+            $scope.published = 1;
+            $scope.publishMessage = "Dépublier";
+        }
+    };
+
     $scope.getLocale = function (post)
     {
         for (var i = 0; i < $scope.locales.length; i++) {
@@ -105,5 +120,5 @@ app.controller('TacosCtrl', function ($scope, $http)
             }
         }
         return false;
-    }
+    };
 });

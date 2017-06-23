@@ -32,17 +32,17 @@
                         <img src="logo.png" alt="">
                     </li>
                     <a class="decorationNone marginTopNavAside" href="{{route('admin.dashboard')}}">
-                        <li class="list-group-item justify-content-between active">
+                        <li class="decorationNone list-group-item justify-content-between active">
                             Overview
                         </li>
                     </a>
                     <a class="decorationNone" href="{{route('admin.posts')}}">
-                        <li class="list-group-item justify-content-between">
+                        <li class="decorationNone list-group-item justify-content-between">
                             Posts
                         </li>
                     </a>
                     <a class="decorationNone" href="{{route('admin.dashboard')}}">
-                        <li class="list-group-item justify-content-between">
+                        <li class="decorationNone list-group-item justify-content-between">
                             Dashboard
                         </li>
                     </a>

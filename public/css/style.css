@@ -7,7 +7,7 @@ button {
 }
 
 .decorationNone{
-    text-decoration: none;
+    text-decoration: none !important;
     color: rgb(190,190,210);
 }
 
@@ -193,7 +193,9 @@ Style des carte material design
 }
 
 
-
+.margin-top-published{
+    margin-top: 5vh;
+}
 .white-box{
     margin-top: 5vh;
 }
