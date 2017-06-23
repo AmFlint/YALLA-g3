@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Http\Requests\PostRequest;
+use App\Http\Requests\PostRequestEdit;
 use App\Post;
 use App\Tag;
 use Illuminate\Http\Request;
@@ -90,7 +91,7 @@ class AdminController extends Controller
 	    return view('admin.posts.edit', compact('post', 'categories', 'tags'));
     }
 
-    public function updatePost($id, Request $request)
+    public function updatePost($id, PostRequestEdit $request)
     {
         $props = $request->all();
         if ($request->image) {
@@ -100,6 +101,24 @@ class AdminController extends Controller
         $post = Post::findOrFail($id);
         $post->update($props);
         $post->tags()->sync($request->tag_list);
+        return redirect(route('admin.posts'));
+    }
+
+    public function publishPost($id)
+    {
+        $post = Post::find($id);
+        if (!$this->checkIfEntityExists($post, 'Impossible de changer la visibilité de l\'article : article inexistant', 'danger')) {
+            return redirect(route('admin.posts'));
+        }
+        if ($post->published) {
+            $post->published = 0;
+            Session::flash('error', 'L\'article a été dépublié avec succès. Bravo.');
+        } else {
+            $post->published = 1;
+            Session::flash('error', 'L\'article a été publié avec succès. Bravo.');
+        }
+        $post->save();
+        Session::flash('errorClass', 'success');
         return redirect(route('admin.posts'));
     }
 }

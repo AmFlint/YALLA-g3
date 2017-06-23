@@ -40,6 +40,9 @@ Route::prefix('admin')->group(function() {
         Route::get('/edit/{id}', ['as' => 'admin.post_edit', 'uses' => 'AdminController@editPost'])
         ->where('id', '[0-9]+');
 
+        Route::get('/publish/{id}', ['as' => 'admin.post_publish', 'uses' => 'AdminController@publishPost'])
+            ->where('id', '[0-9]+');
+
         Route::put('/edit/{id}', ['as' => 'admin.post_update', 'uses' => 'AdminController@updatePost']);
     });
 
