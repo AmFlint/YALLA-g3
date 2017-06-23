@@ -29,9 +29,9 @@
                     <td>{!! $post->summary !!}</td>
                     <td>
                     @if($post->published)
-                        <a class="btn btn-danger" href="{{route('admin.post_publish', $post->id}}">Dépublié</a>
+                        <a class="btn btn-danger" href="{{route('admin.post_publish', $post->id)}}">Dépublié</a>
                     @else
-                        <a href="{{route('admin.post_publish', $post->id}}" class="btn btn-success">Publié</a>
+                        <a href="{{route('admin.post_publish', $post->id)}}" class="btn btn-success">Publié</a>
                     @endif
                     </td>
                     <td><button type="button" class="btn btn-danger test" data-toggle="modal" data-target="#myModal">Suppr</button></td>
