@@ -18,7 +18,7 @@
                             <p class="descriptionCard"><span class="strong">54%</span> unique visiteurs</p>
                         </div>
                     </div>
-                    <div class="col-md-3  col-xs-3  col-md-3  col-lg-3  col-xl-3 ">
+                    <div class="col-md-3  col-xs-3 col-md-3 col-lg-3 col-xl-3 ">
                         <div class="card">
                             <img src="{{asset('img-content/admin/ic_filter_none_black_48px.svg')}}" alt="">
                             <p class="descriptionCard"><span class="strong">154</span> page view</p>

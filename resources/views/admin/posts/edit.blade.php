@@ -63,9 +63,49 @@
                         {!! Form::file('image') !!}
                     </div>
                     <div class="styleForm">
-                        {!! Form::submit('Editer', ['class' => 'btn btn-primary']) !!}
+                    {!! Form::submit('Editer', ['class' => 'btn btn-primary']) !!}
                         {!! Form::close() !!}
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-3 col-md-3 alignTop paddingFix">
+        <div class="card">
+            <div class="card-head">
+                <h4 class="text-center">Gérer les tags</h4>
+            </div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-success marginTopAddTag" data-toggle="modal" data-target="#myModal">
+                Gérer les tags
+            </button>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ajouter un tag</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="col-lg-12" ng-submit="addTag(event)">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search for..."ng-model="inputTag">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button">Ajouter!</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-10 col-lg-10">
+                    <button class="btn btn-default" ng-class="{'btn-success': checkSelection(tag)}" ng-repeat="tag in tags" style="margin: 1%" ng-click="selectTag(tag)" >@{{ tag.name }}</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
