@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="row" ng-app="tagApp" ng-controller="TacosCtrl">
-    <div class="col-md-8">
+    <div class="col-md-8 col-xs-8 col-md-8 col-lg-8 col-xl-8 offset-xl-1 alignTop">
+
         @if($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -13,56 +14,71 @@
             </div>
         @endif
         {!! Form::open(['url' => route('admin.posts_store'), 'class' => 'test', 'files' => true]) !!}
+
+        <div class="cardPageAdd">
         <div class="row">
-            <div class="col-md-6 col-lg-6">
-                {!! Form::label('locale', 'Langue de l\'article') !!}
+        <div class="col-md-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 paddingFix">
+        <h2 class="paddingFix text-center">Ajouter un article :</h2>
+        </div>
+            <div class="col-md-6 col-lg-6 paddingFix styleForm">
+                {!! Form::label('locale', 'Langue de l\'article :') !!}
                 <select ng-change="getTags(languages)" name="locale" ng-model="languages" ng-options="locale.locale as locale.language for locale in locales track by locale.locale" class="form-control"></select>
             </div>
-            <div class="spacer">
-            </div>
-            <div class="spacer"></div>
-            <div class="col-md-6 col-lg-6">
-                {!! Form::label('title', 'Titre') !!}
+            <div class="col-md-6 col-lg-6 styleForm">
+                {!! Form::label('title', 'Titre :') !!}
                 {!! Form::text('title', null,['class' => 'form-control']) !!}
             </div>
-            <div class="spacer"></div>
-            {!! Form::label('content', 'Contenu') !!}
+            <div class="col-md-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 paddingFix styleForm">
+            {!! Form::label('content', 'Contenu :') !!}
             {!! Form::textarea('content', null,['class' => 'form-control']) !!}
-            <div class="spacer"></div>
-            <div class="col-md-8 col-lg-8">
-                {!! Form::label('summary', 'Résumé de l\'Article') !!}
+            </div>
+            <div class="col-md-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 paddingFix styleForm">
+            <div class="col-md-12 col-lg-12 paddingFix">
+                {!! Form::label('summary', 'Résumé de l\'Article :') !!}
                 {!! Form::text('summary', null,['class' => 'form-control']) !!}
             </div>
-            <div class="spacer"></div>
+            </div>
             <div class="invisible">
                 {!! Form::label('slug', 'Slug de l\'Article') !!}
                 {!! Form::text('slug', null,['class' => 'form-control']) !!}
             </div>
-            {!! Form::label('card', 'Type de carte au partage sur twitter') !!}
+            <div class="col-md-8 col-xs-8 col-md-8 col-lg-8 col-xl-8 paddingFix">
+            <div class="styleForm">
+            {!! Form::label('card', 'Type de carte au partage sur twitter :') !!}
+            </div>
             {!! Form::select('card', ['summary' => 'Résumé', 'summary_large_image' => 'Résumé avec image large', 'app' => 'Optimisé Mobile', 'player' => 'Lecteur vidéo'], null, ['class' => 'form-control']) !!}
-            <div class="spacer"></div>
-            <select name="tag_list[]" class="form-control" multiple="multiple">
+            </div>
+            <select name="tag_list[]" class="form-control paddingFix" multiple="multiple">
                 <option ng-repeat="tag in tags_selected" selected value="@{{ tag.id }}">@{{ tag.name }}</option>
             </select>
-            <div class="spacer"></div>
-            {!! Form::label('category_id', 'Catégorie') !!}
+            <div class="col-md-8 col-xs-8 col-md-8 col-lg-8 col-xl-8 paddingFix styleForm marginBottomAjoutArticle">
+            {!! Form::label('category_id', 'Catégorie :') !!}
             {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
+            </div>
         </div>
-        <div class="spacer"></div>
+        <div class="row">
+        <div class="col-md-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 paddingFix">
+        <div>
         {!! Form::file('image') !!}
-        <div class="spacer"></div>
-
-        {!! Form::submit('Ajouter', ['class' => 'btn btn-primary']) !!}
+        </div>
+        <div class="styleForm">
+        {!! Form::submit('Ajouter', ['class' => 'btn btn-success pointer']) !!}
         {!! Form::close() !!}
+        </div>
+        </div>
+        </div>
+        </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-xs-2 col-md-2 alignTop paddingFix">
+        <div class="card">
             <div class="card-head">
-                <h2 class="h4">Ajouter un tag</h2>
+                <h4 class="text-center">Gérer les tags</h4>
             </div>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                Ajouter un tag
+            <button type="button" class="btn btn-success marginTopAddTag" data-toggle="modal" data-target="#myModal">
+                Gérer les tags
             </button>
+            </div>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
