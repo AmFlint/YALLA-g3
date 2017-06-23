@@ -5,11 +5,30 @@ body{
 button {
     cursor: pointer;
 }
+
+.decorationNone{
+    text-decoration: none;
+    color: rgb(190,190,210);
+}
+
+.decorationNone:hover{
+    color: inherit;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.invisible{
+    display: none;
+}
+
 /* 
 
 Barre de nav top
 
 */
+
 nav ul{
     list-style: none;
 }
@@ -105,10 +124,12 @@ Barre de nav aside
 }
 .list-group-item:first-child{
     border-radius: 0px;
-    margin-bottom: 15vh;
 }
 .paddingFix{
     padding: 0px;
+}
+.marginTopNavAside{
+    margin-top: 15vh;
 }
 .list-group-item{
     background-color: transparent;
@@ -118,11 +139,17 @@ Barre de nav aside
     border: none;
     cursor: pointer;
 }
+.backgroundNavAside ul li a{
+    text-decoration: none;
+}
 .list-group-item:hover{
     color: white;
 }
 .active{
     background-color: #13DAFD !important;
+}
+.active a{
+    color: white;
 }
 .list-group-item span{
     background-color: #B3B4E1;
@@ -148,6 +175,17 @@ Style des carte material design
     border: 0px !important;
 }
 
+.cardPageAdd{
+    background-color: white;
+    -webkit-box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
+    -moz-box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
+    box-shadow: 5px 6px 15px 0px rgba(0,0,0,0.08);
+    overflow: hidden;
+    padding: 30px;
+    margin-left: 2.5%;
+    border: 0px !important;
+}
+
 .descriptionCard .strong{
     font-weight: 600;
     font-size: 2em;
@@ -161,7 +199,7 @@ Style des carte material design
 }
 
 .alignTop{
-    margin-top: 15vh;
+    padding-top: 15vh;
 }
 .behindFix{
     position: relative;
@@ -193,7 +231,23 @@ Pagination
     margin-top: 10vh;
 }
 
-.offset-md-2
-{
-    padding: 10% 5%;
+/* 
+
+
+Page add
+
+
+*/
+
+.styleForm{
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.marginBottomAjoutArticle{
+    margin-bottom: 20px;
+}
+
+.marginTopAddTag{
+    margin-top: 15px;
 }
