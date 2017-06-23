@@ -122,4 +122,13 @@ class AdminController extends Controller
         Session::flash('errorClass', 'success');
         return redirect(route('admin.posts'));
     }
+
+    public function previsualizePost($id)
+    {
+        $post = Post::find($id);
+        if (!$this->checkIfEntityExists($post, 'Impossible de prévisualiser: l\'article demandé n\'existe pas !', 'danger')) {
+            return redirect(route('admin.posts'));
+        }
+        return view('admin.posts.previsualize', compact('post'));
+    }
 }
