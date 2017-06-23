@@ -1,6 +1,6 @@
-var app = angular.module('App', []);
+var app = angular.module('App' , []);
 
-app.controller('MainCtrl', ['$scope', '$http', function($scope, $http) {
+app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
     $scope.modals = null;
 
     $scope.test = true;
@@ -42,8 +42,51 @@ app.controller('MainCtrl', ['$scope', '$http', function($scope, $http) {
         {
             console.log(err);
         });
+    };
+
+    $scope.sort = null;
+    $scope.descSort = false;
+    $scope.sortById = function ()
+    {
+        if ($scope.sort === 'id') {
+            $scope.descSort = !$scope.descSort;
+
+        } else {
+            $scope.sort = 'id';
+            $scope.descSort = false;
+        }
+    };
+
+    $scope.sortByName = function ()
+    {
+        if ($scope.sort === 'name') {
+            $scope.descSort = !$scope.descSort;
+
+        } else {
+            $scope.sort = 'name';
+            $scope.descSort = false;
+        }
+    };
+
+    $scope.sortByView = function ()
+    {
+        if ($scope.sort === 'views') {
+            $scope.descSort = !$scope.descSort;
+
+        } else {
+            $scope.sort = 'views';
+            $scope.descSort = false;
+        }
     }
+
 }]);
+
+
+
+
+
+
+
 
 
 
