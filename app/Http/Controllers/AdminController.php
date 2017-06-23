@@ -14,7 +14,7 @@ class AdminController extends Controller
 
     public function listPosts()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('id', 'desc')->get();
         return view('admin.posts.listing', compact('posts'));
     }
 
@@ -66,8 +66,13 @@ class AdminController extends Controller
 		return view('admin.dashboard.dashboard');
     }
 
-	public function addTag()
+	public function editPost($id)
 	{
+
+	    $post = Post::where('id', $id)->get()->first();
+        $categories = Category::where('locale', App::getLocale())->pluck('name', 'id');
+        $tags = Tag::where('locale', $post->locale)->get();
+	    return view('admin.posts.edit', compact('post', 'categories', 'tags'));
 
     }
 }

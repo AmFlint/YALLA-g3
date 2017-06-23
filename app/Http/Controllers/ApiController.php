@@ -10,9 +10,16 @@ class ApiController extends Controller
     public function addTag(Request $request)
     {
 //        $rules = ['name' => 'required|alpha|max:15'];
-            $props = $request->all();
-            $props['slug'] = null;
-            Tag::create($props);
-            return response(Tag::orderBy('id', 'desc')->first(), 200);
+        $props = $request->all();
+        $props['slug'] = null;
+        Tag::create($props);
+        return response(Tag::orderBy('id', 'desc')->first(), 200);
+
+    }
+
+    public function getTagsByLocale(Request $request)
+    {
+        $tags = Tag::where('locale', $request->all())->get();
+        return response($tags, 200);
     }
 }
