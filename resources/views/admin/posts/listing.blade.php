@@ -1,7 +1,8 @@
 @extends('admin.layout_admin')
+<link rel="stylesheet" href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
 
 @section('content')
-<div>
+<div ng-app="App">
     <div class="col-xs-10 col-md-10 col-lg-10 col-xl-10 offset-md-1 alignTop ">
         @if(\Illuminate\Support\Facades\Session::has('error'))
         <div class="alert alert-{{\Illuminate\Support\Facades\Session::get('errorClass')}}">{{\Illuminate\Support\Facades\Session::get('error')}}</div>
@@ -11,7 +12,7 @@
                 <a href="{{route('admin.posts_create')}}"><input type="button" value="Ajouter un article" class="btn btn-success pointer marginBottomAjoutArticle"></a>
             </div>
         </div>
-        <table class="table">
+        <table class="table" ng-controller="MainCtrl">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -69,6 +70,7 @@
     var posts = {!! $posts !!};
 </script>
 <script src="{{asset('js/laroute.js')}}"></script>
+
 <script type="text/javascript">
 
 /*Fonction pour actualiser 
@@ -117,5 +119,6 @@ page list*/
 <script src="{{asset('js/angular.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0/ng-table.min.js"></script>
 <script src="{{asset('js/admin/listing.js')}}"></script>
 @endsection

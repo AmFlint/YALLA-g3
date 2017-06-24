@@ -1,5 +1,4 @@
 @extends('admin.layout_admin')
-
 @section('content')
 
     <div id="page-wrapper" style="min-height: 315px;" ng-app="App" ng-controller="MainCtrl">
@@ -40,12 +39,12 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Nom</th>
-                                <th>nb Vue</th>
+                                <th ng-click="sortById()">Id</th>
+                                <th ng-click="sortByName()">Nom</th>
+                                <th ng-click="sortByView()">nb Vue</th>
                             </tr>
                             </thead>
-                            <tbody ng-repeat="post in posts">
+                            <tbody ng-repeat="post in posts | orderBy:sort:descSort">
                             <tr>
                                 <td>@{{ post.id }}</td>
                                 <td>@{{ post.title }} @{{ post.name }}</td>
