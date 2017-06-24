@@ -230,4 +230,25 @@ class AdminController extends Controller
         Session::flash('errorClass', 'success');
         return redirect(route('admin.tags'));
     }
+
+    public function editTag($id)
+    {
+        $tag = Tag::find($id);
+        if (!$this->checkIfEntityExists($tag, 'Impossible d\'accéder au formulaire d\'édition', 'danger')) {
+            return redirect(route('admin.tags'));
+        }
+        return view('admin.tags.edit', compact('tag'));
+    }
+
+    public function updateTag($id, Request $request)
+    {
+        $rules = [
+            'name' => 'required'
+        ];
+        $this->validate($request, $rules);
+        Tag::find($id)->update($request->all());
+        Session::flash('error', 'Le tag a été édité avec succès, bravo.');
+        Session::flash('errorClass', 'success');
+        return redirect(route('admin.tags'));
+    }
 }
