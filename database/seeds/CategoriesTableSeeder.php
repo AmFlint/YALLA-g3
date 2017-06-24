@@ -11,17 +11,31 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $category1 = \App\Category::create([
+        \App\Category::create([
            'name' => 'Non classé',
             'slug' => 'non-classe',
-            'locale' => 'fr_FR',
+            'locale' => 'fr',
             'parent_id' => 0
         ]);
 
-        $category2 = \App\Category::create([
+        \App\Category::create([
             'name' => 'Ecole',
             'slug' => '',
-            'locale' => 'fr_FR',
+            'locale' => 'fr',
+            'parent_id' => 0
+        ]);
+
+        \App\Category::create([
+            'name' => 'Non classified',
+            'slug' => 'non-classified',
+            'locale' => 'en',
+            'parent_id' => 0
+        ]);
+
+        \App\Category::create([
+            'name' => 'Non classified',
+            'slug' => 'non-classif',
+            'locale' => 'ar',
             'parent_id' => 0
         ]);
     }

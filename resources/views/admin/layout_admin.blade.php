@@ -46,6 +46,11 @@
                             Historique
                         </li>
                     </a>
+                    <a class="decorationNone" href="{{route('admin.tags')}}">
+                        <li class="decorationNone list-group-item justify-content-between">
+                            Tags
+                        </li>
+                    </a>
                 </ul>
             </div>
         </div>

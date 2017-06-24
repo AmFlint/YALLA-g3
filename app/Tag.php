@@ -15,6 +15,11 @@ class Tag extends Model
         return $this->belongsToMany('App\Post');
     }
 
+    public function postSaves()
+    {
+        return $this->belongsToMany('App\PostSave');
+    }
+
     public function setSlugAttribute($value)
     {
         if(empty($value)) {
