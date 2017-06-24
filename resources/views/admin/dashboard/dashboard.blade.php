@@ -1,7 +1,7 @@
 @extends('admin.layout_admin')
 @section('content')
 
-    <div id="page-wrapper" style="min-height: 315px;" ng-app="App" ng-controller="MainCtrl">
+    <div id="page-wrapper" style="min-height: 315px;" ng-app="App" ng-controller="MainCtrl" ng-cloak>
         <!-- row -->
         <div class="row">
             <div class="col-md-9 col-xs-8 col-md-10 col-lg-10 col-xl-10">
@@ -30,9 +30,13 @@
         <div class="row">
             <div class="col-md-9 col-xs-8 col-md-10 col-lg-10 col-xl-10 offset-md-1 behindFix">
                 <div class="col-md-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 alignTopSelect">
-                    <button type="button" class="btn btn-info" id="postCat" ng-click="getPost()">Post</button>
-                    <button type="button" class="btn btn-info alignLeftTag" id="categoryCat" ng-click="getCategory()">Category</button>
-                    <button type="button" class="btn btn-info alignLeftTag" id="tagCat" ng-click="getTag()">Tag</button>
+                    <button type="button" class="btn btn-default" ng-click="getPost()" ng-class="{'btn-info' : type === 'post'}">Post</button>
+                    <button type="button" class="btn btn-default alignLeftTag" ng-click="getCategory()" ng-class="{'btn-info' : type === 'category'}">Category</button>
+                    <button type="button" class="btn btn-default alignLeftTag" ng-click="getTag()" ng-class="{'btn-info' : type === 'tag'}">Tag</button>
+
+                    <button type="button" class="btn btn-default alignLeftTag pull-right" ng-click="getFr()" ng-class="{'btn-info' : localisation === 'fr'}">fr</button>
+                    <button type="button" class="btn btn-default alignLeftTag pull-right" ng-click="getEn()" ng-class="{'btn-info' : localisation === 'en'}">en</button>
+                    <button type="button" class="btn btn-default alignLeftTag pull-right" ng-click="getAr()" ng-class="{'btn-info' : localisation === 'ar'}">ar</button>
                 </div>
                 <div class="white-box">
                     <div class="table-responsive">
