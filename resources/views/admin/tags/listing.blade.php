@@ -52,7 +52,7 @@
                         <td>{{$tag->slug}}</td>
                         <td>
                             <button type="button" class="btn btn-danger test" data-toggle="modal" data-target="#myModal">Suppr</button>
-                            <a href="{{route('admin.post_edit', $tag->id)}}" class="btn btn-warning">Editer</a>
+                            <a href="{{route('admin.tag_edit', $tag->id)}}" class="btn btn-warning">Editer</a>
                         </td>
                     </tr>
                     </tbody>

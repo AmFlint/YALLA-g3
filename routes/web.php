@@ -63,6 +63,12 @@ Route::prefix('admin')->group(function() {
         Route::get('/delete/{id}', ['as' => 'admin.tag_delete', 'uses' => 'AdminController@deleteTag'])
         ->where('id', '[0-9]+');
 
+        Route::get('/edit/{id}', ['as' => 'admin.tag_edit', 'uses' => 'AdminController@editTag'])
+        ->where('id', '[0-9]+');
+
+        Route::put('/edit/{id}', ['as' => 'admin.tag_update', 'uses' => 'AdminController@updateTag'])
+            ->where('id', '[0-9]+');
+
     });
 
 });
