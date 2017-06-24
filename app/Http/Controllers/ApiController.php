@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Tag;
 use Illuminate\Http\Request;
 
@@ -21,6 +22,12 @@ class ApiController extends Controller
     {
         $tags = Tag::where('locale', $request->all())->get();
         return response($tags, 200);
+    }
+
+    public function getCategoriesByLocale(Request $request)
+    {
+        $categories = Category::where('locale', $request->all())->get();
+        return response($categories, 200);
     }
 
     public function getViewsByType(Request $request)

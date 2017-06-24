@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 paddingFix styleForm">
                     {!! Form::label('locale', 'Langue de l\'article :') !!}
-                    <select ng-change="getTags(languages)" name="locale" ng-model="languages" ng-options="locale.locale as locale.language for locale in locales track by locale.locale" class="form-control"></select>
+                    <select ng-change="getTagsAndCategories(languages)" name="locale" ng-model="languages" ng-options="locale.locale as locale.language for locale in locales track by locale.locale" class="form-control"></select>
                 </div>
                 <div class="col-md-6 col-lg-6 styleForm">
                     {!! Form::label('title', 'Titre') !!}
@@ -54,7 +54,9 @@
                 </select>
                 <div class="col-md-8 col-xs-8 col-md-8 col-lg-8 col-xl-8 paddingFix styleForm marginBottomAjoutArticle">
                     {!! Form::label('category_id', 'Catégorie') !!}
-                    {!! Form::select('category_id', $categories, $post->category->id, ['class' => 'form-control']) !!}
+                    <select name="category_id" id="" class="form-control"
+                            ng-model="category_id"
+                            ng-options="category.id as category.name for category in categories track by category.id"></select>
                 </div>
             </div>
             <div class="row">
@@ -130,9 +132,9 @@
 <script src="{{asset('js/laroute.js')}}"></script>
 <script>
     var tags = {!! $tags !!};
-    var post = {
-        locale: 'fr_FR'
-    };
+    var post = {!! $post !!};
+    var taggs_selected = {!! $post->tags !!};
+    var categories = {!! $categories !!};
 </script>
 <script src="{{asset('js/admin/tags.js')}}"></script>
 @endsection

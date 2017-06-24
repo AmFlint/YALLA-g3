@@ -14,7 +14,7 @@ class PostsTableSeeder extends Seeder
     {
         $post1 = Post::create([
             'published' => 1,
-            'locale' => 'fr_FR',
+            'locale' => 'fr',
             'image' => 'yolo.jpg',
             'title' => 'Article N°1',
             'content' => 'Contenu article 1',
@@ -30,7 +30,7 @@ class PostsTableSeeder extends Seeder
 
         $post2 = Post::create([
             'published' => 1,
-            'locale' => 'fr_FR',
+            'locale' => 'fr',
             'image' => 'test.jpg',
             'title' => 'Article N°2',
             'content' => 'Contenu article 2 test',
@@ -46,7 +46,7 @@ class PostsTableSeeder extends Seeder
 
 	    $post3 = Post::create([
 		    'published' => 1,
-		    'locale' => 'fr_FR',
+		    'locale' => 'fr',
 		    'image' => 'yolo.jpg',
 		    'title' => 'Article N°3',
 		    'content' => 'Contenu article 3',
@@ -62,7 +62,7 @@ class PostsTableSeeder extends Seeder
 
 	    $post4 = Post::create([
 		    'published' => 1,
-		    'locale' => 'fr_FR',
+		    'locale' => 'en',
 		    'image' => 'yolo.jpg',
 		    'title' => 'Article N°4',
 		    'content' => 'Contenu article 4',
@@ -70,15 +70,15 @@ class PostsTableSeeder extends Seeder
 		    'summary' => 'Résumé article 4',
 		    'card' => 'summary',
 		    'meta_robots' => 0,
-		    'category_id' => 1,
+		    'category_id' => 3,
 		    "views" => 1009
 	    ]);
 
-	    $post4->tags()->sync([1, 2]);
+	    $post4->tags()->sync([4]);
 
 	    $post5 = Post::create([
 		    'published' => 1,
-		    'locale' => 'fr_FR',
+		    'locale' => 'en',
 		    'image' => 'yolo.jpg',
 		    'title' => 'Article N°5',
 		    'content' => 'Contenu article 5',
@@ -86,15 +86,15 @@ class PostsTableSeeder extends Seeder
 		    'summary' => 'Résumé article 5',
 		    'card' => 'summary',
 		    'meta_robots' => 0,
-		    'category_id' => 1,
+		    'category_id' => 3,
 		    "views" => 107
 	    ]);
 
-	    $post5->tags()->sync([1, 2]);
+	    $post5->tags()->sync([3, 5]);
 
 	    $post6 = Post::create([
 		    'published' => 1,
-		    'locale' => 'fr_FR',
+		    'locale' => 'ar',
 		    'image' => 'yolo.jpg',
 		    'title' => 'Le 4L Trophy partenaire de Yalla!',
 		    'content' => '4L Trophy',
@@ -102,15 +102,15 @@ class PostsTableSeeder extends Seeder
 		    'summary' => '4l Trophy est partenaire',
 		    'card' => 'summary',
 		    'meta_robots' => 0,
-		    'category_id' => 1,
+		    'category_id' => 4,
 		    "views" => 457
 	    ]);
 
-	    $post6->tags()->sync([1, 2]);
+	    $post6->tags()->sync([6]);
 
 	    $post7 = Post::create([
 		    'published' => 1,
-		    'locale' => 'fr_FR',
+		    'locale' => 'ar',
 		    'image' => 'yolo.jpg',
 		    'title' => 'Evenement fundraising à Paris',
 		    'content' => 'Event fundraising',
@@ -118,15 +118,15 @@ class PostsTableSeeder extends Seeder
 		    'summary' => 'Résumé event paris fundraising',
 		    'card' => 'summary',
 		    'meta_robots' => 0,
-		    'category_id' => 1,
+		    'category_id' => 4,
 		    "views" => 19
 	    ]);
 
-	    $post7->tags()->sync([1, 2]);
+	    $post7->tags()->sync([6, 7]);
 
 	    $post8 = Post::create([
 		    'published' => 1,
-		    'locale' => 'fr_FR',
+		    'locale' => 'fr',
 		    'image' => 'yolo.jpg',
 		    'title' => 'Les enfants à Bamako ont trouvé des dons',
 		    'content' => 'Le contenu de l\'article sur les enfants à Bamako',

@@ -10,6 +10,14 @@ button {
     cursor: pointer;
 }
 
+h1.h1 {
+    margin-bottom: 30px;
+}
+
+.mg-top {
+    margin: 20px 0;
+}
+
 .decorationNone{
     text-decoration: none !important;
     color: rgb(190,190,210);

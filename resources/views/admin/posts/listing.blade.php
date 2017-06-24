@@ -1,8 +1,7 @@
 @extends('admin.layout_admin')
-<link rel="stylesheet" href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
 
 @section('content')
-<div ng-app="App">
+<div>
     <div class="col-xs-10 col-md-10 col-lg-10 col-xl-10 offset-md-1 alignTop ">
         <h1 class="h1 text-center">Liste des Articles</h1>
         @if(\Illuminate\Support\Facades\Session::has('error'))
@@ -13,7 +12,7 @@
                 <a href="{{route('admin.posts_create')}}"><input type="button" value="Ajouter un article" class="btn btn-success pointer marginBottomAjoutArticle"></a>
             </div>
         </div>
-        <table class="table" ng-controller="MainCtrl">
+        <table class="table">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -28,17 +27,24 @@
             <tbody>
                 <tr>
                     <td>{{$post->id}}</td>
-                    <td>{{$post->title}}</td>
+                    <td>
+                        <a href="{{route('admin.post_details', $post->id)}}">
+                            {{$post->title}}
+                        </a>
+                    </td>
                     <td>{!! $post->summary !!}</td>
                     <td>{{$post->locale}}</td>
                     <td>
                     @if($post->published)
-                        <a class="btn btn-danger" href="{{route('admin.post_publish', $post->id)}}">Dépublié</a>
+                        <a class="btn btn-warning" href="{{route('admin.post_publish', $post->id)}}">Dépublier</a>
                     @else
-                        <a href="{{route('admin.post_publish', $post->id)}}" class="btn btn-success">Publié</a>
+                        <a href="{{route('admin.post_publish', $post->id)}}" class="btn btn-success">Publier</a>
                     @endif
                     </td>
-                    <td><button type="button" class="btn btn-danger test" data-toggle="modal" data-target="#myModal">Suppr</button></td>
+                    <td>
+                        <button type="button" class="btn btn-danger test" data-toggle="modal" data-target="#myModal">Suppr</button>
+                        <a href="{{route('admin.post_edit', $post->id)}}" class="btn btn-warning">Editer</a>
+                    </td>
                 </tr>
             </tbody>
             @endforeach
@@ -58,7 +64,7 @@
                         <p></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal">Retour</button>
                         <a class="decorationNone" href=""><button type="button" class="btn btn-danger">Supprimer</button></a>
                     </div>
                 </div>
@@ -69,9 +75,6 @@
 @endsection
 
 @section('scripts')
-<script>
-    var posts = {!! $posts !!};
-</script>
 <script src="{{asset('js/laroute.js')}}"></script>
 
 <script type="text/javascript">
@@ -109,19 +112,8 @@ depuis la page list*/
             modalCore.innerHTML = data[2];
         };
     }
-
-/*Fonction toggle 
-class published
-page list*/
-
- 
-
-
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="{{asset('js/angular.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0/ng-table.min.js"></script>
-<script src="{{asset('js/admin/listing.js')}}"></script>
 @endsection
