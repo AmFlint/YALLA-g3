@@ -7,6 +7,10 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
 
     $scope.posts = posts;
 
+    $scope.type = 'post';
+
+    $scope.localisation = false;
+
     $scope.deleteModal = function(post) {
         $scope.modals = post;
         console.log($scope.modals);
@@ -14,29 +18,70 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
 
     $scope.getPost = function()
     {
-        var type = document.querySelector('#postCat').innerText;
-        $scope.getDataByType(type);
+        $scope.type = 'post';
+        $scope.getDataByType($scope.type, $scope.localisation);
     };
 
     $scope.getTag = function()
     {
-        var type = document.querySelector('#tagCat').innerText;
-        $scope.getDataByType(type);
+        $scope.type = 'tag';
+        $scope.getDataByType($scope.type, $scope.localisation);
     };
 
     $scope.getCategory = function()
     {
-        var type = document.querySelector('#categoryCat').innerText;
-        $scope.getDataByType(type);
+        $scope.type = 'category';
+        $scope.getDataByType($scope.type, $scope.localisation);
     };
 
-    $scope.getDataByType = function (type)
+    $scope.getFr = function ()
     {
+        if ($scope.localisation == 'fr') {
+            $scope.localisation = false;
+        } else {
+            $scope.localisation = 'fr';
+        }
+        $scope.getDataByType($scope.type, $scope.localisation);
+    };
+
+    $scope.getEn = function ()
+    {
+        if ($scope.localisation == 'en') {
+            $scope.localisation = false;
+        } else {
+            $scope.localisation = 'en';
+        }
+        $scope.getDataByType($scope.type, $scope.localisation);
+    };
+
+    $scope.getAr = function ()
+    {
+        if ($scope.localisation == 'ar') {
+            $scope.localisation = false;
+        } else {
+            $scope.localisation = 'ar';
+        }
+        $scope.getDataByType($scope.type, $scope.localisation);
+    };
+
+
+
+    $scope.getDataByType = function (type, locale)
+    {
+        var localisation;
+        if (locale) {
+            localisation = '&locale=' + locale;
+        } else {
+            localisation = '';
+        }
+
         $http({
             method: 'get',
-            url: root_route + laroute.action('api.views_get_by_type') + '?type=' + type
+            url: root_route + laroute.action('api.views_get_by_type') + '?type=' + type + localisation
         }).then(function successCallback(data)
         {
+            console.log(data.data);
+
             $scope.posts = data.data;
         }, function errorCallback(err)
         {
@@ -77,6 +122,11 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
             $scope.sort = 'views';
             $scope.descSort = false;
         }
+    }
+
+    $scope.sortByFr = function ()
+    {
+
     }
 
 }]);
