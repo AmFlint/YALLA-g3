@@ -41,6 +41,7 @@
                             <tr>
                                 <th ng-click="sortById()">Id</th>
                                 <th ng-click="sortByName()">Nom</th>
+                                <th>Locale</th>
                                 <th ng-click="sortByView()">nb Vue</th>
                             </tr>
                             </thead>
@@ -48,6 +49,7 @@
                             <tr>
                                 <td>@{{ post.id }}</td>
                                 <td>@{{ post.title }} @{{ post.name }}</td>
+                                <td>@{{ post.locale }}</td>
                                 <td>@{{ post.views }}</td>
                             </tr>
                             </tbody>

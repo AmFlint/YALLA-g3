@@ -33,7 +33,11 @@ class ApiController extends Controller
     public function getViewsByType(Request $request)
     {
         $entity = 'App\\' . ucfirst($request->type);
-        $to_send = $entity::orderBy('created_at', 'desc')->get();
+        if (isset($request->locale) && $request->locale != null) {
+            $to_send = $entity::orderBy('created_at', 'desc')->where('locale', $request->locale)->get();
+        } else {
+            $to_send = $entity::orderBy('created_at', 'desc')->get();
+        }
         return response($to_send, 200);
     }
 }
