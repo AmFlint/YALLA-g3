@@ -33,7 +33,7 @@
                     </li>
                     <a class="decorationNone marginTopNavAside" href="{{route('admin.dashboard')}}">
                         <li class="decorationNone list-group-item justify-content-between active">
-                            Overview
+                            Dashboard
                         </li>
                     </a>
                     <a class="decorationNone" href="{{route('admin.posts')}}">
@@ -41,9 +41,9 @@
                             Posts
                         </li>
                     </a>
-                    <a class="decorationNone" href="{{route('admin.dashboard')}}">
+                    <a class="decorationNone" href="{{route('admin.history')}}">
                         <li class="decorationNone list-group-item justify-content-between">
-                            Dashboard
+                            Historique
                         </li>
                     </a>
                 </ul>

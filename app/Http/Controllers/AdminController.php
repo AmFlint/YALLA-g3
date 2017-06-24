@@ -6,6 +6,7 @@ use App\Category;
 use App\Http\Requests\PostRequest;
 use App\Http\Requests\PostRequestEdit;
 use App\Post;
+use App\PostSave;
 use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -17,7 +18,7 @@ class AdminController extends Controller
 
     public function listPosts()
     {
-        $posts = Post::orderBy('id', 'desc')->get();
+        $posts = Post::orderBy('id', 'desc')->paginate(20);
         return view('admin.posts.listing', compact('posts'));
     }
 
@@ -60,6 +61,11 @@ class AdminController extends Controller
         if (!$this->checkIfEntityExists($post, 'Impossible de supprimer, l\'article demandé n\'existe pas !', 'danger')) {
             return redirect(route('admin.posts'));
         }
+        $props = $post->getAttributes();
+        $props['post_id'] = $props['id'];
+        $props['id'] = null;
+        $props['action'] = 'delete';
+        PostSave::create($props);
         $post->delete();
         Session::flash('error', 'Votre article a bien été supprimé');
         Session::flash('errorClass', 'success');
@@ -100,6 +106,11 @@ class AdminController extends Controller
             $props['image'] = $image;
         }
         $post = Post::findOrFail($id);
+        $propertiesSave = $post->getAttributes();
+        $propertiesSave['post_id'] = $propertiesSave['id'];
+        $propertiesSave['id'] = null;
+        $propertiesSave['action'] = 'edit';
+        PostSave::create($propertiesSave);
         $post->update($props);
         $post->tags()->sync($request->tag_list);
         return redirect(route('admin.posts'));
@@ -119,6 +130,41 @@ class AdminController extends Controller
             Session::flash('error', 'L\'article a été publié avec succès. Bravo.');
         }
         $post->save();
+        Session::flash('errorClass', 'success');
+        return redirect(route('admin.posts'));
+    }
+
+    public function previsualizePost($id)
+    {
+        $post = Post::find($id);
+        if (!$this->checkIfEntityExists($post, 'Impossible de prévisualiser: l\'article demandé n\'existe pas !', 'danger')) {
+            return redirect(route('admin.posts'));
+        }
+        return view('admin.posts.previsualize', compact('post'));
+    }
+
+    public function history()
+    {
+        $posts = PostSave::orderBy('created_at', 'desc')->paginate(20);
+        return view('admin.history', compact('posts'));
+    }
+
+    public function rollBackPost($id)
+    {
+        $postSave = PostSave::find($id);
+        if (!$this->checkIfEntityExists($postSave, 'Impossible de remettre en circulation: l\'article demandé n\'existe pas !', 'danger')) {
+            return redirect(route('admin.history'));
+        }
+        $post = Post::find($postSave->post_id);
+        $props = $postSave->getAttributes();
+        $props['id'] = $props['post_id'];
+        if (!$post) {
+            Post::create($props);
+        } else {
+            $post->update($props);
+        }
+        $postSave->delete();
+        Session::flash('error', 'L\'article a été remis en circulation avec succès !');
         Session::flash('errorClass', 'success');
         return redirect(route('admin.posts'));
     }

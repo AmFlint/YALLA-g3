@@ -4,6 +4,7 @@
 @section('content')
 <div ng-app="App">
     <div class="col-xs-10 col-md-10 col-lg-10 col-xl-10 offset-md-1 alignTop ">
+        <h1 class="h1 text-center">Liste des Articles</h1>
         @if(\Illuminate\Support\Facades\Session::has('error'))
         <div class="alert alert-{{\Illuminate\Support\Facades\Session::get('errorClass')}}">{{\Illuminate\Support\Facades\Session::get('error')}}</div>
         @endif
@@ -18,6 +19,7 @@
                     <th>Id</th>
                     <th>Titre</th>
                     <th>Résumé</th>
+                    <th>Locale</th>
                     <th>Visible</th>
                     <th>Action</th>
                 </tr>
@@ -28,6 +30,7 @@
                     <td>{{$post->id}}</td>
                     <td>{{$post->title}}</td>
                     <td>{!! $post->summary !!}</td>
+                    <td>{{$post->locale}}</td>
                     <td>
                     @if($post->published)
                         <a class="btn btn-danger" href="{{route('admin.post_publish', $post->id)}}">Dépublié</a>
@@ -40,7 +43,7 @@
             </tbody>
             @endforeach
         </table>
-
+        {{ $posts->links('pagination.default') }}
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">

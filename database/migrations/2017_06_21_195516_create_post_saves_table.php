@@ -22,9 +22,12 @@ class CreatePostSavesTable extends Migration
             $table->text('content');
             $table->string('slug', 110);
             $table->string('summary', 150);
-            $table->integer('meta_id')->unsigned()->index();
+            $table->tinyInteger('meta_robots')->default(1);
             $table->integer('category_id')->unsigned()->index();
             $table->string('action', 25);
+            $table->string('card', 100);
+            $table->integer('post_id');
+            $table->integer('views')->default(0);
             $table->timestamps();
         });
     }

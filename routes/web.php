@@ -23,6 +23,11 @@ Route::prefix('admin')->group(function() {
 
     Route::post('tags', ['as' => 'admin.tag_add', 'uses' => 'ApiController@addTag']);
 
+    Route::get('history', ['as' => 'admin.history', 'uses' => 'AdminController@history']);
+
+    Route::get('rollback/{id}', ['as' => 'admin.rollback', 'uses' => 'AdminController@rollBackPost'])
+    ->where('id', '[0-9]+');
+
     Route::prefix('posts')->group(function() {
 
         Route::get('/', ['as' => 'admin.posts', 'uses' => 'AdminController@listPosts']);
@@ -44,6 +49,9 @@ Route::prefix('admin')->group(function() {
             ->where('id', '[0-9]+');
 
         Route::put('/edit/{id}', ['as' => 'admin.post_update', 'uses' => 'AdminController@updatePost']);
+
+        Route::get('/previsualize/{id}', ['as' => 'admin.post_previsualize', 'uses' => 'AdminController@previsualizePost'])
+            ->where('id', '[0-9]');
     });
 
 });
