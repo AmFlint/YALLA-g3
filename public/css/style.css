@@ -270,3 +270,21 @@ Page add
 .marginTopAddTag{
     margin-top: 15px;
 }
+
+#details .jumbotron
+{
+    padding: 22% 0;
+    background: url("../img-content/uploads/80998.jpg") center no-repeat;
+}
+
+#details article
+{
+    width: 80%;
+    margin: 0 auto;
+    line-height: 27pt;
+    font-size: 18px;
+}
+
+#details ul {
+    padding: 3% 5% 3% 1%;
+}
