@@ -13,13 +13,13 @@ class CreateMediaPostTable extends Migration
      */
     public function up()
     {
-        Schema::create('media_post', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('post_id')->unsigned()->index();
-            $table->foreign('post_id')->references('id')->on('posts')->ondDelete('cascade');
-            $table->integer('media_id')->unsigned()->index();
-            $table->foreign('media_id')->references('id')->on('medias')->ondDelete('cascade');
-        });
+//        Schema::create('media_post', function (Blueprint $table) {
+//            $table->increments('id');
+//            $table->integer('post_id')->unsigned()->index();
+//            $table->foreign('post_id')->references('id')->on('posts')->ondDelete('cascade');
+//            $table->integer('media_id')->unsigned()->index();
+//            $table->foreign('media_id')->references('id')->on('medias')->ondDelete('cascade');
+//        });
     }
 
     /**

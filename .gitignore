@@ -98,3 +98,4 @@ $RECYCLE.BIN/
 *.lnk
 
 !/app/Http/Controllers/AdminController.php
+!/public/

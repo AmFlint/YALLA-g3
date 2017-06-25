@@ -44,7 +44,7 @@
                     <tr>
                         <td>{{$tag->id}}</td>
                         <td>
-                            <a href="{{route('admin.post_details', $tag->id)}}">
+                            <a href="{{route('admin.tag_details', $tag->id)}}">
                                 {{$tag->name}}
                             </a>
                         </td>

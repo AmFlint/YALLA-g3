@@ -34,9 +34,9 @@
                     <button type="button" class="btn btn-default alignLeftTag" ng-click="getCategory()" ng-class="{'btn-info' : type === 'category'}">Category</button>
                     <button type="button" class="btn btn-default alignLeftTag" ng-click="getTag()" ng-class="{'btn-info' : type === 'tag'}">Tag</button>
 
-                    <button type="button" class="btn btn-default alignLeftTag pull-right" ng-click="getFr()" ng-class="{'btn-info' : localisation === 'fr'}">fr</button>
-                    <button type="button" class="btn btn-default alignLeftTag pull-right" ng-click="getEn()" ng-class="{'btn-info' : localisation === 'en'}">en</button>
-                    <button type="button" class="btn btn-default alignLeftTag pull-right" ng-click="getAr()" ng-class="{'btn-info' : localisation === 'ar'}">ar</button>
+                    <button type="button" class="btn btn-default alignLeftTag pull-right" ng-click="getFr()" ng-class="{'btn-info' : localisation === 'fr'}">Français</button>
+                    <button type="button" class="btn btn-default alignLeftTag pull-right" ng-click="getEn()" ng-class="{'btn-info' : localisation === 'en'}">English</button>
+                    <button type="button" class="btn btn-default alignLeftTag pull-right" ng-click="getAr()" ng-class="{'btn-info' : localisation === 'ar'}">Arabic</button>
                 </div>
                 <div class="white-box">
                     <div class="table-responsive">
@@ -45,7 +45,7 @@
                             <tr>
                                 <th ng-click="sortById()">Id</th>
                                 <th ng-click="sortByName()">Nom</th>
-                                <th>Locale</th>
+                                <th ng-click="sortByLocale()">Locale</th>
                                 <th ng-click="sortByView()">nb Vue</th>
                             </tr>
                             </thead>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Requests\PostRequest;
 use App\Http\Requests\PostRequestEdit;
+use App\Media;
 use App\Post;
 use App\PostSave;
 use App\Tag;
@@ -44,14 +45,24 @@ class AdminController extends Controller
      */
     public function storePost(PostRequest $request)
     {
+        // If admin chose to upload an image for external media input
+        if ($request->imageMedia) {
+            $propertiesMedia['type'] = 'image'; // set type to image (for future html structure)
+            $imageMedia = $this->upload($request->file('imageMedia')); // Upload file and get name
+            $propertiesMedia['url'] = $imageMedia; // set url link for image
+            $media = Media::create($propertiesMedia); // create Media
+        } else if ($request->url) { // if admin chose to upload image/youtube video from external site
+            $media = Media::create($request->all()); // create media
+        }
         $props = $request->all();
-        $image = $this->upload($request->file('image'));
+        $props['media_id'] = $media->id ?? null; // if admin uploaded media, attach it properties
+        $image = $this->upload($request->file('image')); // upload title image
         $props['image'] = $image;
-        $post = Post::create($props);
-        $post->tags()->sync($request->tag_list);
+        $post = Post::create($props); // create article from properties
+        $post->tags()->sync($request->tag_list); // and synchronize tags
         Session::flash('error', 'Votre article a bien été ajouté');
         Session::flash('errorClass', 'success');
-        return redirect(route('admin.posts'));
+        return redirect(route('admin.posts')); // redirect with validation message
     }
 
     /**
@@ -115,11 +126,26 @@ class AdminController extends Controller
     public function updatePost($id, PostRequestEdit $request)
     {
         $props = $request->all();
-        if ($request->image) {
+        if ($request->image) { // if admin uploads a new image
             $image = $this->upload($request->file('image'));
             $props['image'] = $image;
         }
         $post = Post::findOrFail($id);
+        if ($request->imageMedia) {
+            $propertiesMedia['type'] = 'image'; // set type to image (for future html structure)
+            $imageMedia = $this->upload($request->file('imageMedia')); // Upload file and get name
+            $propertiesMedia['url'] = $imageMedia; // set url link for image
+        } else if ($request->url) {
+            $propertiesMedia['type'] = $request->type; // set type to image (for future html structure)
+            $propertiesMedia['url'] = $request->url;
+        }
+        // If Article already has a relationship with a media
+        if ($post->media) {
+            $post->media->update($propertiesMedia); // update article's media
+        } else { // else create a new one and save media_id in props
+            $media = Media::create($propertiesMedia);
+            $props['media_id'] = $media->id;
+        }
         $propertiesSave = $post->getAttributes();
         $propertiesSave['post_id'] = $propertiesSave['id'];
         $propertiesSave['id'] = null;
@@ -128,6 +154,8 @@ class AdminController extends Controller
         $postSave->tags()->sync($post->tags);
         $post->update($props);
         $post->tags()->sync($request->tag_list);
+        Session::flash('error', 'L\'article a bien été édité, bravo.');
+        Session::flash('errorClass', 'success');
         return redirect(route('admin.posts'));
     }
 
@@ -234,7 +262,7 @@ class AdminController extends Controller
     public function editTag($id)
     {
         $tag = Tag::find($id);
-        if (!$this->checkIfEntityExists($tag, 'Impossible d\'accéder au formulaire d\'édition', 'danger')) {
+        if (!$this->checkIfEntityExists($tag, 'Impossible d\'accéder au formulaire d\'édition, le tag demandé n\'existe pas !', 'danger')) {
             return redirect(route('admin.tags'));
         }
         return view('admin.tags.edit', compact('tag'));
@@ -250,5 +278,14 @@ class AdminController extends Controller
         Session::flash('error', 'Le tag a été édité avec succès, bravo.');
         Session::flash('errorClass', 'success');
         return redirect(route('admin.tags'));
+    }
+
+    public function viewTag($id)
+    {
+        $tag = Tag::find($id);
+        if (!$this->checkIfEntityExists($tag, 'Impossible de voir le tag: l\'id demandée n\'existe pas !', 'danger')) {
+            return redirect(route('admin.tags'));
+        }
+        return view('admin.tags.details', compact('tag'));
     }
 }

@@ -22,8 +22,9 @@ class CreatePostsTable extends Migration
             $table->text('content');
             $table->string('slug', 110);
             $table->string('summary', 150);
+            $table->integer('media_id')->unsigned()->index()->nullable();
             $table->string('card', 100);
-            $table->tinyInteger('meta_robots')->default(1);
+            $table->string('meta_robots', 30)->nullable();
             $table->integer('category_id')->unsigned()->index();
             $table->integer('views')->default(0);
             $table->timestamps();

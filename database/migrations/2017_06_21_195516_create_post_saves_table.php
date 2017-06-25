@@ -22,10 +22,11 @@ class CreatePostSavesTable extends Migration
             $table->text('content');
             $table->string('slug', 110);
             $table->string('summary', 150);
-            $table->tinyInteger('meta_robots')->default(1);
+            $table->integer('media_id')->unsigned()->index()->nullable();
+            $table->string('card', 100);
+            $table->string('meta_robots', 30)->nullable();
             $table->integer('category_id')->unsigned()->index();
             $table->string('action', 25);
-            $table->string('card', 100);
             $table->integer('post_id');
             $table->integer('views')->default(0);
             $table->timestamps();
@@ -39,6 +40,5 @@ class CreatePostSavesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_saves');
     }
 }
