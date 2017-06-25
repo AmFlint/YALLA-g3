@@ -69,6 +69,9 @@ Route::prefix('admin')->group(function() {
         Route::put('/edit/{id}', ['as' => 'admin.tag_update', 'uses' => 'AdminController@updateTag'])
             ->where('id', '[0-9]+');
 
+        Route::get('{id}', ['as' => 'admin.tag_details', 'uses' => 'AdminController@viewTag'])
+            ->where('id', '[0-9]+');
+
     });
 
 });

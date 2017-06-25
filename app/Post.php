@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 
 class Post extends Model
 {
-    protected $fillable = ['published', 'image', 'card', 'meta_robots', 'category_id', 'locale', 'title', 'slug', 'content', 'summary'];
+    protected $fillable = ['published', 'image', 'card', 'meta_robots', 'category_id', 'locale', 'title', 'slug', 'content', 'summary', 'media_id'];
 
     public function category()
     {
@@ -19,9 +19,9 @@ class Post extends Model
         return $this->belongsToMany('App\Tag');
     }
 
-    public function medias()
+    public function media()
     {
-        return $this->belongsToMany('App\Media');
+        return $this->belongsTo('App\Media');
     }
 
     public function setSlugAttribute($value)

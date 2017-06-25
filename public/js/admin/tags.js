@@ -22,9 +22,14 @@ app.controller('TacosCtrl', function ($scope, $http)
         }
     ];
     // At the start, post's published property initiated to 0
-    $scope.published = 0;
+    $scope.post = post;
+    $scope.published = $scope.post.published;
     // publishMessage will change depending on post's published property state
-    $scope.publishMessage = "Publier";
+    if ($scope.published == 1) {
+        $scope.publishMessage = "Dépublier";
+    } else {
+        $scope.publishMessage = "Publier";
+    }
     // Get categories from back end for category_id select
     $scope.categories = categories;
     // Change publishMessage depending on publish state, triggered on ng-click
@@ -39,6 +44,7 @@ app.controller('TacosCtrl', function ($scope, $http)
             $scope.publishMessage = "Dépublier";
         }
     };
+
     // getting locale from post --> initiate selected option in language selection (fr by default otherwise post's locale if edit)
     $scope.getLocale = function (post)
     {
