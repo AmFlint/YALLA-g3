@@ -2,14 +2,23 @@
 
 
 @section('content')
-
-    <h1>{{$post->title}}</h1>
-    <ul>
+<section id="details">
+    <div class="jumbotron"></div>
+    <div class="container text-center">
+        <h1 class="display-3">{{$post->title}}</h1>
+    </div>
+    <ul class="container">
     @foreach($post->tags->all() as $tag)
-        <li>{{$tag->name}}</li>
+        <li class="btn btn-success pull-right alignLeftTag">{{$tag->name}}</li>
     @endforeach
     </ul>
-    {{$post->category->name}}
+    <article>
+        <p><strong>Catégorie </strong> : {{$post->category->name}}</p>
+        <p>{!! $post->content !!}</p>
+    </article>
+</section>
+@endsection
 
-    <p>{!! $post->content !!}</p>
+@section('scripts')
+
 @endsection
