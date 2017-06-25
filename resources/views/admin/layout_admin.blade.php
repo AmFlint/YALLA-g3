@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <div class="offset-md-2">
+        <div class="offset-md-2" style="padding-top: 4%">
             @yield('content')
         </div>
     </main>
