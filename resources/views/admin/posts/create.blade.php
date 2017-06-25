@@ -135,12 +135,13 @@
                     </div>
                     <div class="modal-body">
                         <form class="col-lg-12" ng-submit="addTag(event)">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for..." ng-model="inputTag">
-                                <span class="input-group-btn">
-                                <button class="btn btn-secondary" type="button">Ajouter!</button>
-                            </span>
-                            </div>
+                            <label for="">Nom</label>
+                            <input type="text" class="form-control marginBottomAjoutArticle" placeholder="Nom du tag" ng-model="inputTag">
+                            <label for="">Couleur du tag : <span class="tagColor tag_@{{ colorTag }} border"></span></label>
+                            <ul class="tagColors">
+                                <li class="tagColor tag_@{{ color.color }} pointer" ng-repeat="color in tagColors" ng-click="getColor(color.color)"></li>
+                            </ul>
+                            <button class="btn btn-secondary" type="submit">Ajouter!</button>
                         </form>
                     </div>
                     <div class="col-md-10 col-lg-10">

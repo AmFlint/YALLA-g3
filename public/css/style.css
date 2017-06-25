@@ -14,6 +14,37 @@ h1.h1 {
     margin-bottom: 30px;
 }
 
+.tagColors {
+    padding: 0;
+}
+
+.tagColor {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.border {
+    border: 1px solid black;
+}
+
+.tag_red {
+    background: indianred;
+}
+
+.tag_blue {
+    background: aquamarine;
+}
+
+.tag_yellow {
+    background: yellow;
+}
+
+.tag_pink {
+    background: pink;
+}
+
 .mg-top {
     margin: 20px 0;
 }
