@@ -21,7 +21,29 @@ app.controller('TacosCtrl', function ($scope, $http)
             language: 'Arabic'
         }
     ];
+
+    $scope.tagColors = [
+        {
+            color: 'red'
+        },
+        {
+            color: 'pink'
+        },
+        {
+            color: 'blue'
+        },
+        {
+            color: 'yellow'
+        }
+    ];
+
+    $scope.getColor = function(color)
+    {
+        $scope.colorTag = color;
+    };
+
     // At the start, post's published property initiated to 0
+    $scope.inputTag = '';
     $scope.post = post;
     $scope.published = $scope.post.published;
     // publishMessage will change depending on post's published property state
@@ -80,7 +102,7 @@ app.controller('TacosCtrl', function ($scope, $http)
         // Prevent submission
         event.preventDefault();
         // if a value is inserted into tag input (in Modal)
-        if (this.inputTag.trim() == '') {
+        if (this.inputTag.trim() == '' || $scope.colorTag == '') {
             return;
         }
         var req = {
@@ -88,7 +110,8 @@ app.controller('TacosCtrl', function ($scope, $http)
             url: root_route + laroute.action('api.tags_add'),
             data: {
                 locale: location,
-                name: this.inputTag
+                name: this.inputTag,
+                color: $scope.colorTag
             }
         };
         // AJAX call, api returns the recently added tag
@@ -99,6 +122,7 @@ app.controller('TacosCtrl', function ($scope, $http)
                 $scope.tags.push(data.data);
                 // empty tag input (in Modal)
                 $scope.inputTag = '';
+                $scope.colorTag = '';
             }, function errorCallback (err) {
                 console.log(err);
             });

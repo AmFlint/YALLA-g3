@@ -19,6 +19,7 @@ class CreateTagsTable extends Migration
             $table->string('name', 25);
             $table->string('slug', 30);
             $table->integer('views')->default(0);
+            $table->string('color', 15)->default('');
             $table->timestamps();
         });
     }

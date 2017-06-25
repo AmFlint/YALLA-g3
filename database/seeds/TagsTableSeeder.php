@@ -14,43 +14,50 @@ class TagsTableSeeder extends Seeder
         \App\Tag::create([
             'name' => 'santé',
             'slug' => 'sante',
-            'locale' => 'fr'
+            'locale' => 'fr',
+            'color' => 'red'
         ]);
 
         \App\Tag::create([
             'name' => 'enfants',
             'slug' => 'enfants',
-            'locale' => 'fr'
+            'locale' => 'fr',
+            'color' => 'pink'
         ]);
 
         \App\Tag::create([
             'name' => 'school',
             'slug' => 'school',
-            'locale' => 'en'
+            'locale' => 'en',
+            'color' => 'yellow'
         ]);
 
         \App\Tag::create([
             'name' => 'children',
             'slug' => 'children',
-            'locale' => 'en'
+            'locale' => 'en',
+            'color' => 'red'
         ]);
 
         \App\Tag::create([
             'name' => 'syria',
             'slug' => 'syria',
-            'locale' => 'en'
+            'locale' => 'en',
+            'color' => 'blue'
         ]);
 
         \App\Tag::create([
             'name' => 'help',
             'slug' => 'help',
-            'locale' => 'ar'
+            'locale' => 'ar',
+            'color' => 'pink'
         ]);
 
         \App\Tag::create([
             'name' => 'is on the way',
             'slug' => 'is-on-the-way',
-            'locale' => 'ar'
+            'locale' => 'ar',
+            'color' => 'blue'
         ]);
     }
 }
