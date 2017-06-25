@@ -49,7 +49,7 @@
 
                     {!! Form::select('card', ['summary' => 'Résumé', 'summary_large_image' => 'Résumé avec image large', 'app' => 'Optimisé Mobile', 'player' => 'Lecteur vidéo'], $post->card, ['class' => 'form-control']) !!}
                 </div>
-                <select name="tag_list[]" class="form-control paddingFix" multiple="multiple">
+                <select name="tag_list[]" class="form-control paddingFix invisible" multiple="multiple">
                     <option ng-repeat="tag in tags_selected" selected value="@{{ tag.id }}">@{{ tag.name }}</option>
                 </select>
                 <div class="col-md-8 col-xs-8 col-md-8 col-lg-8 col-xl-8 paddingFix styleForm marginBottomAjoutArticle">
@@ -57,12 +57,37 @@
                     <select name="category_id" id="" class="form-control"
                             ng-model="category_id"
                             ng-options="category.id as category.name for category in categories track by category.id"></select>
+                    <input type="hidden" ng-init="published = post.published" name="published" ng-model="published"
+                           value="@{{ published }}">
+                    {!! Form::label('meta_robots', 'Règles de référencement') !!}
+                    {!! Form::select('meta_robots', ['' => 'Indexer normalement', 'noindex, follow' => 'NOINDEX, FOLLOW', 'index, nofollow' => "INDEX, NOFOLLOW", 'noindex, nofollow' => 'NOINDEX, NOFOLLOW'], $post->meta_robots ?? '', ['class' => 'form-control']) !!}
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 paddingFix">
                     <div>
-                        {!! Form::file('image') !!}
+                        {!! Form::label('image', 'Image titre de l\'Article') !!}
+                        {!! Form::file('image', ['class' => 'form-control-file marginBottomAjoutArticle']) !!}
+                    </div>
+                    <div class="form-check marginBottomAjoutArticle">
+                        <label class="form-check-label">
+                            <input type="checkbox" ng-model="media" class="form-check-input">
+                            Media en ligne / Upload une image ? (facultatif)
+                        </label>
+                    </div>
+                    <div ng-show="!media" class="row">
+                        <div class="col-md-6">
+                            {!! Form::label('type', 'Type de lien (youtube, image)') !!}
+                            {!! Form::select('type', ['image' => 'Image', 'youtube' => 'lien Youtube'], $post->media->type ?? null, ['class' => 'form-control']) !!}
+                        </div>
+                        <div class="col-md-6">
+                            {!! Form::label('url') !!}
+                            {!! Form::text('url', $post->media->url ?? null, ['class' => 'form-control']) !!}
+                        </div>
+                    </div>
+                    <div ng-show="media">
+                        {!! Form::label('imageMedia', 'Choisissez votre image') !!}
+                        {!! Form::file('imageMedia', ['class' => 'form-control-file']) !!}
                     </div>
                     <div class="styleForm">
                     {!! Form::submit('Editer', ['class' => 'btn btn-primary']) !!}
@@ -81,6 +106,17 @@
             <button type="button" class="btn btn-success marginTopAddTag" data-toggle="modal" data-target="#myModal">
                 Gérer les tags
             </button>
+        </div>
+        <div class="card margin-top-published">
+            <div class="card-head">
+                <h4 class="text-center">Publier l'article</h4>
+            </div>
+            <button type="button" ng-click="publish()" class="btn btn-success marginTopAddTag marginBottomAjoutArticle"
+                    ng-class="{'btn-danger': published == 1}" ng-cloak>
+                @{{publishMessage}}
+            </button>
+            <p class="lead" ng-show="published" ng-cloak>L'Article sera publié après validation du formulaire</p>
+            <p class="lead" ng-hide="published" ng-cloak>L'Article ne sera pas publié</p>
         </div>
     </div>
     <!-- Modal -->

@@ -9,8 +9,13 @@ class Media extends Model
     protected $fillable = ['url', 'type'];
     //
 
-    public function posts()
+    public function post()
     {
-        return $this->belongsToMany('App\Post');
+        return $this->hasOne('App\Post');
+    }
+
+    public function postSave()
+    {
+        return $this->hasOne('App\PostSave');
     }
 }

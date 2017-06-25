@@ -29,6 +29,9 @@ class CreatePostSaveTagTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('postSave_tag');
+        Schema::dropIfExists('post_tag');
+        Schema::dropIfExists('post_save_tag');
+        Schema::dropIfExists('tags');
+        Schema::dropIfExists('post_saves');
     }
 }

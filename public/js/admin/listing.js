@@ -13,7 +13,6 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
 
     $scope.deleteModal = function(post) {
         $scope.modals = post;
-        console.log($scope.modals);
     };
 
     $scope.getPost = function()
@@ -80,8 +79,6 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
             url: root_route + laroute.action('api.views_get_by_type') + '?type=' + type + localisation
         }).then(function successCallback(data)
         {
-            console.log(data.data);
-
             $scope.posts = data.data;
         }, function errorCallback(err)
         {
@@ -104,11 +101,24 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
 
     $scope.sortByName = function ()
     {
-        if ($scope.sort === 'name') {
+        if (($scope.sort === 'name' && $scope.type != 'post') || ($scope.sort == 'title' && $scope.type == 'post')) {
+            $scope.descSort = !$scope.descSort;
+        } else if ($scope.type == 'post') {
+            $scope.sort = 'title';
+            $scope.descSort = false;
+        } else {
+            $scope.sort = 'name';
+            $scope.descSort = false;
+        }
+    };
+
+    $scope.sortByLocale = function()
+    {
+        if ($scope.sort === 'locale') {
             $scope.descSort = !$scope.descSort;
 
         } else {
-            $scope.sort = 'name';
+            $scope.sort = 'locale';
             $scope.descSort = false;
         }
     };
@@ -122,7 +132,7 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
             $scope.sort = 'views';
             $scope.descSort = false;
         }
-    }
+    };
 
     $scope.sortByFr = function ()
     {
