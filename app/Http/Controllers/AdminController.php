@@ -370,4 +370,26 @@ class AdminController extends Controller
         Session::flash('errorClass', 'success');
         return redirect(route('admin.categories'));
     }
+
+    public function viewPostsByTag($id)
+    {
+        $tag = Tag::find($id);
+        if (!$this->checkIfEntityExists($tag, 'Impossible de voir les posts, le tag demandé n\'existe pas.', 'danger')) {
+            return redirect(route('admin.tags'));
+        }
+        $posts = $tag->posts()->get();
+        $tags = Tag::where('locale', $tag->locale)->where('id', '!=', $tag->id)->get();
+        return view('admin.tags.listing_associated', compact('posts', 'tag', 'tags'));
+    }
+
+    public function viewPostsByCategory($id)
+    {
+        $category = Category::find($id);
+        if (!$this->checkIfEntityExists($category, 'Impossible de voir les posts, le tag demandé n\'existe pas.', 'danger')) {
+            return redirect(route('admin.tags'));
+        }
+        $posts = $category->posts()->get();
+        $categories = Category::where('locale', $category->locale)->where('id', '!=', $category->id)->get();
+        return view('admin.categories.listing_associated', compact('posts', 'category', 'categories'));
+    }
 }
