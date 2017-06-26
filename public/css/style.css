@@ -78,7 +78,7 @@ nav ul{
 
 .backgroundNav{
     z-index: 5;
-    height: 8vh;
+    height: 50px;
     background-color: white;
     overflow: auto;
     position: fixed;
@@ -263,6 +263,7 @@ Style des carte material design
 /* 
 
 
+
 Pagination
 
 
@@ -311,11 +312,16 @@ Page add
 #details article
 {
     width: 80%;
-    margin: 0 auto;
+    margin: 2% auto;
     line-height: 27pt;
     font-size: 18px;
 }
 
 #details ul {
     padding: 3% 5% 3% 1%;
+}
+
+.borderArticle
+{
+    border-bottom: 1px solid lightgrey;
 }
