@@ -11,7 +11,7 @@
     </div>
     <ul class="container">
     @foreach($post->tags->all() as $tag)
-        <li class="btn btn-success pull-right alignLeftTag">{{$tag->name}}</li>
+        <li class="btn pull-right alignLeftTag tag_{{$tag->color}}">{{$tag->name}}</li>
     @endforeach
     </ul>
     <article>

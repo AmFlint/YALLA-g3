@@ -37,6 +37,7 @@
                     {!! Form::hidden('color', '', ['id' => 'inputColor']) !!}
                     {!! Form::close() !!}
                 </div>
+                <div class="tagColor border colorful"></div>
                 <div class="tagColors" style="margin: 4% 0 0 2%">
                     <button class="tagColor tag_red pointer btn"></button>
                     <button class="tagColor tag_blue pointer btn"></button>
@@ -136,23 +137,8 @@
                 modalCore.innerHTML = data[2];
             };
         }
-
-        /**
-         * Ajout couleur tag
-         **/
-
-        var lis = document.querySelectorAll(".tagColor");
-        var input = document.querySelector('#inputColor');
-
-        for (var j = 0; j < lis.length; j++)
-        {
-            lis[j].addEventListener('click', function () {
-                var li = this.classList[1];
-                var color = li.split('_')[1];
-                input.setAttribute('value', color);
-            });
-        }
     </script>
+    <script src="{{asset('js/admin/tagColor.js')}}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
