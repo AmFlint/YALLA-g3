@@ -1,13 +1,26 @@
 @extends('admin.layout_admin')
 
 @section('content')
-    <div>
-        <div class="col-xs-10 col-md-10 col-lg-10 col-xl-10 offset-md-1 alignTop ">
-            <h1>{{$tag->name}}</h1>
-            <h2 class="h2">{{$tag->locale}}</h2>
-            <h3 class="h3">{{$tag->slug}}</h3>
-            <button class="btn tag_{{$tag->color}}">{{$tag->name}}</button>
+    <section id="details">
+    <article class="borderArticle row text-center">
+        <div class="col-md-4">
+            <h2>Nom</h2>
+            <p>{!! $tag->name !!}</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Locale</h2>
+            <p class="text-uppercase">{!! $tag->locale !!}</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Chemin</h2>
+            <p>{!! $tag->slug !!}</p>
+        </div>
+        <div class="col-md-12 text-center" style="margin-bottom: 2%">
+            <button class="btn tag_{{$tag->color}} center-block">{{$tag->name}}</button>
+        </div>
+    </article>
+        <div class="col-md-12 text-center">
             <a href="{{route('admin.tag_edit', $tag->id)}}" class="btn btn-success">Editer le tag</a>
         </div>
-    </div>
+    </section>
 @endsection
