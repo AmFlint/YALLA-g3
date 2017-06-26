@@ -13,6 +13,6 @@ return [
     |
     */
 
-    'welcome' => 'bienvenue',
+    'welcome' => 'welcome',
 
 ];

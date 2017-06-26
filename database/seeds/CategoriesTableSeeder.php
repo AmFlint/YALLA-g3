@@ -15,28 +15,28 @@ class CategoriesTableSeeder extends Seeder
            'name' => 'Non classé',
             'slug' => 'non-classe',
             'locale' => 'fr',
-            'parent_id' => 0
+            'parent_id' => null
         ]);
 
         \App\Category::create([
             'name' => 'Ecole',
             'slug' => '',
             'locale' => 'fr',
-            'parent_id' => 0
+            'parent_id' => null
         ]);
 
         \App\Category::create([
             'name' => 'Non classified',
             'slug' => 'non-classified',
             'locale' => 'en',
-            'parent_id' => 0
+            'parent_id' => null
         ]);
 
         \App\Category::create([
             'name' => 'Non classified',
             'slug' => 'non-classif',
             'locale' => 'ar',
-            'parent_id' => 0
+            'parent_id' => null
         ]);
     }
 }

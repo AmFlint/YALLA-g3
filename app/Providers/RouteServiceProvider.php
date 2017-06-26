@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -24,7 +28,24 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-
+        if (isset($_SERVER['REQUEST_URI'])) {
+            $url = explode('/', $_SERVER['REQUEST_URI']);
+            $languages = [
+                'fr' => 'fr',
+                'ar' => 'ar',
+                'en' => 'en'
+            ];
+            if (in_array($url[1], $languages)) {
+                $localisation = $languages[$url[1]];
+            } else {
+                $localisation = App::getLocale();
+            }
+            if (!Cookie::get('localisation') || $localisation != Cookie::get('localisation')) {
+                return redirect($_SERVER['REQUEST_URI'])->withCookie(cookie('localisation', $localisation, 10))->send();
+            }
+            App::setLocale(Cookie::get('localisation'));
+    //        dd(App::getLocale());
+        }
         parent::boot();
     }
 

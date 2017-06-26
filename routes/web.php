@@ -74,8 +74,41 @@ Route::prefix('admin')->group(function() {
 
     });
 
+    Route::prefix('categories')->group(function() {
+        Route::get('', ['as' => 'admin.categories', 'uses' => 'AdminController@listCategories']);
+
+        Route::get('/delete/{id}', ['as' => 'admin.category_delete', 'uses' => 'AdminController@deleteCategory'])
+            ->where('id', '[0-9]+');
+
+        Route::post('/create', ['as' => 'admin.category_store', 'uses' => 'AdminController@storeCategory']);
+
+        Route::get('{id}', ['as' => 'admin.category_details', 'uses' => 'AdminController@viewCategory'])
+            ->where('id', '[0-9]+');
+
+        Route::get('edit/{id}', ['as' => 'admin.category_edit', 'uses' => 'AdminController@editCategory'])
+            ->where('id', '[0-9]+');
+
+        Route::put('edit/{id}', ['as' => 'admin.category_update', 'uses' => 'AdminController@updateCategory'])
+            ->where('id', '[0-9]+');
+    });
+
 });
 
 Route::get(Lang::get('routes.welcome'), function() {
     return 'yoo';
+});
+
+Route::get(App::getLocale() . '/' . Lang::get('routes.welcome'), function() {
+   return 'salut';
+});
+
+Route::get('{locale}', ['as' => 'setLocale', 'uses' => 'Controller@setLocale'])
+    ->where('locale', '[a-z]+');
+
+Route::prefix(App::getLocale())->group(function() {
+    Route::get(Lang::get('routes.welcome'), function() {
+        return 'tu es sur la page' . App::getLocale();
+    }) ;
+
+    Route::get('posts', ['as' => "posts", 'uses' => 'MainController@listPosts']);
 });
