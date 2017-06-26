@@ -17,8 +17,8 @@
                 <tr>
                     <th>Id</th>
                     <th>Titre</th>
-                    <th>Résumé</th>
                     <th>Locale</th>
+                    <th>Catégorie</th>
                     <th>Visible</th>
                     <th>Action</th>
                 </tr>
@@ -32,8 +32,8 @@
                             {{$post->title}}
                         </a>
                     </td>
-                    <td>{!! $post->summary !!}</td>
                     <td>{{$post->locale}}</td>
+                    <td>{{$post->category->name}}</td>
                     <td>
                     @if($post->published)
                         <a class="btn btn-warning" href="{{route('admin.post_publish', $post->id)}}">Dépublier</a>
