@@ -14,9 +14,25 @@
         <li class="btn pull-right alignLeftTag tag_{{$tag->color}}">{{$tag->name}}</li>
     @endforeach
     </ul>
-    <article>
+    <article class="borderArticle">
         <p><strong>Catégorie </strong> : {{$post->category->name ?? ''}}</p>
         <p>{!! $post->content !!}</p>
+    </article>
+    <article class="borderArticle row">
+        <div class="col-md-6 text-center">
+            <h2>Résumé</h2>
+            <p>{!! $post->summary !!}</p>
+        </div>
+        <div class="col-md-6 text-center">
+            <div class="col-md-12">
+                <h2>Vues</h2>
+                <p>{!! $post->views !!}</p>
+            </div>
+            <div class="col-md-12">
+                <h2>Dernière modification</h2>
+                <p>{!! $post->updated_at !!}</p>
+            </div>
+        </div>
     </article>
 </section>
 @endsection
