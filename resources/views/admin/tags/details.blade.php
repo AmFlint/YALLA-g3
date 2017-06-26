@@ -9,5 +9,4 @@
             <a href="{{route('admin.tag_edit', $tag->id)}}" class="btn btn-success">Editer le tag</a>
         </div>
     </div>
-
 @endsection

@@ -3,7 +3,9 @@
 
 @section('content')
 <section id="details">
-    <div class="jumbotron"></div>
+    <div class="jumbotron">
+        <img src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="">
+    </div>
     <div class="container text-center">
         <h1 class="display-3">{{$post->title}}</h1>
     </div>
@@ -13,7 +15,7 @@
     @endforeach
     </ul>
     <article class="borderArticle">
-        <p><strong>Catégorie </strong> : {{$post->category->name}}</p>
+        <p><strong>Catégorie </strong> : {{$post->category->name ?? ''}}</p>
         <p>{!! $post->content !!}</p>
     </article>
     <article class="borderArticle row">
