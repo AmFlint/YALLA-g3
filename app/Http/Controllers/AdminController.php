@@ -236,11 +236,16 @@ class AdminController extends Controller
 
     public function storeTag(Request $request)
     {
-        if (!$request->name) {
-            Session::flash('error', 'Merci de préciser au moins un nom pour votre tag (ou au moins une idée quoi ?)');
-            Session::flash('errorClass', 'danger');
-            return redirect(route('admin.tags'));
-        }
+        $rules = [
+            'name' => 'required|max:20',
+            'color' => 'required'
+        ];
+        $messages = [
+            'name.required' => 'Vous devez choisir un nom pour votre tag.',
+            'name.max' => 'Le nom du tag ne doit pas excéder 20 caractères',
+            'color.required' => 'Vous devez préciser une couleur pour votre tag.'
+        ];
+        $this->validate($request, $rules, $messages);
         Tag::create($request->all());
         Session::flash('error', 'Le tag a bien été ajouté, bravo.');
         Session::flash('errorClass', 'success');
@@ -343,6 +348,8 @@ class AdminController extends Controller
             return redirect(route('admin.categories'));
         }
         $categories = Category::where('parent_id', null)->where('locale', $category->locale)->where('id', '!=', $category->id)->pluck('name', 'id');
+        $categories = $categories->all();
+        $categories[null] = 'Pas de parent';
         return view('admin.categories.edit', compact('category', 'categories'));
     }
 

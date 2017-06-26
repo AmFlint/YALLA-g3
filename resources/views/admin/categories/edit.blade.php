@@ -20,9 +20,9 @@
             {!! Form::select('locale', ['fr' => 'Français', 'en' => 'English', 'ar' => 'Arabic'], $category->locale, ['class' => 'form-control marginBottomAjoutArticle']) !!}
             {!! Form::label('slug', 'Chemin de la categorie')!!}
             {!! Form::text('slug', $category->slug, ['class' => 'form-control marginBottomAjoutArticle']) !!}
-            @if($categories->all())
+            @if($categories)
                 {!! Form::label('parent_id', 'Catégorie Parent (hiérarchie)') !!}
-                {!! Form::select('parent_id', $categories, null, ['class' => 'form-control marginBottomAjoutArticle']) !!}
+                {!! Form::select('parent_id', $categories, $category->parent_id ?? null, ['class' => 'form-control marginBottomAjoutArticle']) !!}
             @endif
             {!! Form::submit('Editer', ['class' => 'btn btn-success pointer']) !!}
             {!! Form::close() !!}
