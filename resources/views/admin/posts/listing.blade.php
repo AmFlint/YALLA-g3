@@ -33,7 +33,11 @@
                         </a>
                     </td>
                     <td>{{$post->locale}}</td>
-                    <td>{{$post->category->name}}</td>
+                    <td>
+                        <a href="{{route('admin.categories_assoc_posts', $post->category->id)}}" class="btn btn-info">
+                            {{$post->category->name}}
+                        </a>
+                    </td>
                     <td>
                     @if($post->published)
                         <a class="btn btn-warning" href="{{route('admin.post_publish', $post->id)}}">Dépublier</a>

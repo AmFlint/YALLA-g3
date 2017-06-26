@@ -25,6 +25,7 @@ class CreatePostSavesTable extends Migration
             $table->integer('media_id')->unsigned()->index()->nullable();
             $table->string('card', 100);
             $table->string('meta_robots', 30)->nullable();
+            $table->string('alt', 30);
             $table->integer('category_id')->unsigned()->index();
             $table->string('action', 25);
             $table->integer('post_id');

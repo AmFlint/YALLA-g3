@@ -345,6 +345,28 @@ Page add
     padding: 0;
 }
 
+.container li {
+    list-style: none;
+}
+
+a:hover,
+.btn a{
+    color: white;
+    text-decoration: none;
+}
+
+.tagsLink button {
+    margin: 0 10px;
+}
+
+.tagsLink button:first-child {
+    margin-left: 0;
+}
+
+.tagsLink {
+    padding-left: 0 !important;
+}
+
 #details article
 {
     width: 85%;
