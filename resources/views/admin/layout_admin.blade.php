@@ -36,19 +36,24 @@
                             Dashboard
                         </li>
                     </a>
-                    <a class="decorationNone" href="{{route('admin.posts')}}">
-                        <li class="decorationNone list-group-item justify-content-between">
-                            Posts
-                        </li>
-                    </a>
                     <a class="decorationNone" href="{{route('admin.history')}}">
                         <li class="decorationNone list-group-item justify-content-between">
                             Historique
                         </li>
                     </a>
+                    <a class="decorationNone" href="{{route('admin.posts')}}">
+                        <li class="decorationNone list-group-item justify-content-between">
+                            Posts
+                        </li>
+                    </a>
                     <a class="decorationNone" href="{{route('admin.tags')}}">
                         <li class="decorationNone list-group-item justify-content-between">
                             Tags
+                        </li>
+                    </a>
+                    <a class="decorationNone" href="{{route('admin.categories')}}">
+                        <li class="decorationNone list-group-item justify-content-between">
+                            Categories
                         </li>
                     </a>
                 </ul>

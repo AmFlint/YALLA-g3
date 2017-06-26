@@ -3,28 +3,34 @@
 @section('content')
     <div>
         <div class="col-xs-10 col-md-10 col-lg-10 col-xl-10 offset-md-1 alignTop ">
-            <h1 class="h1 text-center">Liste des Tags</h1>
+            <h1 class="h1 text-center">Liste des Catégories</h1>
             @if(\Illuminate\Support\Facades\Session::has('error'))
                 <div class="alert alert-{{\Illuminate\Support\Facades\Session::get('errorClass')}}">{{\Illuminate\Support\Facades\Session::get('error')}}</div>
             @endif
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    @foreach($errors->all() as $error)
+                        {{$error}}
+                    @endforeach
+                </div>
+            @endif
             <div class="row">
                 <div class="col-xs-8 col-md-8 col-lg-8 col-xl-8">
-                    {!! Form::open(['url' => route('admin.tag_store'), 'class' => 'row']) !!}
-                        <div class="col-md-4">
-                            {!! Form::label('name', 'Nom du tag') !!}
-                            {!! Form::text('name', null, ['class' => 'form-control']) !!}
-                        </div>
-                        <div class="col-md-4">
-                            {!! Form::label('locale', 'Localisation') !!}
-                            {!! Form::select('locale', ['fr' => 'Français', 'en' => 'English', 'ar' => 'Arabic'], 'fr_FR', ['class' => 'form-control']) !!}
-                        </div>
+                    {!! Form::open(['url' => route('admin.category_store'), 'class' => 'row']) !!}
+                    <div class="col-md-4">
+                        {!! Form::label('name', 'Nom de la catégorie') !!}
+                        {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                    </div>
+                    <div class="col-md-4">
+                        {!! Form::label('locale', 'Localisation') !!}
+                        {!! Form::select('locale', ['fr' => 'Français', 'en' => 'English', 'ar' => 'Arabic'], 'fr_FR', ['class' => 'form-control']) !!}
+                    </div>
                     <div class="col-md-4">
                         {!! Form::label('slug', 'Chemin (facultatif)') !!}
                         {!! Form::text('slug', null, ['class' => 'form-control']) !!}
-
                     </div>
                     <div class="col-md-6 mg-top">
-                        {!! Form::submit('Ajouter un tag !', ['class' => 'btn btn-success pointer']) !!}
+                        {!! Form::submit('Ajouter une catégorie !', ['class' => 'btn btn-success pointer']) !!}
                     </div>
                     {!! Form::close() !!}
                 </div>
@@ -39,26 +45,25 @@
                     <th>Action</th>
                 </tr>
                 </thead>
-                @foreach($tags as $tag)
+                @foreach($categories as $category)
                     <tbody>
                     <tr>
-                        <td>{{$tag->id}}</td>
+                        <td>{{$category->id}}</td>
                         <td>
-                            <a href="{{route('admin.tag_details', $tag->id)}}">
-                                {{$tag->name}}
+                            <a href="{{route('admin.category_details', $category->id)}}">
+                                {{$category->name}}
                             </a>
                         </td>
-                        <td>{{$tag->locale}}</td>
-                        <td>{{$tag->slug}}</td>
+                        <td>{{$category->locale}}</td>
+                        <td>{{$category->slug}}</td>
                         <td>
                             <button type="button" class="btn btn-danger test" data-toggle="modal" data-target="#myModal">Suppr</button>
-                            <a href="{{route('admin.tag_edit', $tag->id)}}" class="btn btn-warning">Editer</a>
+                            <a href="{{route('admin.category_edit', $category->id)}}" class="btn btn-warning">Editer</a>
                         </td>
                     </tr>
                     </tbody>
                 @endforeach
             </table>
-        {{ $tags->links('pagination.default') }}
         <!-- Modal -->
             <div class="modal fade" id="myModal" role="dialog">
                 <div class="modal-dialog">
@@ -114,7 +119,7 @@
                         data.push(cells[i].innerHTML);
                     }
                 }
-                link.href = root_route + laroute.action('admin.tag_delete', {id: data[0]});
+                link.href = root_route + laroute.action('admin.category_delete', {id: data[0]});
                 modalId.innerHTML = "Supprimer l'article " + data[0] + " ?";
                 modalTitle.innerHTML = data[1];
                 modalCore.innerHTML = data[2];

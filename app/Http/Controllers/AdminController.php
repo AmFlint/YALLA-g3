@@ -47,7 +47,7 @@ class AdminController extends Controller
     {
         // If admin chose to upload an image for external media input
         if ($request->imageMedia) {
-            $propertiesMedia['type'] = 'image'; // set type to image (for future html structure)
+            $propertiesMedia['type'] = 'imageLocale'; // set type to image (for future html structure)
             $imageMedia = $this->upload($request->file('imageMedia')); // Upload file and get name
             $propertiesMedia['url'] = $imageMedia; // set url link for image
             $media = Media::create($propertiesMedia); // create Media
@@ -132,7 +132,7 @@ class AdminController extends Controller
         }
         $post = Post::findOrFail($id);
         if ($request->imageMedia) {
-            $propertiesMedia['type'] = 'image'; // set type to image (for future html structure)
+            $propertiesMedia['type'] = 'imageLocale'; // set type to image (for future html structure)
             $imageMedia = $this->upload($request->file('imageMedia')); // Upload file and get name
             $propertiesMedia['url'] = $imageMedia; // set url link for image
         } else if ($request->url) {
@@ -140,9 +140,9 @@ class AdminController extends Controller
             $propertiesMedia['url'] = $request->url;
         }
         // If Article already has a relationship with a media
-        if ($post->media) {
+        if ($post->media && isset($propertiesMedia)) {
             $post->media->update($propertiesMedia); // update article's media
-        } else { // else create a new one and save media_id in props
+        } else if (isset($propertiesMedia)){ // else create a new one and save media_id in props
             $media = Media::create($propertiesMedia);
             $props['media_id'] = $media->id;
         }
@@ -287,5 +287,80 @@ class AdminController extends Controller
             return redirect(route('admin.tags'));
         }
         return view('admin.tags.details', compact('tag'));
+    }
+
+    public function listCategories()
+    {
+        $categories = Category::orderBy('id', 'desc')->get();
+        return view('admin.categories.listing', compact('categories'));
+    }
+
+    public function deleteCategory($id)
+    {
+        $category = Category::find($id);
+        if (!$this->checkIfEntityExists($category, 'Impossible de supprimer: la categéorie demandée n\'existe pas ', 'danger')) {
+            return redirect(route('admin.categories'));
+        }
+        if ($category->id === 1) {
+            Session::flash('error', 'La catégorie par défaut ne peut pas être supprimée.');
+            Session::flash('errorClass', 'danger');
+            return redirect(route('admin.categories'));
+        }
+        Post::where('category_id', $category->id)->update(['category_id' => 1]);
+        $category->delete();
+        Session::flash('error', 'La catégorie a bien été supprimé');
+        Session::flash('errorClass', 'success');
+        return redirect(route('admin.categories'));
+    }
+
+    public function storeCategory(Request $request)
+    {
+        $rules = ['name' => 'required|max:20'];
+        $messages = [
+            'name.required' => 'Vous devez indiquer un nom à votre catégorie.',
+            'name.max' => 'Le nom de votre catégorie ne doit pas dépasser 20 caractères.'
+        ];
+        $this->validate($request, $rules, $messages);
+        Category::create($request->all());
+        Session::flash('error', 'La catégorie a bien été crée');
+        Session::flash('errorClass', 'success');
+        return redirect(route('admin.categories'));
+    }
+
+    public function viewCategory($id)
+    {
+        $category = Category::find($id);
+        if (!$this->checkIfEntityExists($category, 'La catégorie demandée n\'existe pas.', 'danger')) {
+            return redirect(route('admin.categories'));
+        }
+        return view('admin.categories.details', compact('category'));
+    }
+
+    public function editCategory($id)
+    {
+        $category = Category::find($id);
+        if (!$this->checkIfEntityExists($category, 'La catégorie demandée n\'existe pas. Impossible d\'accéder à la page d\'édition.', 'danger')) {
+            return redirect(route('admin.categories'));
+        }
+        $categories = Category::where('parent_id', null)->where('locale', $category->locale)->where('id', '!=', $category->id)->pluck('name', 'id');
+        return view('admin.categories.edit', compact('category', 'categories'));
+    }
+
+    public function updateCategory($id, Request $request)
+    {
+        $category = Category::find($id);
+        if (!$this->checkIfEntityExists($category, 'La catégorie demandée n\'existe pas. Impossible d\'accéder à la page d\'édition.', 'danger')) {
+            return redirect(route('admin.categories'));
+        }
+        $rules = ['name' => 'required|max:20'];
+        $messages = [
+            'name.required' => 'Vous devez indiquer un nom à votre catégorie.',
+            'name.max' => 'Le nom de votre catégorie ne doit pas dépasser 20 caractères.'
+        ];
+        $this->validate($request, $rules, $messages);
+        $category->update($request->all());
+        Session::flash('error', 'La catégorie a bien été modfié, bravo.');
+        Session::flash('errorClass', 'success');
+        return redirect(route('admin.categories'));
     }
 }
