@@ -21,12 +21,18 @@
                     <div class="col-md-4">
                         {!! Form::label('slug', 'Chemin (facultatif)') !!}
                         {!! Form::text('slug', null, ['class' => 'form-control']) !!}
-
                     </div>
                     <div class="col-md-6 mg-top">
                         {!! Form::submit('Ajouter un tag !', ['class' => 'btn btn-success pointer']) !!}
                     </div>
+                    {!! Form::hidden('color', '', ['id' => 'inputColor']) !!}
                     {!! Form::close() !!}
+                </div>
+                <div class="tagColors" style="margin: 4% 0 0 2%">
+                    <button class="tagColor tag_red pointer btn"></button>
+                    <button class="tagColor tag_blue pointer btn"></button>
+                    <button class="tagColor tag_yellow pointer btn"></button>
+                    <button class="tagColor tag_pink pointer btn"></button>
                 </div>
             </div>
             <table class="table">
@@ -87,9 +93,11 @@
     <script src="{{asset('js/laroute.js')}}"></script>
     <script type="text/javascript">
 
-        /*Fonction pour actualiser
-         les données dans le modal
-         depuis la page list*/
+        /**
+         * Fonction pour actualiser
+         * les données dans le modal
+         * depuis la page list.
+         **/
 
         var table = document.getElementsByTagName("table")[0];
         var tbody = table.getElementsByTagName("tbody")[0];
@@ -98,7 +106,6 @@
         var modalCore = document.querySelector(".modal-body p");
         var modalId = document.querySelector('.modal-title');
         var link = document.querySelector('.modal-footer a');
-
 
         for (var i = 0; i < button.length; i++) {
             button[i].onclick = function getCellValue(e) {
@@ -119,6 +126,22 @@
                 modalTitle.innerHTML = data[1];
                 modalCore.innerHTML = data[2];
             };
+        }
+
+        /**
+         * Ajout couleur tag
+         **/
+
+        var lis = document.querySelectorAll(".tagColor");
+        var input = document.querySelector('#inputColor');
+
+        for (var j = 0; j < lis.length; j++)
+        {
+            lis[j].addEventListener('click', function () {
+                var li = this.classList[1];
+                var color = li.split('_')[1];
+                input.setAttribute('value', color);
+            });
         }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -30,19 +30,19 @@ h1.h1 {
 }
 
 .tag_red {
-    background: indianred;
+    background: #cd3d41;
 }
 
 .tag_blue {
-    background: aquamarine;
+    background: #62ccff;
 }
 
 .tag_yellow {
-    background: yellow;
+    background: #ffdf4d;
 }
 
 .tag_pink {
-    background: pink;
+    background: #fb9cff;
 }
 
 .mg-top {
