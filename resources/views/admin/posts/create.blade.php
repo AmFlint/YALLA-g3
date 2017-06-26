@@ -69,6 +69,8 @@
                         <div>
                             {!! Form::label('image', 'Image titre de l\'Article') !!}
                             {!! Form::file('image', ['class' => 'form-control-file marginBottomAjoutArticle']) !!}
+                            {!! Form::label('alt', 'Alternative pour le référencement de l\'image') !!}
+                            {!! Form::text('alt', null, ['class' => 'form-control']) !!}
                         </div>
                         <div class="form-check marginBottomAjoutArticle">
                             <label class="form-check-label">

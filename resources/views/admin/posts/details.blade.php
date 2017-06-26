@@ -51,7 +51,32 @@
             <h2>Meta robots</h2>
             <p>{!! $post->meta_robots !!}</p>
         </div>
+    <div class="jumbotron" style="padding: 0">
+        <img src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="">
+        <h2 class="text-center"><small>{{$post->alt}}</small></h2>
+    </div>
     </article>
+    @if($post->media)
+    <article class="borderArticle row">
+        <div class="col-md-6 text-center">
+            <h2>Type du média</h2>
+            <p class="lead">{{$post->media->type}}</p>
+        </div>
+        <div class="col-md-6 text-center">
+            <h2>Lien du média</h2>
+            <p class="lead">{{$post->media->url}}</p>
+        </div>
+        @if($post->media->type == 'image')
+        <div class="col-md-12">
+            <img src="{{$post->media->url}}" alt="">
+        </div>
+        @elseif($post->media->type == 'youtube')
+            <div class="col-md-12">
+                <iframe src="{{$post->media->url}}" frameborder="0"></iframe>
+            </div>
+        @endif
+    </article>
+    @endif
 </section>
 @endsection
 

@@ -42,6 +42,17 @@ h1.h1 {
     margin-right: 20px;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.jumbotron {
+    width: 60%;
+    margin:0 auto;
+}
+
 .mgb-tags {
     margin: 20px 0;
 }
@@ -328,6 +339,10 @@ Page add
 #details
 {
     margin-top: 3%;
+}
+
+#details .jumbotron {
+    padding: 0;
 }
 
 #details article

@@ -20,9 +20,9 @@
                 {!! Form::select('locale', ['fr' => 'Français', 'en' => 'English', 'ar' => 'Arabic'], $tag->locale, ['class' => 'form-control']) !!}
                 {!! Form::label('slug', 'Chemin du tag')!!}
                 {!! Form::text('slug', $tag->slug, ['class' => 'form-control']) !!}
-                {!! Form::hidden('color', '', ['id' => 'inputColor']) !!}
+                {!! Form::hidden('color', $tag->color, ['id' => 'inputColor']) !!}
                 <label for="" class="vab">Couleur du tag :</label>
-                <div class="tagColor border colorful"></div>
+                <div class="tagColor border colorful tag_{{$tag->color}}"></div>
                 <div class="tagColors mgb-tags">
                     <div class="tagColor tag_red pointer btn"></div>
                     <div class="tagColor tag_blue pointer btn"></div>
