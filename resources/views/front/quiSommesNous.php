@@ -14,7 +14,7 @@
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" href="#"><img src="" alt="Logo"> Yalla!</a>
+			<a class="navbar-brand" href="#"><img src="" alt="Logo"></a>
 			<div class="collapse navbar-collapse text-uppercase justify-content-end" id="navbarNavDropdown">
 				<ul class="navbar-nav">
 					<li class="nav-item">
