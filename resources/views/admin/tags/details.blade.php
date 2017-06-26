@@ -16,7 +16,7 @@
             <p>{!! $tag->slug !!}</p>
         </div>
         <div class="col-md-12 text-center" style="margin-bottom: 2%">
-            <button class="btn tag_{{$tag->color}} center-block">{{$tag->name}}</button>
+            <a href="{{route('admin.tags_assoc_posts', $tag->id)}}" class="btn tag_{{$tag->color}} center-block">{{$tag->name}}</a>
         </div>
     </article>
         <div class="col-md-12 text-center">

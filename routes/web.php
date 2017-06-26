@@ -72,6 +72,8 @@ Route::prefix('admin')->group(function() {
         Route::get('{id}', ['as' => 'admin.tag_details', 'uses' => 'AdminController@viewTag'])
             ->where('id', '[0-9]+');
 
+        Route::get('{id}/posts', ['as' => 'admin.tags_assoc_posts', 'uses' => 'AdminController@viewPostsByTag'])
+            ->where('id', '[0-9]+');
     });
 
     Route::prefix('categories')->group(function() {
@@ -89,6 +91,9 @@ Route::prefix('admin')->group(function() {
             ->where('id', '[0-9]+');
 
         Route::put('edit/{id}', ['as' => 'admin.category_update', 'uses' => 'AdminController@updateCategory'])
+            ->where('id', '[0-9]+');
+
+        Route::get('{id}/posts', ['as' => 'admin.categories_assoc_posts', 'uses' => 'AdminController@viewPostsByCategory'])
             ->where('id', '[0-9]+');
     });
 
