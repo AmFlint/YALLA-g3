@@ -102,7 +102,7 @@ class AdminController extends Controller
         $destinationPath = 'img-content/uploads';
         $extension = $file->getClientOriginalExtension();
         $fileName = rand(11111,99999).'.'.$extension;
-        $file->move($destinationPath, $fileName); // uploading file to given pat
+        $file->move($destinationPath, $fileName); // uploading file to given path
         return $fileName;
     }
 
