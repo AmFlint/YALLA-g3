@@ -285,6 +285,11 @@ Page add
 
 */
 
+[class*="tag_"]
+{
+    color: white;
+}
+
 .col-xs-8Custom,
 .col-md-8Custom{
     width: 64.5%;
@@ -303,16 +308,15 @@ Page add
     margin-top: 15px;
 }
 
-#details .jumbotron
+#details
 {
-    padding: 22% 0;
-    background: url("../img-content/uploads/80998.jpg") center no-repeat;
+    margin-top: 3%;
 }
 
 #details article
 {
-    width: 80%;
-    margin: 2% auto;
+    width: 85%;
+    margin: 3% auto;
     line-height: 27pt;
     font-size: 18px;
 }
