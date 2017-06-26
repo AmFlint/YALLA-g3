@@ -6,6 +6,7 @@
             <h1>{{$tag->name}}</h1>
             <h2 class="h2">{{$tag->locale}}</h2>
             <h3 class="h3">{{$tag->slug}}</h3>
+            <button class="btn tag_{{$tag->color}}">{{$tag->name}}</button>
             <a href="{{route('admin.tag_edit', $tag->id)}}" class="btn btn-success">Editer le tag</a>
         </div>
     </div>

@@ -97,3 +97,7 @@ Route::prefix('admin')->group(function() {
 Route::get(Lang::get('routes.welcome'), function() {
     return 'yoo';
 });
+
+Route::get(App::getLocale() . '/' . Lang::get('routes.welcome'), function() {
+   return 'salut';
+});
