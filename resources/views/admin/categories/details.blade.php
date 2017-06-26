@@ -1,12 +1,26 @@
 @extends('admin.layout_admin')
 
 @section('content')
-    <div>
-        <div class="col-xs-10 col-md-10 col-lg-10 col-xl-10 offset-md-1 alignTop ">
-            <h1>{{$category->name}}</h1>
-            <h2 class="h2">{{$category->locale}}</h2>
-            <h3 class="h3">{{$category->slug}}</h3>
-            <a href="{{route('admin.category_edit', $category->id)}}" class="btn btn-success">Editer la catégorie</a>
+    <section id="details">
+        <article class="borderArticle row text-center">
+            <div class="col-md-4">
+                <h2>Nom</h2>
+                <p>{!! $category->name !!}</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Locale</h2>
+                <p class="text-uppercase">{!! $category->locale !!}</p>
+            </div>
+            <div class="col-md-4">
+                <h2>Chemin</h2>
+                <p>{!! $category->slug !!}</p>
+            </div>
+            <div class="col-md-12 text-center" style="margin-bottom: 2%">
+                <button class="btn tag_{{$category->color}} center-block">{{$category->name}}</button>
+            </div>
+        </article>
+        <div class="col-md-12 text-center">
+            <a href="{{route('admin.tag_edit', $category->id)}}" class="btn btn-success">Editer le tag</a>
         </div>
-    </div>
+    </section>
 @endsection
