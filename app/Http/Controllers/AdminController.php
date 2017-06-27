@@ -80,16 +80,25 @@ class AdminController extends Controller
         return view('admin.posts.details', compact('post'));
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * Delete a single post from database
+     * redirect with error management if post doesn't exist
+     * else saves post in post_saves table and synchronize views/tags relationships + delete current post
+     */
     public function deletePost($id)
     {
+        // find current post + error management if post not found
         $post = Post::find($id);
         if (!$this->checkIfEntityExists($post, 'Impossible de supprimer, l\'article demandé n\'existe pas !', 'danger')) {
             return redirect(route('admin.posts'));
         }
+        // getting attributes from post to add an "action" property used for rollback
         $props = $post->getAttributes();
         $props['post_id'] = $props['id'];
         $props['id'] = null;
-        $props['action'] = 'delete';
+        $props['action'] = 'delete'; // set saved post's action property to delete
         $postSave = PostSave::create($props);
         $postSave->tags()->sync($post->tags);
         $postSave->views()->sync($post->views);

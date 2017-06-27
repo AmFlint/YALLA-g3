@@ -23,4 +23,18 @@ class MainController extends Controller
         $posts = Post::where('locale', App::getLocale())->get();
         return view('front/posts', compact('posts'));
     }
+
+    public function viewPost($slug)
+    {
+        $post = Post::where('locale', App::getLocale())->where('slug', $slug)->where('published', 1)->first();
+        if (!$post) {
+            dd('Need to abort(404) in the future');
+        }
+    }
+
+    public function listPost()
+    {
+        $posts = Post::where('locale', App::getLocale())->get();
+        return view('front.articles', compact('posts'));
+    }
 }

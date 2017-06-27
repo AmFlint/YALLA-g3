@@ -116,5 +116,10 @@ Route::prefix(App::getLocale())->group(function() {
         return 'tu es sur la page' . App::getLocale();
     });
 
+    Route::get(Lang::get('routes.actu'), ['as' => 'post_listing', 'uses' => 'MainController@listPost']);
+
+    Route::get(Lang::get('routes.actu') . '/{slug}', ['as' => 'post_single', 'uses' => 'MainController@viewPost'])
+    ->where('slug', '[a-z0-9\-]+');
+
     Route::get('posts', ['as' => "posts", 'uses' => 'MainController@listPosts']);
 });
