@@ -49,6 +49,9 @@ class ApiController extends Controller
         // setting Carbon locale to french even though it doesn't work yet T_T
         Carbon::setLocale('fr');
         $post = Post::find($request->id); // get concerned post
+        if (!$post) {
+            return;
+        }
         $views = $post->views()->orderBy('created_at', 'asc')->get(); // get different count of views from post
         $to_send = [];
         foreach ($views as $view) { // foreach views, add a month attribute to make front-dev's life easier with months
