@@ -136,7 +136,7 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
         }
     };
 
-    $scope.showGraph = function (post)
+    $scope.setGraph = function (post)
     {
         if (typeof $scope.posts[0].published == 'undefined') {
             return;
@@ -144,18 +144,48 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
 
         $http({
             method: 'get',
-            url: root_route + laroute.action('api.views_get_by_type') + '?id=' + post.id
+            url: root_route + laroute.route('api.views_get_by_post') + '?id=' + post.id
         }).then(function successCallback(data)
         {
-            $scope.posts = data.data;
+            if (data.data.length > 0) {
+                $scope.graph = data.data;
+                myBarChart.options.scales.yAxes[0].ticks.max = $scope.getMaxView($scope.graph) + 50;
+                $scope.setDataToGraph($scope.graph, myBarChart.data.labels, myBarChart.data.datasets.data);
+                myBarChart.update();
+            }
         }, function errorCallback(err)
         {
             console.log(err);
         });
+    };
 
-        console.log(data.datasets.label)
+    $scope.getMaxView = function(data)
+    {
+        var max = data[0].views;
+        if (data.length < 2) {
+            return max;
+        }
+        for (var i = 1; i < data.length; i++) {
+            if (data[i].views > max) {
+                max = data[i].views;
+            }
+        }
+        return max;
+    };
 
-    }
+    $scope.setDataToGraph = function (dataS)
+    {
+        data.labels = [];
+        data.datasets[0].data = [];
+        for (var i = 0; i < dataS.length; i++) {
+            data.labels.push(dataS[i].month);
+            data.datasets[0].data.push(dataS[i].views);
+        }
+    };
+
+
+
+
 
 }]);
 
