@@ -34,8 +34,9 @@ class MainController extends Controller
 
     public function listPost()
     {
-        $posts = Post::where('locale', App::getLocale())->get();
-        return view('front.articles', compact('posts'));
+//        $posts = Post::where('locale', App::getLocale())->get();
+//        return view('front.articles', compact('posts'));
+        return view('front.articles');
     }
 
     public function donate()
