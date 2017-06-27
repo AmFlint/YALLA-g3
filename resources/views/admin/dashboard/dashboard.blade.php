@@ -50,11 +50,11 @@
                             </tr>
                             </thead>
                             <tbody ng-repeat="post in posts | orderBy:sort:descSort">
-                            <tr>
+                            <tr ng-click="showGraph(post)" style="cursor: pointer">
                                 <td>@{{ post.id }}</td>
                                 <td>@{{ post.title }} @{{ post.name }}</td>
                                 <td>@{{ post.locale }}</td>
-                                <td>@{{ post.views }}</td>
+                                <td>@{{ post.view }}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -62,6 +62,15 @@
                 </div>
             </div>
         </div>
+        {{--modal--}}
+        <div class="modal fade bd-example-modal-lg" id="yay" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                </div>
+            </div>
+        </div>
+
         <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 alignTopPagination">
             <nav aria-label="Page navigation">
                 <ul class="pagination justify-content-center">
@@ -99,4 +108,5 @@
     <script src="{{asset('js/admin/listing.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/Chart.min.js' )}}"></script>
 @endsection
