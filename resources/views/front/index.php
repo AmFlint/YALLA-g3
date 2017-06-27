@@ -95,23 +95,22 @@
     </div>
   </div>
 
-
-
-
-
   <div class="row text-center rowMarginTopFixCallToAction">
-    <div class="col-xs-12 col-md-12">
-      <h4>Ensemble rendons le monde meilleur</h4>
-      <button>Nous rejoindre</button>
-    </div>
-  </div>
-  <div class="row text-center rowMarginTopFixCallToAction">
-    <div class="col-xs-12 col-md-12">
-      <h4>Aidez-nous à rendre le monde meilleur</h4>
+    <div class="col-xs-12 col-md-12 buttonCTA backgroundBannerHommePageOne">
+      <p style="margin-top: 14vh;">Un petit geste à <span class="fontWeightBoldDubai">plusieurs</span> un grand pas <span class="fontWeightBoldDubai">ensemble</span></p>
       <button>Faire un don</button>
     </div>
   </div>
+  <div class="row text-center">
+    <div class="col-xs-12 col-md-12 buttonCTA backgroundBannerHommePage2">
+      <p style="margin-top: 14vh;">Devenez <span class="fontWeightBoldDubai">membre</span> de ce projet</p>
+      <button>Nous rejoindre</button>
+    </div>
+  </div>
 </div>
+
+
+
 
 <footer>
   <div class="row rowMarginTopFixCallToAction">

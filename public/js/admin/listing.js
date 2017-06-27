@@ -1,6 +1,8 @@
 var app = angular.module('App' , []);
 
 app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
+    $scope.graph = null;
+
     $scope.modals = null;
 
     $scope.test = true;
@@ -125,14 +127,65 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
 
     $scope.sortByView = function ()
     {
-        if ($scope.sort === 'views') {
+        if ($scope.sort === 'view') {
             $scope.descSort = !$scope.descSort;
 
         } else {
-            $scope.sort = 'views';
+            $scope.sort = 'view';
             $scope.descSort = false;
         }
     };
+
+    $scope.setGraph = function (post)
+    {
+        if (typeof $scope.posts[0].published == 'undefined') {
+            return;
+        }
+
+        $http({
+            method: 'get',
+            url: root_route + laroute.route('api.views_get_by_post') + '?id=' + post.id
+        }).then(function successCallback(data)
+        {
+            if (data.data.length > 0) {
+                $scope.graph = data.data;
+                myBarChart.options.scales.yAxes[0].ticks.max = $scope.getMaxView($scope.graph) + 50;
+                $scope.setDataToGraph($scope.graph, myBarChart.data.labels, myBarChart.data.datasets.data);
+                myBarChart.update();
+            }
+        }, function errorCallback(err)
+        {
+            console.log(err);
+        });
+    };
+
+    $scope.getMaxView = function(data)
+    {
+        var max = data[0].views;
+        if (data.length < 2) {
+            return max;
+        }
+        for (var i = 1; i < data.length; i++) {
+            if (data[i].views > max) {
+                max = data[i].views;
+            }
+        }
+        return max;
+    };
+
+    $scope.setDataToGraph = function (dataS)
+    {
+        data.labels = [];
+        data.datasets[0].data = [];
+        for (var i = 0; i < dataS.length; i++) {
+            data.labels.push(dataS[i].month);
+            data.datasets[0].data.push(dataS[i].views);
+        }
+    };
+
+
+
+
 
 }]);
 

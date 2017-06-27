@@ -2,12 +2,13 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class Post extends Model
 {
-    protected $fillable = ['published', 'image', 'card', 'meta_robots', 'category_id', 'locale', 'title', 'slug', 'content', 'summary', 'media_id', 'alt'];
+    protected $fillable = ['published', 'image', 'card', 'meta_robots', 'category_id', 'locale', 'title', 'slug', 'content', 'summary', 'media_id', 'view', 'alt'];
 
     public function category()
     {
@@ -22,6 +23,17 @@ class Post extends Model
     public function media()
     {
         return $this->belongsTo('App\Media');
+    }
+
+    public function views()
+    {
+        return $this->belongsToMany('App\View');
+    }
+
+    public function getMonth()
+    {
+        Carbon::setLocale('fr');
+        return $this->attributes['created_at']->format('F');
     }
 
     public function setSlugAttribute($value)

@@ -579,6 +579,21 @@ HomePage reste du contenu
 .rowMarginTopFixCallToAction{
     margin-top: 20vh;
 }
+.buttonCTA{
+    font-size: 1.4em;
+    color: white;
+}
+.backgroundBannerHommePageOne{
+    background-image: url('../img-content/front/quiSommesNous8.jpg');
+    background-size: cover;
+    height: 45vh;
+}
+.backgroundBannerHommePage2{
+    background-image: url('../img-content/front/bannerHomePage.jpg');
+    background-size: cover;
+    height: 45vh;
+}
+
 
 /* 
 Responsive home page

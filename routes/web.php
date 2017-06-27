@@ -51,7 +51,7 @@ Route::prefix('admin')->group(function() {
         Route::put('/edit/{id}', ['as' => 'admin.post_update', 'uses' => 'AdminController@updatePost']);
 
         Route::get('/previsualize/{id}', ['as' => 'admin.post_previsualize', 'uses' => 'AdminController@previsualizePost'])
-            ->where('id', '[0-9]');
+            ->where('id', '[0-9]+');
     });
 
     Route::prefix('tags')->group(function() {
@@ -107,13 +107,14 @@ Route::get(App::getLocale() . '/' . Lang::get('routes.welcome'), function() {
    return 'salut';
 });
 
-Route::get('{locale}', ['as' => 'setLocale', 'uses' => 'Controller@setLocale'])
-    ->where('locale', '[a-z]+');
-
 Route::prefix(App::getLocale())->group(function() {
+    Route::get('', ['as' => 'home', 'uses' => 'MainController@home']);
+
+    Route::get(Lang::get('routes.about'), ['as' => 'about', 'uses' => 'MainController@about']);
+
     Route::get(Lang::get('routes.welcome'), function() {
         return 'tu es sur la page' . App::getLocale();
-    }) ;
+    });
 
     Route::get('posts', ['as' => "posts", 'uses' => 'MainController@listPosts']);
 });

@@ -48,6 +48,7 @@
                     <td>
                         <button type="button" class="btn btn-danger test" data-toggle="modal" data-target="#myModal">Suppr</button>
                         <a href="{{route('admin.post_edit', $post->id)}}" class="btn btn-warning">Editer</a>
+                        <a href="{{route('admin.post_previsualize', $post->id)}}" class="btn btn-primary marginTopAddTag">Prévisualiser</a>
                     </td>
                 </tr>
             </tbody>

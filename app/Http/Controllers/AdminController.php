@@ -91,6 +91,7 @@ class AdminController extends Controller
         $props['action'] = 'delete';
         $postSave = PostSave::create($props);
         $postSave->tags()->sync($post->tags);
+        $postSave->views()->sync($post->views);
         $post->delete();
         Session::flash('error', 'Votre article a bien été supprimé');
         Session::flash('errorClass', 'success');
@@ -152,6 +153,7 @@ class AdminController extends Controller
         $propertiesSave['action'] = 'edit';
         $postSave = PostSave::create($propertiesSave);
         $postSave->tags()->sync($post->tags);
+        $postSave->views()->sync($post->views);
         $post->update($props);
         $post->tags()->sync($request->tag_list);
         Session::flash('error', 'L\'article a bien été édité, bravo.');
@@ -218,6 +220,7 @@ class AdminController extends Controller
         }
         // synchronize original tags to the archived post's tags
         $post->tags()->sync($postSave->tags);
+        $post->views()->sync($postSave->views);
         $postSave->delete(); // remove archived post and send validation message to admin along with redirection
         Session::flash('error', 'L\'article a été remis en circulation avec succès !');
         Session::flash('errorClass', 'success');
