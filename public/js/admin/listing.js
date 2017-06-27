@@ -1,6 +1,8 @@
 var app = angular.module('App' , []);
 
 app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
+    $scope.graph = null;
+
     $scope.modals = null;
 
     $scope.test = true;
@@ -125,14 +127,35 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
 
     $scope.sortByView = function ()
     {
-        if ($scope.sort === 'views') {
+        if ($scope.sort === 'view') {
             $scope.descSort = !$scope.descSort;
 
         } else {
-            $scope.sort = 'views';
+            $scope.sort = 'view';
             $scope.descSort = false;
         }
     };
+
+    $scope.showGraph = function (post)
+    {
+        if (typeof $scope.posts[0].published == 'undefined') {
+            return;
+        }
+
+        console.log(post.title);
+
+        $http({
+            method: 'get',
+            url: root_route + laroute.action('api.views_get_by_type') + '?id=' + post.id
+        }).then(function successCallback(data)
+        {
+            $scope.posts = data.data;
+        }, function errorCallback(err)
+        {
+            console.log(err);
+        });
+
+    }
 
 }]);
 
