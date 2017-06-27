@@ -30,6 +30,8 @@ Route::prefix('admin')->group(function() {
 
         Route::get('/', ['as' => 'api.views_get_by_type', 'uses' => 'ApiController@getViewsByType']);
 
+        Route::get('/posts', ['as' => 'api.views_get_by_post', 'uses' => 'ApiController@getViewsByPost']);
+
     });
 
 });
