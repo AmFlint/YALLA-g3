@@ -15,5 +15,6 @@ return [
 
     'welcome' => 'welcome',
     'about' => 'about-us',
+    'actu' => 'actualities'
 
 ];

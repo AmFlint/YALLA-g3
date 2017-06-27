@@ -1,8 +1,7 @@
 <?php
 
 return [
-
     'welcome' => 'salam',
-    'about' => 'about-us'
-
+    'about' => 'about-us',
+    'actu' => 'actualities',
 ];

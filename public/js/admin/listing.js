@@ -15,6 +15,21 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
 
     $scope.localisation = false;
 
+    $scope.months = {
+        January: 'Janvier',
+        February: 'Février',
+        March: "Mars",
+        April: 'Avril',
+        May: 'Mai',
+        June: 'Juin',
+        July: 'Juillet',
+        August: 'Aoùt',
+        September: 'Septembre',
+        October: 'Octobre',
+        November: 'Novembre',
+        December: 'Décembre'
+    };
+
     $scope.deleteModal = function(post) {
         $scope.modals = post;
     };
@@ -182,15 +197,10 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
         data.labels = [];
         data.datasets[0].data = [];
         for (var i = 0; i < dataS.length; i++) {
-            data.labels.push(dataS[i].month);
+            data.labels.push($scope.months[dataS[i].month]);
             data.datasets[0].data.push(dataS[i].views);
         }
     };
-
-
-
-
-
 }]);
 
 
