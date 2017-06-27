@@ -51,7 +51,7 @@ Route::prefix('admin')->group(function() {
         Route::put('/edit/{id}', ['as' => 'admin.post_update', 'uses' => 'AdminController@updatePost']);
 
         Route::get('/previsualize/{id}', ['as' => 'admin.post_previsualize', 'uses' => 'AdminController@previsualizePost'])
-            ->where('id', '[0-9]');
+            ->where('id', '[0-9]+');
     });
 
     Route::prefix('tags')->group(function() {

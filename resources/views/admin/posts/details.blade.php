@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-4">
             <h2>Vues</h2>
-            <p>{!! $post->views !!}</p>
+            <p>{!! $post->view !!}</p>
         </div>
         <div class="col-md-4">
             <h2>Modification</h2>
