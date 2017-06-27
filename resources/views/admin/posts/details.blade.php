@@ -24,7 +24,7 @@
     <article class="borderArticle row text-center">
         <div class="col-md-4">
             <h2>Ajout</h2>
-            <p>{!! $post->created_at !!}</p>
+            <p>{!! $post->created_at->diffForHumans() !!}</p>
         </div>
         <div class="col-md-4">
             <h2>Vues</h2>
@@ -32,7 +32,7 @@
         </div>
         <div class="col-md-4">
             <h2>Modification</h2>
-            <p>{!! $post->updated_at !!}</p>
+            <p>{!! $post->updated_at->diffForHumans() !!}</p>
         </div>
     </article>
     <article class="borderArticle row text-center">
