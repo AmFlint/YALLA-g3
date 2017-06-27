@@ -72,6 +72,7 @@ class AdminController extends Controller
      */
     public function viewPost($id)
     {
+        Carbon::setLocale('fr');
         $post = Post::find($id);
         if (!$this->checkIfEntityExists($post, 'Le poste recherché n\'existe pas ! Vous ne pouvez le voir !', 'danger')) {
             return redirect(route('admin.posts'));
