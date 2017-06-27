@@ -18,7 +18,6 @@ class ApiController extends Controller
         $props['slug'] = null;
         Tag::create($props);
         return response(Tag::orderBy('id', 'desc')->first(), 200);
-
     }
 
     public function getTagsByLocale(Request $request)

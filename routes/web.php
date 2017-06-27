@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/admin/espace-connexion', ['as' => 'admin.login', 'uses' => 'AdminController@login']);
+
 Route::prefix('admin')->group(function() {
 
     Route::get('tags', 'AdminController@tag');
@@ -109,6 +111,12 @@ Route::get(App::getLocale() . '/' . Lang::get('routes.welcome'), function() {
 
 Route::prefix(App::getLocale())->group(function() {
     Route::get('', ['as' => 'home', 'uses' => 'MainController@home']);
+
+    Route::get(Lang::get('routes.donate'), ['as' => 'donate', 'uses' => 'MainController@donate']);
+
+    Route::get(Lang::get('routes.terms'), ['as' => 'terms', 'uses' => 'MainController@terms']);
+
+    Route::get(Lang::get('routes.contact'), ['as' => 'contact', 'uses' => 'MainController@contact']);
 
     Route::get(Lang::get('routes.about'), ['as' => 'about', 'uses' => 'MainController@about']);
 
