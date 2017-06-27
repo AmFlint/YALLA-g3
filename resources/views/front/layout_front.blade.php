@@ -15,7 +15,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="{{route('home')}}"><img src="{{asset('img-layout/logo.png')}}" alt="Logo"></a>
-    <div class="collapse navbar-collapse text-uppercase justify-content-end" id="navbarNavDropdown">
+    <div class="navBlack collapse navbar-collapse text-uppercase justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="{{route('about')}}">{{Lang::get('nav.about')}}</a>
@@ -49,22 +49,22 @@
 @yield('content')
 
 <footer>
-    <div class="row rowMarginTopFixCallToAction">
-        <div class="col-xs-6 col-md-12 text-center">
-            <img src="" alt="">
+    <div class="row">
+        <div class="col-xs-1 offset-md-5 col-md-1">
+            <img src="{{asset('img-layout/twitter.svg')}}" alt="">
         </div>
-        <div class="col-xs-6 col-md-12 text-center">
-            <img src="" alt="">
+        <div class="col-xs-1 col-md-1">
+            <img src="{{asset('img-layout/facebook.svg')}}" alt="">
         </div>
     </div>
-    <div class="col-xs-12 col-md-12 text-center">
-        <a class="hoverFix" href="">© Yalla! pour les enfants | une école pour la paix</a>
+    <div class="col-xs-12 col-md-12 text-center linkMarginBottomFooter">
+        <a href="">© Yalla! pour les enfants | une école pour la paix</a>
     </div>
-    <div class="col-xs-12 col-md-12 text-center">
-        <a class="hoverFix" href="">13, rue René Villerme – 75011 PARIS</a>
+    <div class="col-xs-12 col-md-12 text-center linkMarginBottomFooter">
+        <a href="">13, rue René Villerme – 75011 PARIS</a>
     </div>
-    <div class="col-xs-12 col-md-12 text-center">
-        <a class="hoverFix" href="">Mentions légales | Nous contacter</a>
+    <div class="col-xs-12 col-md-12 text-center linkMarginBottomFooter">
+        <a href="">Mentions légales | Nous contacter</a>
     </div>
 </footer>
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
