@@ -21,4 +21,9 @@ class Controller extends BaseController
         }
         return true;
     }
+
+    public function setLocale($locale)
+    {
+        dd($locale);
+    }
 }

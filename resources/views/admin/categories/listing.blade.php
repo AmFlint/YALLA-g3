@@ -59,6 +59,7 @@
                         <td>
                             <button type="button" class="btn btn-danger test" data-toggle="modal" data-target="#myModal">Suppr</button>
                             <a href="{{route('admin.category_edit', $category->id)}}" class="btn btn-warning">Editer</a>
+                            <a href="{{route('admin.categories_assoc_posts', $category->id)}}" class="btn btn-info">Voir les posts</a>
                         </td>
                     </tr>
                     </tbody>

@@ -19,7 +19,7 @@ class CreateCategoriesTable extends Migration
             $table->string('locale', 10);
             $table->string('name', 25);
             $table->string('slug', 30);
-            $table->integer('views')->default(0);
+            $table->integer('view')->default(0);
             $table->timestamps();
         });
     }

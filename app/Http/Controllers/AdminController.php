@@ -91,6 +91,7 @@ class AdminController extends Controller
         $props['action'] = 'delete';
         $postSave = PostSave::create($props);
         $postSave->tags()->sync($post->tags);
+        $postSave->views()->sync($post->views);
         $post->delete();
         Session::flash('error', 'Votre article a bien été supprimé');
         Session::flash('errorClass', 'success');
@@ -102,7 +103,7 @@ class AdminController extends Controller
         $destinationPath = 'img-content/uploads';
         $extension = $file->getClientOriginalExtension();
         $fileName = rand(11111,99999).'.'.$extension;
-        $file->move($destinationPath, $fileName); // uploading file to given pat
+        $file->move($destinationPath, $fileName); // uploading file to given path
         return $fileName;
     }
 
@@ -152,6 +153,7 @@ class AdminController extends Controller
         $propertiesSave['action'] = 'edit';
         $postSave = PostSave::create($propertiesSave);
         $postSave->tags()->sync($post->tags);
+        $postSave->views()->sync($post->views);
         $post->update($props);
         $post->tags()->sync($request->tag_list);
         Session::flash('error', 'L\'article a bien été édité, bravo.');
@@ -218,6 +220,7 @@ class AdminController extends Controller
         }
         // synchronize original tags to the archived post's tags
         $post->tags()->sync($postSave->tags);
+        $post->views()->sync($postSave->views);
         $postSave->delete(); // remove archived post and send validation message to admin along with redirection
         Session::flash('error', 'L\'article a été remis en circulation avec succès !');
         Session::flash('errorClass', 'success');
@@ -369,5 +372,27 @@ class AdminController extends Controller
         Session::flash('error', 'La catégorie a bien été modfié, bravo.');
         Session::flash('errorClass', 'success');
         return redirect(route('admin.categories'));
+    }
+
+    public function viewPostsByTag($id)
+    {
+        $tag = Tag::find($id);
+        if (!$this->checkIfEntityExists($tag, 'Impossible de voir les posts, le tag demandé n\'existe pas.', 'danger')) {
+            return redirect(route('admin.tags'));
+        }
+        $posts = $tag->posts()->get();
+        $tags = Tag::where('locale', $tag->locale)->where('id', '!=', $tag->id)->get();
+        return view('admin.tags.listing_associated', compact('posts', 'tag', 'tags'));
+    }
+
+    public function viewPostsByCategory($id)
+    {
+        $category = Category::find($id);
+        if (!$this->checkIfEntityExists($category, 'Impossible de voir les posts, le tag demandé n\'existe pas.', 'danger')) {
+            return redirect(route('admin.tags'));
+        }
+        $posts = $category->posts()->get();
+        $categories = Category::where('locale', $category->locale)->where('id', '!=', $category->id)->get();
+        return view('admin.categories.listing_associated', compact('posts', 'category', 'categories'));
     }
 }

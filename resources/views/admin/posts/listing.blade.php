@@ -33,7 +33,11 @@
                         </a>
                     </td>
                     <td>{{$post->locale}}</td>
-                    <td>{{$post->category->name}}</td>
+                    <td>
+                        <a href="{{route('admin.categories_assoc_posts', $post->category->id)}}" class="btn btn-info">
+                            {{$post->category->name}}
+                        </a>
+                    </td>
                     <td>
                     @if($post->published)
                         <a class="btn btn-warning" href="{{route('admin.post_publish', $post->id)}}">Dépublier</a>
@@ -44,6 +48,7 @@
                     <td>
                         <button type="button" class="btn btn-danger test" data-toggle="modal" data-target="#myModal">Suppr</button>
                         <a href="{{route('admin.post_edit', $post->id)}}" class="btn btn-warning">Editer</a>
+                        <a href="{{route('admin.post_previsualize', $post->id)}}" class="btn btn-primary marginTopAddTag">Prévisualiser</a>
                     </td>
                 </tr>
             </tbody>
