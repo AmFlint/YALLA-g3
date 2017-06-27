@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Contact</title>
-  <link rel="stylesheet" href="style/bootstrap.min.css">
-  <link rel="stylesheet" href="style/screen-2.css">
-  <meta name="viewport" content="width=device-width, user-scalable=no">
-</head>
-<body>
+@extends('front.layout_front')
 
+@section('content')
+    <link rel="stylesheet" href="{{asset('css/screen-2.css')}}">
+    <h1 class="h1 text-center">Contactez-nous !</h1>
   <form>
     <div class="row">
       <div class="col-md-8 offset-md-2">
@@ -33,13 +27,11 @@
           </div>
           <div class="col-md-2 offset-md-4 btn-right">
             <div class="">
-              <button type="button" class="btn btn-secondary btn-legal"><a href="#"><img class="btn-width" src="img_layout/right-arrow.svg" alt=""></a></button>
+              <button type="button" class="btn btn-secondary btn-legal"><a href="#"><img class="btn-width" src="{{asset('img-layout/right-arrow.svg')}}" alt=""></a></button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </form>
-
-</body>
-</html>
+@endsection

@@ -405,4 +405,9 @@ class AdminController extends Controller
         $categories = Category::where('locale', $category->locale)->where('id', '!=', $category->id)->get();
         return view('admin.categories.listing_associated', compact('posts', 'category', 'categories'));
     }
+
+    public function login()
+    {
+        return view('front.connexion');
+    }
 }

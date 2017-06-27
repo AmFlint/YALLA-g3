@@ -16,5 +16,8 @@ return [
     'welcome' => 'bienvenue',
     'about' => 'qui-sommes-nous',
     'actu' => 'actualites',
+    'donate' => 'faire-un-don',
+    'contact' => 'contactez-nous',
+    'terms' => 'mentions-legales',
 
 ];

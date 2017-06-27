@@ -14,20 +14,20 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#"><img src="../../../public/img-layout/logo.png" alt="Logo"></a>
+    <a class="navbar-brand" href="{{route('home')}}"><img src="{{asset('img-layout/logo.png')}}" alt="Logo"></a>
     <div class="collapse navbar-collapse text-uppercase justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Qui sommes nous ?</a>
+                <a class="nav-link" href="{{route('about')}}">{{Lang::get('nav.about')}}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Notre quotidien</a>
+                <a class="nav-link" href="#">{{Lang::get('nav.quotidien')}}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route('post_listing')}}">Nos Actualités</a>
+                <a class="nav-link" href="{{route('post_listing')}}">{{Lang::get('nav.actualities')}}</a>
             </li>
             <li class="nav-item">
-                <a href="" class="nav-link">Contact</a>
+                <a href="{{route('contact')}}" class="nav-link">{{Lang::get('nav.contact')}}</a>
             </li>
             <li class="nav-item">
                 <div class="dropdown dropdownStyleFix">
@@ -41,7 +41,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <button>Faire un don</button>
+                <button>{{Lang::get('home.donate')}}</button>
             </li>
         </ul>
     </div>

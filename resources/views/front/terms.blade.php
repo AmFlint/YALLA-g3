@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Mentions légales</title>
-  <link rel="stylesheet" href="style/bootstrap.min.css">
-  <link rel="stylesheet" href="style/screen-2.css">
-  <meta name="viewport" content="width=device-width, user-scalable=no">
-</head>
-<body>
-  <div class="margin-legal">
+@extends('front.layout_front')
+
+@section('content')
+    <link rel="stylesheet" href="{{asset('css/screen-2.css')}}">
+    <div class="margin-legal">
     <h1 class="text-center">Mentions légales</h1>
     <div class="row">
       <div class="col-md-10 offset-md-1">
@@ -125,5 +119,4 @@
     </div>
 
   </div>
-</body>
-</html>
+@endsection

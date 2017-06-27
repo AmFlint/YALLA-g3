@@ -15,6 +15,9 @@ return [
 
     'welcome' => 'welcome',
     'about' => 'about-us',
-    'actu' => 'actualities'
+    'actu' => 'actualities',
+    'donate' => 'donate',
+    'contact' => 'contact-us',
+    'terms' => 'terms-of-use',
 
 ];

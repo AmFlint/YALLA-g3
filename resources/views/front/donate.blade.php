@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Faire un don</title>
-  <link rel="stylesheet" href="style/bootstrap.min.css">
-  <link rel="stylesheet" href="style/screen-2.css">
-  <meta name="viewport" content="width=device-width, user-scalable=no">
-</head>
-<body>
+@extends('front.layout_front')
+
+@section('content')
+    <link rel="stylesheet" href="{{asset('css/screen-2.css')}}">
   <h1 class="text-center h1-don">Nous soutenir</h1>
   <div class="offset-md-1">
   <h3>Pour faire un don à Yalla!</h3>
@@ -22,7 +16,7 @@
       </ul>
     </div>
     <div class="col-md-6 col-xs-12 col-lg-6 offset-md-1">
-      <img class="img-fluid rounded" src="img_content/don-1.png" alt="">
+      <img class="img-fluid rounded" src="{{asset('img-content/front/don-1.png')}}" alt="">
     </div>
   </div>
 
@@ -32,7 +26,7 @@
   <div class="row">
 
       <div class="col-md-6 col-xs-12 col-lg-6 offset-md-1">
-        <img class="img-fluid rounded no-active" src="img_content/don-2.png" alt="">
+        <img class="img-fluid rounded no-active" src="{{asset('img-content/front/don-2.png')}}" alt="">
       </div>
       <div class="col-md-3 col-xs-12 col-lg-3 offset-md-1">
         <ul>
@@ -48,6 +42,5 @@
           <li class="margin">BIC : CCOPFRPPXXX</li>
         </ul>
       </div>
-    </div>
-  </body>
-  </html>
+</div>
+@endsection
