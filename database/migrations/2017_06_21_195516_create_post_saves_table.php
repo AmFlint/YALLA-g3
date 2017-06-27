@@ -29,7 +29,7 @@ class CreatePostSavesTable extends Migration
             $table->integer('category_id')->unsigned()->index();
             $table->string('action', 25);
             $table->integer('post_id');
-            $table->integer('views')->default(0);
+            $table->integer('view')->default(0);
             $table->timestamps();
         });
     }

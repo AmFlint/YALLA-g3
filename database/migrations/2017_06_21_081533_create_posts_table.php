@@ -27,7 +27,7 @@ class CreatePostsTable extends Migration
             $table->string('card', 100);
             $table->string('meta_robots', 30)->nullable();
             $table->integer('category_id')->unsigned()->index();
-            $table->integer('views')->default(0);
+            $table->integer('view')->default(0);
             $table->timestamps();
         });
     }
