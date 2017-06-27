@@ -3,6 +3,8 @@ var app = angular.module('App' , []);
 app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
     $scope.graph = null;
 
+    $scope.attrib = '';
+
     $scope.modals = null;
 
     $scope.test = true;
@@ -129,7 +131,6 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
     {
         if ($scope.sort === 'view') {
             $scope.descSort = !$scope.descSort;
-
         } else {
             $scope.sort = 'view';
             $scope.descSort = false;
@@ -147,6 +148,9 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
             url: root_route + laroute.route('api.views_get_by_post') + '?id=' + post.id
         }).then(function successCallback(data)
         {
+            if  ($scope.type !== 'post') {
+                return;
+            }
             if (data.data.length > 0) {
                 $scope.graph = data.data;
                 myBarChart.options.scales.yAxes[0].ticks.max = $scope.getMaxView($scope.graph) + 50;
