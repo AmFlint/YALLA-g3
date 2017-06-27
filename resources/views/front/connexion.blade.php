@@ -1,7 +1,8 @@
 @extends('front.layout_front')
 
 @section('content')
-  <h1 class="text-center h1-co">Connexion</h1>
+    <link rel="stylesheet" href="{{asset('css/screen-2.css')}}">
+    <h1 class="text-center h1-co">Connexion</h1>
   <div class="row">
     <div class="col-md-2 col-xs-10 offset-md-5 offset-xs-2">
     <form>
