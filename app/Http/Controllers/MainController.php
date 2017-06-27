@@ -26,7 +26,7 @@ class MainController extends Controller
 
     public function viewPost($slug)
     {
-        $post = Post::where('locale', App::getLocale())->where('slug', $slug)->first();
+        $post = Post::where('locale', App::getLocale())->where('slug', $slug)->where('published', 1)->first();
         if (!$post) {
             dd('Need to abort(404) in the future');
         }
