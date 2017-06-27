@@ -50,11 +50,11 @@
       </div>
     </div>
   </div> 
-  <div class="row rowMarginTopFixCallToAction">
+  <div class="row rowMarginTopFixCallToAction justify-content-center derniereActu">
     <div class="col-md-12 offset-md-12">
       <h3 class="text-center">Notre dernière actualité</h3>
     </div>
-    <div class="col-md-4 offset-md-4 col-xs-12 text-center">
+    <div class="col-md-5 col-xs-12 text-center">
       <img src="{{asset('img-content/front/homePage4.jpg')}}" alt="">
       <h4 class="marginTopAddTag">Fest-noz solidaire le 29 octobre à Poullaouen</h4>
       <p class="marginTopAddTag">Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres</p>
@@ -64,31 +64,15 @@
       <a class="marginTopAddTag hoverFix" href="">Voir tous nos articles</a>
     </div>
   </div>
-  <div class="row rowMarginTopFixCallToAction">
-    <div class="col-md-4 offset-md-2 col-xs-12 card">
-      <img src="{{asset('img-layout/facebook.svg')}}" alt="">
-      <div class="col-md-8 offset-md-2">
-        <p>Yalla - Pour les Enfants <span>23 juin, 14:09</span></p>
-        <p>42 of yalla students at indstitut francais du Liban watching movies.</p>
-      </div>
-    </div>
-    <div class="col-md-4 offset-md-1 col-xs-12 card">
-      <img src="{{asset('img-layout/twitter.svg')}}" alt="">
-      <div class="col-md-8 offset-md-2">
-        <p>Yalla!pourlesenfants <span>24 juin</span></p>
-        <p>Weekly meeting at the center on child protection with our Child Protection Adviser.</p>
-      </div>
-    </div>
-  </div>
   <div class="row text-center rowMarginTopFixCallToAction">
     <div class="col-xs-12 col-md-12 buttonCTA backgroundBannerHommePageOne">
-      <p style="margin-top: 14vh;">Un petit geste à <span class="fontWeightBoldDubai">plusieurs</span> un grand pas <span class="fontWeightBoldDubai">ensemble</span></p>
+      <p style="margin-top: 15vh;">Un petit geste à <span class="fontWeightBoldDubai">plusieurs</span> un grand pas <span class="fontWeightBoldDubai">ensemble</span></p>
       <button>Faire un don</button>
     </div>
   </div>
   <div class="row text-center">
     <div class="col-xs-12 col-md-12 buttonCTA backgroundBannerHommePage2">
-      <p style="margin-top: 14vh;">Devenez <span class="fontWeightBoldDubai">membre</span> de ce projet</p>
+      <p style="margin-top: 15vh;">Devenez <span class="fontWeightBoldDubai">membre</span> de ce projet</p>
       <button>Nous rejoindre</button>
     </div>
   </div>

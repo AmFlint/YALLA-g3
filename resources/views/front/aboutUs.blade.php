@@ -32,7 +32,7 @@
 					<p class="">Les bénévoles de Yalla ! à Paris et sur le terrain ont préalablement adopté les valeurs de l’association et agissent conformément à ses principes. Ils rapportent leurs activités de façon régulière au Bureau qui contrôle la conformité des actions développées sur le terrain à la mission et aux valeurs que s’est données Yalla !.</p>
 				</div>
 				<div class="col-xs-12 col-md-5 offset-md-1">
-					<div class="containerImgPageWhoAreYouSecond">
+					<div>
 						<img class="positionnement widthImgSectionTwo" src="{{asset('img-content/front/quiSommesNous2.jpg')}}" alt="">
 						<div class="rectImgColorPink"></div>
 					</div>
@@ -64,8 +64,8 @@
 					<p class="paddingTopFix">menée par les agences humanitaires des Nations Unies, afin de s’intégrer dans une action globale et parvenir ensemble à plus d’efficacité pour répondre aux besoins les plus prégnants.</p>
 				</div>
 			</div>
-			<h3 class="col-xs-12 col-md-12 text-center marginTopContentPageWhoAreYou styleTitleNotreStategie">L’équipe du Bureau</h3>
-			<div class="row text-center marginTopContentPageWhoAreYou">
+			<h3 class="col-xs-12 col-md-12 text-center marginTopContentPageWhoAreYou styleTitleLequipeBureau">L’équipe du Bureau</h3>
+			<div class="row text-center">
 				<div class="col-xs-12 offset-xs-0 col-md-3 offset-md-2 containerImgNotreStrategie">
 					<img class="" src="{{asset('img-content/front/quiSommesNous4.jpg')}}" alt="">
 					<div class="rectImgColorRedStrategieOne"></div>
