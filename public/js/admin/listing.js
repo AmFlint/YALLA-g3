@@ -142,8 +142,6 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
             return;
         }
 
-        console.log(post.title);
-
         $http({
             method: 'get',
             url: root_route + laroute.action('api.views_get_by_type') + '?id=' + post.id
@@ -154,6 +152,8 @@ app.controller('MainCtrl',  ['$scope', '$http', function($scope, $http) {
         {
             console.log(err);
         });
+
+        console.log(data.datasets.label)
 
     }
 
