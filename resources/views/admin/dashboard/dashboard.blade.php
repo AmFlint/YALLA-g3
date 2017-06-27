@@ -50,7 +50,7 @@
                             </tr>
                             </thead>
                             <tbody ng-repeat="post in posts | orderBy:sort:descSort">
-                            <tr ng-click="setGraph(post)" style="cursor: pointer" data-toggle="modal" data-target="#graph">
+                            <tr ng-click="setGraph(post)" style="cursor: pointer" data-toggle="modal" data-target="@{{type == 'post' ? '#graph' : ''}}">
                                 <td>@{{ post.id }}</td>
                                 <td>@{{ post.title }} @{{ post.name }}</td>
                                 <td>@{{ post.locale }}</td>
@@ -66,11 +66,11 @@
         {{--modal--}}
         <div class="modal fade bd-example-modal-lg" id="graph" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
-                <div class="modal-content" style="padding: 2%">
+                <div class="modal-content offset-md-1" style="padding: 2%">
                     <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
-                    <canvas id="myChart">
+                    <canvas id="myChart" class="col-md-12">
                     </canvas>
                 </div>
             </div>
