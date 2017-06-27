@@ -14,5 +14,6 @@ return [
     */
 
     'welcome' => 'bienvenue',
+    'about' => 'qui-sommes-nous',
 
 ];

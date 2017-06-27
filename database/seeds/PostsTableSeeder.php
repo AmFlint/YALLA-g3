@@ -15,11 +15,15 @@ class PostsTableSeeder extends Seeder
         $post1 = Post::create([
             'published' => 1,
             'locale' => 'fr',
-            'image' => 'nps1.jpg',
-            'title' => 'Article N°1',
-            'content' => 'Contenu article 1',
-            'slug' => 'article-n-1',
-            'summary' => 'Résumé article 1',
+            'image' => 'compresse.jpg',
+            'title' => 'Fest-noz solidaire le 29 octobre à Poullaouen',
+            'content' => 'Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres de Beyrouth.
+
+Vous pourrez y apprécier les talents des musiciens et chanteurs, Marie-Hélène Baron, Laurent Bigot, Yann Boulanger, Jean-Daniel Bourdonnay, Pierre Crépillon, Annie Ebrel, Ifig Flatrès, Marie-Laurence Fustec, Riwal Fustec, Yann Goasdoué, Maurice Guillou, Jean-Paul Guyomarc’h, Jean Herrou, Brigitte Le Corre, Yann Le Corre, Bruno Le Manach, Marie-Noëlle Le Mapihan, Pierre-Yves Le Panse, François Perennes, Iffig Poho, Christian Rivoalen, qui s’engagent bénévolement pour soutenir Yalla! Pour les Enfants.
+
+Cette fête traditionnelle bretonne où règnent la bonne humeur, la convivialité, la gaieté fait écho au dialogue interculturel mené par Yalla ! Pour les Enfants qui entend réunir au travers de projets culturels communs la communauté d’accueil libanaise et la communauté syrienne en exil pour construire une paix durable. Avec la participation active de : Maryam Samaan, Cyrille Flejou, AFPS Centre Bretagne, la mairie de Poullaouen, Le Télégramme, Ouest-France, Radio Montagne Noire, Radio Kreiz Breizh, Radio Bleu Breizh Izel',
+            'slug' => 'fest-noz-solidaire-le-29-octobre-a-poullaouen',
+            'summary' => 'Yalla!',
             'media_id' => 1,
             'card' => 'summary',
             'meta_robots' => 0,
@@ -30,16 +34,55 @@ class PostsTableSeeder extends Seeder
 
         $post1->tags()->sync([1, 2]);
 
-        $post1->views()->sync([1, 2]);
+        $post1->views()->sync([1, 2, 3, 4]);
 
         $post2 = Post::create([
             'published' => 1,
             'locale' => 'fr',
-            'image' => 'nps2.jpg',
-            'title' => 'Article N°2',
-            'content' => 'Contenu article 2 test',
+            'image' => 'yallapourlesenfantsweb.jpg',
+            'title' => 'Assemblée Générale de Yalla ! Pour les Enfants jeudi 29 septembre 2016 à 19h, à Paris',
+            'content' => 'Chers adhérents, chers amis,
+
+Nous vous invitons à l’Assemblée Générale de Yalla ! Pour les Enfants, qui se tiendra le jeudi 29 septembre 2016 à 18h30 à « La Trockette », 125, rue du Chemin Vert 75011 Paris, métro Père Lachaise.
+
+L’ordre du jour sera le suivant :
+
+Rapport moral,
+Rapport financier,
+Présentation du budget prévisionnel,
+Information sur la relation bancaire avec la Société Générale,
+Présentation du projet de l’école d’Aley et du programme « apprends-moi Maman »,
+
+Appel à bénévolat :
+
+1 / Recrutement d’une personne venant collaborer à la communication de Yalla !
+2 / Recrutement d’une personne pouvant répondre aux appels à projet des bailleurs de fonds,
+3/ Recrutement d’une personne apportant une aide aux travaux administratifs,
+Questions diverses,
+
+Les documents ayant servi à l’élaboration de cette Assemblée Générale sont consultables, sur RDV au siège de l’association pendant tout le mois d’octobre.
+
+Nous vous remercions de nous faire part de votre participation en nous renvoyant les informations suivantes :
+
+Madame, Monsieur
+
+Participera à l’Assemblée Générale du jeudi 29 septembre 2016
+
+Ne participera pas à l’Assemblée Générale du jeudi 29 septembre 2016*
+
+Donne pouvoir à :
+
+ 
+
+*veuillez barrer la mention inutile
+
+ 
+
+Bien cordialement,
+Mary Lemeland-Mellionec,
+Présidente',
             'slug' => 'article-n-2',
-            'summary' => 'Résumé article 2',
+            'summary' => 'Chers adhérents, chers amis, Nous vous invitons à l’Assemblée Générale de Yalla ! Pour les Enfants, qui se tiendra le jeudi 29 septembre 2016 à 18h30 à « La Trockette », 125, rue du Chemin Vert',
             'card' => 'summary_large',
             'media_id' => '2',
             'meta_robots' => 1,
@@ -50,16 +93,20 @@ class PostsTableSeeder extends Seeder
 
         $post2->tags()->sync([1]);
 
-        $post2->views()->sync([3]);
+        $post2->views()->sync([5, 6, 7, 8]);
 
 	    $post3 = Post::create([
 		    'published' => 1,
 		    'locale' => 'fr',
-		    'image' => 'nps3.jpg',
-		    'title' => 'Article N°3',
-		    'content' => 'Contenu article 3',
-		    'slug' => 'article-n-3',
-		    'summary' => 'Résumé article 3',
+		    'image' => 'guerre.jpg',
+		    'title' => 'Pétition « Ban Ki-moon : STOPPONS LA GUERRE EN SYRIE »',
+		    'content' => 'Nous relayons l’appel citoyen adressé au Secrétaire Général des Nations Unies Ban Ki-moon. Pour vous aussi signer cette pétition, cliquez ici.
+
+« Nous citoyens du monde, demandons aujourd’hui, l’arrêt immédiat des bombardements en Syrie et la protection des zones civiles, ainsi que l’aide d’urgence aux populations durement touchées par cette guerre génocidaire.
+Parce qu’il n’est plus humainement possible pour nous, d’assister en spectateurs impuissants au massacre de cette population. Nous nous unissons ce jour pour hurler notre désaccord et notre volonté de voir cesser de telles atrocités.
+Nous demandons à Monsieur Ban Ki-moon, Secrétaire Général de l’ONU, de porter notre message auprès des représentants des nations du monde, afin de faire stopper immédiatement les bombardement en Syrie. »',
+		    'slug' => 'petition-petitionban-ki-moon-stoppons-la-guerre-en-syrie',
+		    'summary' => 'Nous relayons l’appel citoyen adressé au Secrétaire Général des Nations Unies Ban Ki-moon. Pour vous aussi signer cette pétition, cliquez ici.',
 		    'card' => 'summary',
 		    'alt' => 'Yolo image representant alt',
 		    'meta_robots' => 0,
@@ -69,7 +116,7 @@ class PostsTableSeeder extends Seeder
 
 	    $post3->tags()->sync([1, 2]);
 
-	    $post3->views()->sync([4,5]);
+	    $post3->views()->sync([9, 10]);
 
 	    $post4 = Post::create([
 		    'published' => 1,
@@ -88,7 +135,7 @@ class PostsTableSeeder extends Seeder
 
 	    $post4->tags()->sync([4]);
 
-	    $post4->views()->sync([5,6]);
+	    $post4->views()->sync([11, 12]);
 
 	    $post5 = Post::create([
 		    'published' => 1,
@@ -108,7 +155,7 @@ class PostsTableSeeder extends Seeder
 
 	    $post5->tags()->sync([3, 5]);
 
-	    $post5->views()->sync([7]);
+	    $post5->views()->sync([13, 14]);
 
 	    $post6 = Post::create([
 		    'published' => 1,
@@ -126,6 +173,7 @@ class PostsTableSeeder extends Seeder
 	    ]);
 
 	    $post6->tags()->sync([6]);
+        $post6->views()->sync([14, 15]);
 
 	    $post7 = Post::create([
 		    'published' => 1,
@@ -143,6 +191,7 @@ class PostsTableSeeder extends Seeder
 	    ]);
 
 	    $post7->tags()->sync([6, 7]);
+        $post7->views()->sync([16, 17]);
 
 	    $post8 = Post::create([
 		    'published' => 1,
@@ -160,5 +209,6 @@ class PostsTableSeeder extends Seeder
 	    ]);
 
 	    $post8->tags()->sync([1, 2]);
+        $post8->views()->sync([18, 19]);
     }
 }

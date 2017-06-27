@@ -2,6 +2,7 @@
 
 return [
 
-    'welcome' => 'salam'
+    'welcome' => 'salam',
+    'about' => 'about-us'
 
 ];

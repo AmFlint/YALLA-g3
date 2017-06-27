@@ -20,8 +20,8 @@ class CreatePostSavesTable extends Migration
             $table->string('image', 50);
             $table->string('title', 100);
             $table->text('content');
-            $table->string('slug', 110);
-            $table->string('summary', 150);
+            $table->string('slug', 150);
+            $table->string('summary', 300);
             $table->integer('media_id')->unsigned()->index()->nullable();
             $table->string('card', 100);
             $table->string('meta_robots', 30)->nullable();
