@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
@@ -27,6 +28,12 @@ class Post extends Model
     public function views()
     {
         return $this->belongsToMany('App\View');
+    }
+
+    public function getMonth()
+    {
+        Carbon::setLocale('fr');
+        return $this->attributes['created_at']->format('F');
     }
 
     public function setSlugAttribute($value)
