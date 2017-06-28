@@ -128,6 +128,8 @@ Route::prefix(App::getLocale())->group(function() {
 
     Route::get(Lang::get('routes.actu'), ['as' => 'post_listing', 'uses' => 'MainController@listPost']);
 
+    Route::get(Lang::get('routes.partners'), ['as' => 'partners', 'uses' => 'MainController@partners']);
+
     Route::get(Lang::get('routes.actu') . '/{slug}', ['as' => 'post_single', 'uses' => 'MainController@viewPost'])
     ->where('slug', '[a-z0-9\-]+');
 

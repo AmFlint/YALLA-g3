@@ -9,7 +9,7 @@
 <div class="homePage">
 	<div class="row">
 		<div class="col-xs-12 col-md-12">
-			<h2 class="text-center">Un <span class="fontWeightBoldDubai">quotidien</span> Des <span class="fontWeightBoldDubai">objectifs Des projets</span></h2>
+			<h2 class="text-center">{!! Lang::get('quotidien.main_title') !!}</h2>
 		</div>
 	</div>
 </div>
@@ -20,20 +20,17 @@
 			<div class="text-center">
 				<img src="{{asset('img-layout/mortarboard.svg')}}" alt="">
 			</div>
-			<h2>Le droit à l’éducation</h2>
+			<h2>{{Lang::get('quotidien.education')}}</h2>
 			<ul>
-				<li>- Remettre l’enfant à niveau et le réhabituer au rythme scolaire</li>
-				<li>- Intégrer l’enfant au sein du système scolaire classique afin qu’il puisse obtenir un diplôme et lui donner toutes les chances de succès dans sa vie future</li>
-				<li>- De mars à juillet 2014, Yalla! a ouvert une école informelle accueillant 50 enfants syriens réfugiés dans le quartier de Karam Zeitoun à Beyrouth. L’équipe pédagogique, composée d’une directrice des études libanaise et de trois professeurs syriens réfugiés, ont remis à niveau 50 enfants syriens réfugiés en arabe, mathématiques et anglais.</li>
+				{!! Lang::get('quotidien.education_lis') !!}
 			</ul>
 		</div>
 		<div class="col-md-4">
 			<div class="text-center">
 				<img src="{{asset('img-layout/idea.svg')}}" alt="">
 			</div>
-			<h2>Un développement personel</h2>
-			<p>Permettre le développement de l’enfant dans un environnement sécurisé et adapté afin qu’il retrouve confiance en lui et panse ses blessures liées à l’exil et au conflit.
-			</p>				
+			<h2>{{Lang::get('quotidien.personal')}}</h2>
+			<p>{{Lang::get('quotidien.personal_lis')}}</p>
 		</div>
 	</div>
 	<div class="row quotidientRowMarginTop justify-content-around">
