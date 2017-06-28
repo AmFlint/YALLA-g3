@@ -33,7 +33,7 @@
     </div>
   </div>
 
-    <div class="row justify-content-around">
+    <div class="row justify-content-between">
     <div class="col-xs-12 col-md-4 col-lg-4 text-center column">
       <a href="#">
       <div class="square2">
