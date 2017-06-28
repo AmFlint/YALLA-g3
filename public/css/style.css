@@ -715,50 +715,51 @@ Responsive home page
 */
 
 @media screen and (max-width: 767px) {
-  .rectImgColorGreen,
-  .rectImgColorRed,
-  .rectImgColorYellow{
-    display: none;
-}
-.row{
-    margin: 0;
-}
-.rowMarginTopFix{
-    margin-top: 20px !important;
-}
-.rowMarginTopFixCallToAction{
-    margin-top: 20vh;
-}
-.alignContainerTextHomePageRight{
-    margin-left: 0%;
-    margin-top: 20px;
-    padding: 10px;
-}
 
-.alignContainerTextHomePageLeft{
-    margin-top: 20px;
-    padding: 10px;
-}
-.contentHomePage h3{
-    text-align: center;
-}
+    .rectImgColorGreen,
+      .rectImgColorRed,
+      .rectImgColorYellow{
+        display: none;
+    }
+    .row{
+        margin: 0;
+    }
+    .rowMarginTopFix{
+        margin-top: 20px !important;
+    }
+    .rowMarginTopFixCallToAction{
+        margin-top: 20vh;
+    }
+    .alignContainerTextHomePageRight{
+        margin-left: 0%;
+        margin-top: 20px;
+        padding: 10px;
+    }
 
-.contentHomePage p{
-    text-align: center;
-}
-.contentHomePage img{
-    border-radius: 0px;
-}
-.orderContentHomePage{
-    order: -1;
-}
-.contentHomePage div.row:nth-of-type(1) div:nth-of-type(1) img,
-.contentHomePage div.row:nth-of-type(2) div:nth-of-type(2) img,
-.contentHomePage div.row:nth-of-type(3) div:nth-of-type(1) img{
-    border-radius: 0px;
-    padding: 10px;
-    height: 300px;
-}
+    .alignContainerTextHomePageLeft{
+        margin-top: 20px;
+        padding: 10px;
+    }
+    .contentHomePage h3{
+        text-align: center;
+    }
+
+    .contentHomePage p{
+        text-align: center;
+    }
+    .contentHomePage img{
+        border-radius: 0px;
+    }
+    .orderContentHomePage{
+        order: -1;
+    }
+    .contentHomePage div.row:nth-of-type(1) div:nth-of-type(1) img,
+    .contentHomePage div.row:nth-of-type(2) div:nth-of-type(2) img,
+    .contentHomePage div.row:nth-of-type(3) div:nth-of-type(1) img{
+        border-radius: 0px;
+        padding: 10px;
+        height: 300px;
+    }
 }
 
 /* 
@@ -1094,26 +1095,40 @@ Page 404
 
 */
 
-.page404 h1{
-    margin-top: 7vh;
-    font-size: 3.5em;
-    color: #fa575d;
+#content404
+{
+    width: 50%;
+    margin: 2% auto;
+    text-align: center;
 }
 
-.page404 h3{
-    margin-top: 2vh;
-    font-size: 2.3em;
-    color: #fa575d;
+#content404 h1
+{
+    font-size: 10em;
+    font-family: Dubai, sans-serif;
+    color: #e03946;
 }
-
-.page404 p{
-    margin-top: 2vh;
+#content404 h2
+{
+    color: #e03946;
+    font-family: "Open Sans", sans-serif;
+    font-size: 2em;
+    margin-bottom: 5%;
+}
+#content404 p
+{
+    font-family: "Open Sans", sans-serif;
+    width: 60%;
+    margin: 0 auto 5% auto;
     font-size: 1.5em;
-    color: rgb(40,40,40);
 }
 
-.marginTop404{
-    margin-top: 20vh;
+@media screen and (min-width: 300px) and (max-width: 700px)
+{
+    #content404
+    {
+        width: 100%;
+    }
 }
 
 .button404{
