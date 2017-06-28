@@ -17,7 +17,7 @@
   <div class="contentHomePage">
     <div class="row">
       <div class="col-xs-12 col-md-5 offset-md-1 paddingFix">
-        <img src="{{asset('img-content/front/homePage1.jpg')}}" alt="">
+        <img src="{{asset('img-content/front/homePage1.jpg')}}" alt="" class="text-center">
         <div class="rectImgColorRed"></div>
       </div>
       <div class="col-xs-12 col-md-5 alignContainerTextHomePageRight desktopText">
