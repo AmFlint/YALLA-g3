@@ -1,5 +1,13 @@
 @extends('front.layout_front')
 @section('title', Lang::get('home.title'))
+@section('meta')
+    <meta name="description" content="{{Lang::get('home.meta_description')}}">
+    <meta property="og:title" content="{{Lang::get('home.title')}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{route('home')}}">
+    <meta property="og:image" content="{{asset('img-content/front/homePage1.jpg')}}">
+    <meta name="twitter:card" content="summary" />
+@endsection
 @section('body_class', 'site')
 @section('navClass', 'navWhite')
 @section('content')

@@ -15,5 +15,8 @@ return [
     'help' => 'Un petit geste à <span class="fontWeightBoldDubai">plusieurs</span> un grand pas <span class="fontWeightBoldDubai">ensemble</span>',
     'join_project' => 'Devenez <span class="fontWeightBoldDubai">membre</span> de ce projet!',
     'join_us' => 'Rejoignez nous !',
+
+    // meta
+    'meta_description' => 'Yalla! Campagne pour les enfants et pour la paix, ensemble pour l\'éducation',
     
 ];

@@ -21,7 +21,7 @@
                 <a class="nav-link" href="{{route('about')}}">{{Lang::get('nav.about')}}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">{{Lang::get('nav.quotidien')}}</a>
+                <a class="nav-link" href="{{route('quotidien')}}">{{Lang::get('nav.quotidien')}}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('post_listing')}}">{{Lang::get('nav.actualities')}}</a>
@@ -35,7 +35,7 @@
                         Fr
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">En</a>
+                        <a class="dropdown-item" href="">En</a>
                         <a class="dropdown-item" href="#">العربية</a>
                     </div>
                 </div>
