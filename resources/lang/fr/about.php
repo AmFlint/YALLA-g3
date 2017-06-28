@@ -13,5 +13,8 @@ return [
     'respect' => 'Respect de la coordination de l’aide humanitaire',
     'respect_p' => 'menée par les agences humanitaires des Nations Unies, afin de s’intégrer dans une action globale et parvenir ensemble à plus d’efficacité pour répondre aux besoins les plus prégnants.',
     'team' => 'L’équipe du Bureau',
+    //meta
+    'meta_description' => 'Yalla! est une association qui aide les enfants Syrien psychologiquement mais également à avoir accès à l’éducation',
+
 
 ];
