@@ -1,5 +1,13 @@
 @extends('front.layout_front')
 @section('title', Lang::get('about.title'))
+@section('meta')
+    <meta name="description" content="{{Lang::get('about.meta_description')}}">
+    <meta property="og:title" content="{{Lang::get('about.title')}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{route('about')}}">
+    <meta property="og:image" content="{{asset('img-content/front/quiSommesNous2.jpg')}}">
+    <meta name="twitter:card" content="summary" />
+@endsection
 @section('body_class', 'site')
 @section('nav')
     <div class="quiSommesNousBg">
