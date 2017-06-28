@@ -90,6 +90,16 @@ Route::prefix('admin')->group(function() {
             ->where('id', '[0-9]+');
     });
 
+    Route::prefix('messages')->group(function() {
+       Route::get('', ['as' => 'admin.messages', 'uses' => 'AdminController@listMessages']);
+
+       Route::get('{id}', ['as' => 'admin.message_details', 'uses' => 'AdminController@viewMessage'])
+       ->where('id', '[0-9]+');
+
+       Route::get('/delete/{id}', ['as' => 'admin.message_delete', 'uses' => 'AdminController@deleteMessage'])
+       ->where('id', '[0-9]+');
+    });
+
 });
 
 Route::get(Lang::get('routes.welcome'), function() {

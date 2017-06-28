@@ -75,6 +75,10 @@ button,
     text-transform: lowercase;
 }
 
+.backoffice a:hover {
+    color: #014c8c;
+}
+
 .btn-link,
 .btn-link:hover {
     color: #fff;
@@ -661,7 +665,7 @@ HomePage reste du contenu
 }
 
 .rowMarginTopFixCallToAction .card{
-    margin-left: 0 auto;
+    margin-left: 0;
 }
 .homePageCta{
     padding: 12px 80px 12px 80px;
@@ -1319,4 +1323,90 @@ Page Partners
     width: 5em;
     margin-top: 0em;
     margin-right: 3em ;
+}
+
+.artImg
+{
+    margin-bottom: 20%;
+}
+
+.artImg img
+{
+    width: 60%;
+    position: relative;
+}
+#actuContent
+{
+    position: absolute;
+    top: 42%;
+    left: 46%;
+    width: 50%;
+    background: white;
+    padding: 3%;
+    box-shadow: 0px 19px 67px -30px rgba(0,0,0,0.75);
+    border-bottom: 10px solid #ffc100;
+}
+
+
+
+#actuContent p
+{
+    color: #000;
+    width: 90%;
+    margin: 0 auto;
+    line-height: 150%;
+}
+#actuContent h3
+{
+    color: #000;
+    line-height: 150%;
+}
+
+#rectActuYellow
+{
+    background-color: #ffc100;
+    border-radius: 10px;
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    z-index: -1;
+    width: 42%;
+    height: 20em;
+}
+
+#rectActuRed
+{
+    background-color: #cd3d41;
+    border-radius: 10px;
+    position: absolute;
+    bottom: -5%;
+    left: 0;
+    z-index: -1;
+    width: 42%;
+    height: 20em;
+}
+
+@media screen and (max-width: 991px)
+{
+    #rectActuYellow, #rectActuRed
+    {
+        display: none;
+    }
+
+    .artImg img
+    {
+        width: 100%;
+    }
+
+    .artImg
+    {
+        margin-bottom: 10%;
+    }
+
+    #actuContent
+    {
+        width: 100%;
+        position: inherit;
+
+    }
 }

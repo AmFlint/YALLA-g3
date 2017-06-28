@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <meta name="robots" content="noindex, nofollow">
 </head>
-<body>
+<body class="backoffice">
     <main>
         <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 paddingFix backgroundNav">
             <nav>
@@ -30,7 +30,7 @@
                 <ul class="list-group">
                     <li class="list-group-item justify-content-between">
                         <a href="{{route('home')}}">
-                            <img src="logo.png" alt="">
+                            <img style="width: 130px;" src="{{asset('img-layout/logo.svg')}}" alt="">
                         </a>
                     </li>
                     <a class="decorationNone marginTopNavAside" href="{{route('admin.dashboard')}}">
@@ -56,6 +56,11 @@
                     <a class="decorationNone" href="{{route('admin.categories')}}">
                         <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('categories')}}">
                             Categories
+                        </li>
+                    </a>
+                    <a class="decorationNone" href="{{route('admin.messages')}}">
+                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('messages')}}">
+                            Messages
                         </li>
                     </a>
                 </ul>
