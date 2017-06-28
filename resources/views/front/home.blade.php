@@ -1,5 +1,13 @@
 @extends('front.layout_front')
 @section('title', Lang::get('home.title'))
+@section('meta')
+    <meta name="description" content="{{Lang::get('home.meta_description')}}">
+    <meta property="og:title" content="{{Lang::get('home.title')}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{route('home')}}">
+    <meta property="og:image" content="{{asset('img-content/front/homePage1.jpg')}}">
+    <meta name="twitter:card" content="summary" />
+@endsection
 @section('body_class', 'site')
 @section('navClass', 'navWhite')
 @section('content')
@@ -55,11 +63,11 @@
     <div class="col-md-12 offset-md-12">
       <h3 class="text-center">{{Lang::get('home.actualities')}}</h3>
     </div>
-    <div class="col-md-5 col-xs-12">
+    <div class="col-md-5 col-xs-12 text-center">
       <img src="{{asset('img-content/front/homePage4.jpg')}}" alt="">
       <h4 class="marginTopAddTag">Fest-noz solidaire le 29 octobre à Poullaouen</h4>
       <p class="marginTopAddTag">Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres</p>
-      <div>
+      <div class="">
         <button class="text-uppercase">{{Lang::get('home.read_article')}}</button>
       </div>
       <a class="marginTopAddTag hoverFix" href="">Voir tous nos articles</a>

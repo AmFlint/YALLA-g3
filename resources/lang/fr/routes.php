@@ -20,5 +20,5 @@ return [
     'contact' => 'contactez-nous',
     'terms' => 'mentions-legales',
     'quotidien' => 'notre-quotidien',
-
+    'partners' => 'partenaires'
 ];

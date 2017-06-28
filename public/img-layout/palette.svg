@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="454px" height="496px" viewBox="0 0 454 496" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>palette</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="palette">
+            <g id="Layer_1">
+                <g id="Group">
+                    <path d="M418.208,215.578 C371.233,162.049 322.208,149.605 322.208,90.578 C322.208,26.245 267.875,-23.089 172.779,11.257 C70.816,48.083 0.208,136.911 0.208,247.578 C0.208,384.544 111.241,495.578 248.208,495.578 C270.735,495.578 292.562,492.574 313.307,486.946 L313.301,486.92 C418.208,456.578 504.208,313.578 418.208,215.578 L418.208,215.578 Z M312.709,189.69 C298.208,208.245 258.041,197.397 242.539,171.143 C228.875,148.003 233.875,114.911 257.527,100.321 C271.237,91.864 289.318,100.186 292.758,115.923 C295.558,128.729 301.301,144.594 312.997,159.11 C320.125,167.96 319.707,180.736 312.709,189.69 L312.709,189.69 Z" id="Shape" fill="#E6BE94"></path>
+                    <circle id="Oval" fill="#FF4F19" cx="144.098" cy="135.688" r="47.89"></circle>
+                    <circle id="Oval" fill="#FFCD00" cx="96.098" cy="255.688" r="47.89"></circle>
+                    <circle id="Oval" fill="#00C37A" cx="151.879" cy="367.469" r="47.89"></circle>
+                    <circle id="Oval" fill="#4CD7FF" cx="272.098" cy="407.688" r="47.89"></circle>
+                    <circle id="Oval" fill="#009BCA" cx="360.098" cy="319.469" r="47.89"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

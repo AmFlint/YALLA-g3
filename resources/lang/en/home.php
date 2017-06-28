@@ -15,4 +15,7 @@ return [
     'help' => 'A little something <span class="fontWeightBoldDubai">from everyone</span>, a big step <span class="fontWeightBoldDubai">together</span>',
     'join_project' => 'Become a <span class="fontWeightBoldDubai">member</span> and join the project !',
     'join_us' => 'Join us !',
+    //meta
+    'meta_description' => 'Yalla! Join the campaign to support Syrian children and world peace',
+
 ];
