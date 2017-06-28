@@ -1123,6 +1123,30 @@ Page 404
     font-size: 1.5em;
 }
 
+.rectImgColorYellowDonate
+{
+    background-color: #FFC145;
+    border-radius: 10px;
+    position: absolute;
+    top: -5%;
+    right: -1%;
+    z-index: -2;
+    width: 96%;
+    height: 80%;
+}
+
+.rectImgColorGreenDonate
+{
+    background-color: #30d08d;
+    border-radius: 10px;
+    position: absolute;
+    top: 6%;
+    left: 16%;
+    z-index: -2;
+    width: 62%;
+    height: 100%;
+}
+
 @media screen and (min-width: 300px) and (max-width: 700px)
 {
     #content404
