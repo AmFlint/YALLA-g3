@@ -6,3 +6,10 @@ function changeLocale($locale)
     $url[1] = $locale;
     return implode('/', $url);
 }
+
+function getCurrentNavPosition($url)
+{
+    if ($url == Route::currentRouteName()) {
+        return 'active';
+    }
+}

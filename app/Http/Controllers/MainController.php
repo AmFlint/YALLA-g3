@@ -53,4 +53,9 @@ class MainController extends Controller
     {
         return view('front.terms');
     }
+
+    public function quotidien()
+    {
+        return view('front.quotidien');
+    }
 }

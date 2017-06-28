@@ -12,6 +12,7 @@ use App\Tag;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
@@ -52,6 +53,8 @@ class AdminController extends Controller
             $propertiesMedia['url'] = $imageMedia; // set url link for image
             $media = Media::create($propertiesMedia); // create Media
         } else if ($request->url) { // if admin chose to upload image/youtube video from external site
+            $propertiesMedia = $request->all();
+            $propertiesMedia['url'] = $this->getEmbedUrl($propertiesMedia['url']);
             $media = Media::create($request->all()); // create media
         }
         $props = $request->all();
@@ -148,7 +151,7 @@ class AdminController extends Controller
             $propertiesMedia['url'] = $imageMedia; // set url link for image
         } else if ($request->url) {
             $propertiesMedia['type'] = $request->type; // set type to image (for future html structure)
-            $propertiesMedia['url'] = $request->url;
+            $propertiesMedia['url'] = $this->getEmbedUrl($request->url);
         }
         // If Article already has a relationship with a media
         if ($post->media && isset($propertiesMedia)) {

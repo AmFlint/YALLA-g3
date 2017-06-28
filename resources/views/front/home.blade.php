@@ -1,6 +1,7 @@
 @extends('front.layout_front')
 @section('title', Lang::get('home.title'))
 @section('body_class', 'site')
+@section('navClass', 'navWhite')
 @section('content')
   <!-- header -->
   <video src="{{asset('video/backgroundHomePage.mp4')}}" autoplay="1" loop="1"></video>

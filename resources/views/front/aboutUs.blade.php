@@ -2,8 +2,9 @@
 @section('title', Lang::get('about.title'))
 @section('body_class', 'site')
 @section('nav')
-<div class="quiSommesNousBg">
-	@endsection
+    <div class="quiSommesNousBg">
+@endsection
+@section('navClass', 'navWhite')
 	@section('content')
 	<!-- Début du contenu au dessus de la ligne de flotaison -->
 	<div class="homePage">
