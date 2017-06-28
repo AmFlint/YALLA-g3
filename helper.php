@@ -9,7 +9,9 @@ function changeLocale($locale)
 
 function getCurrentNavPosition($url)
 {
-    if ($url == Route::currentRouteName()) {
+    if (str_contains($_SERVER['REQUEST_URI'], $url)) {
+        return 'active';
+    } elseif ($_SERVER['REQUEST_URI'] == '/admin' && $url == 'dashboard') {
         return 'active';
     }
 }

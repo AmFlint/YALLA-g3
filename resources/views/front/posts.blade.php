@@ -1,5 +1,4 @@
 @extends('admin.layout_admin')
-
 @section('content')
     <div>
         <div class="col-xs-10 col-md-10 col-lg-10 col-xl-10 offset-md-1 alignTop ">

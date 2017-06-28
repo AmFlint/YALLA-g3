@@ -5,7 +5,7 @@
     <title>Admin</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-
+    <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
     <main>
@@ -29,30 +29,32 @@
             <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 paddingFix">
                 <ul class="list-group">
                     <li class="list-group-item justify-content-between">
-                        <img src="logo.png" alt="">
+                        <a href="{{route('home')}}">
+                            <img src="logo.png" alt="">
+                        </a>
                     </li>
                     <a class="decorationNone marginTopNavAside" href="{{route('admin.dashboard')}}">
-                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('admin.dashboard')}}">
+                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('dashboard')}}">
                             Dashboard
                         </li>
                     </a>
                     <a class="decorationNone" href="{{route('admin.history')}}">
-                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('admin.history')}}">
+                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('history')}}">
                             Historique
                         </li>
                     </a>
                     <a class="decorationNone" href="{{route('admin.posts')}}">
-                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('admin.posts')}}">
+                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('posts')}}">
                             Posts
                         </li>
                     </a>
                     <a class="decorationNone" href="{{route('admin.tags')}}">
-                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('admin.tags')}}">
+                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('tags')}}">
                             Tags
                         </li>
                     </a>
                     <a class="decorationNone" href="{{route('admin.categories')}}">
-                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('admin.categories')}}">
+                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('categories')}}">
                             Categories
                         </li>
                     </a>

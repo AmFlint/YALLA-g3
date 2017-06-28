@@ -87,6 +87,13 @@ return [
     'unique'               => 'The :attribute has already been taken.',
     'uploaded'             => 'The :attribute failed to upload.',
     'url'                  => 'The :attribute format is invalid.',
+    'name_required' => 'Please do indicate a name',
+    'name_max' => 'Your name must be less than 100 characters',
+    'email' => 'Please do indicate a valid email address',
+    'email_required' => 'Please do write your email address',
+    'email_max' => 'The email address must be less than 150 characters',
+    'content_required' => 'Please do write a message',
+    'thanks' => 'Your message has been sent and one of our administrator will read it as soon as possible, thank you very much for your time and attention',
 
     /*
     |--------------------------------------------------------------------------
