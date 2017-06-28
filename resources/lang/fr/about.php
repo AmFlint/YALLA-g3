@@ -7,7 +7,7 @@ return [
     'volunteer' => 'Les bénévoles de Yalla ! à Paris et sur le terrain ont préalablement adopté les valeurs de l’association et agissent conformément à ses principes. Ils rapportent leurs activités de façon régulière au Bureau qui contrôle la conformité des actions développées sur le terrain à la mission et aux valeurs que s’est données Yalla !',
     'strategy' => 'Notre Stratégie',
     'benefit' => 'Intégration des bénéficiaires',
-    'benefit_p' => '>et de la communauté d’accueil à tous les stades de développement du projet afin de garantir une compréhension mutuelle des enjeux et objectifs du projet, et contribuer au succès de la mission.',
+    'benefit_p' => 'et de la communauté d’accueil à tous les stades de développement du projet afin de garantir une compréhension mutuelle des enjeux et objectifs du projet, et contribuer au succès de la mission.',
     'creation' => 'Création d’un lien dynamique entre les donateurs et les bénéficiaires',
     'creation_p' => 'afin de créer une solidarité de proximité et garantir une visibilité sur la destination et l’impact des dons quels que soient leurs montants, tout en faisant parvenir aux bénéficiaires un message de soutien concret de la part de la société civile solidaire.',
     'respect' => 'Respect de la coordination de l’aide humanitaire',

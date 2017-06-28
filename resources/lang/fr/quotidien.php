@@ -2,6 +2,7 @@
 
 return [
     'title' => 'Notre quotidien à Yalla!',
+    'meta_description' => 'Notre quotidien: nous battre pour le droit à l\'éducation et le développement des enfants',
     'main_title' => 'Un <span class="fontWeightBoldDubai">quotidien</span> Des <span class="fontWeightBoldDubai">objectifs Des projets</span>',
     'education' => 'Le droit à l’éducation',
     'education_lis' => '<li>- Remettre l’enfant à niveau et le réhabituer au rythme scolaire</li>

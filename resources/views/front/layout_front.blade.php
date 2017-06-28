@@ -14,6 +14,7 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    {{--<a class="nav-link" href="{{route('home')}}"><img src="{{asset('img-layout/logo.svg')}}" alt="Logo" id="Logo"></a>--}}
     <div class="@yield('navClass') collapse navbar-collapse text-uppercase justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -33,17 +34,18 @@
             </li>
             <li class="nav-item">
                 <div class="dropdown dropdownStyleFix">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Fr
+                    <button class="btn btn-secondary dropdown-toggle" style="color: #000;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ucfirst(App::getLocale())}}
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="">En</a>
-                        <a class="dropdown-item" href="#">العربية</a>
+                        <a class="dropdown-item" href="/en">En</a>
+                        <a class="dropdown-item" href="/ar">العربية</a>
+                        <a class="dropdown-item" href="/fr">Fr</a>
                     </div>
                 </div>
             </li>
             <li class="nav-item">
-                <button>{{Lang::get('home.donate')}}</button>
+                <button><a class="btn-link" href="{{route('donate')}}">{{Lang::get('home.donate')}}</a></button>
             </li>
         </ul>
     </div>

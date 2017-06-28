@@ -23,7 +23,7 @@ Vous pourrez y apprécier les talents des musiciens et chanteurs, Marie-Hélène
 
 Cette fête traditionnelle bretonne où règnent la bonne humeur, la convivialité, la gaieté fait écho au dialogue interculturel mené par Yalla ! Pour les Enfants qui entend réunir au travers de projets culturels communs la communauté d’accueil libanaise et la communauté syrienne en exil pour construire une paix durable. Avec la participation active de : Maryam Samaan, Cyrille Flejou, AFPS Centre Bretagne, la mairie de Poullaouen, Le Télégramme, Ouest-France, Radio Montagne Noire, Radio Kreiz Breizh, Radio Bleu Breizh Izel',
             'slug' => 'fest-noz-solidaire-le-29-octobre-a-poullaouen',
-            'summary' => 'Yalla!',
+            'summary' => 'Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres',
             'media_id' => 1,
             'card' => 'summary',
             'meta_robots' => 0,

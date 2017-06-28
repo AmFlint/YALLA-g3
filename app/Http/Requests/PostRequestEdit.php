@@ -26,7 +26,7 @@ class PostRequestEdit extends FormRequest
         return [
             'title' => 'required|max:100',
             'category_id' => 'required',
-            'summary' => 'required|max:150',
+            'summary' => 'required|max:300',
             'card' => 'required',
             'locale' => 'required'
         ];
@@ -38,7 +38,7 @@ class PostRequestEdit extends FormRequest
             'title.required' => 'Vous devez indiquer un titre pour l\'Article.',
             'category_id.required'  => 'Vous devez associer une catégorie à votre article',
             'summary.required' => 'Vous devez indiquer un résumé de l\'Article',
-            'summary.max' => 'Votre résumé ne doit pas comprendre plus de 150 caractères.',
+            'summary.max' => 'Votre résumé ne doit pas comprendre plus de 300 caractères.',
             'title.max' => 'Votre titre ne doit pas comprendre plus de 100 caractères.'
         ];
     }
