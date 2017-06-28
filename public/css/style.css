@@ -25,6 +25,27 @@ Déclaration des classes globale
 background-color: rgb(255,90,90);
 }
 
+@font-face {
+    font-family: Dubai-Bold;
+    src: url('../font/Dubai-Bold.ttf');
+    font-weight: 600;
+}
+@font-face {
+    font-family: Dubai-Light;
+    src: url('../font/Dubai-Light.ttf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: Dubai-Medium;
+    src: url('../font/Dubai-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: Dubai-Regular;
+    src: url('../font/Dubai-Regular.ttf');
+    font-weight: 400;
+}
+
 body{
     overflow-x: hidden;
 }
@@ -151,7 +172,7 @@ nav ul{
 }
 
 .nav-link{
-    color: white !important;
+    color: white;
 }
 
 .backgroundNav{
@@ -435,34 +456,24 @@ Home page
 
 */
 
-@font-face {
-    font-family: Dubai-Bold;
-    src: url('../font/Dubai-Bold.ttf');
-    font-weight: 600;
-}
-@font-face {
-    font-family: Dubai-Light;
-    src: url('../font/Dubai-Light.ttf');
-    font-weight: 300;
-}
-@font-face {
-    font-family: Dubai-Medium;
-    src: url('../font/Dubai-Medium.ttf');
-    font-weight: 500;
-}
-@font-face {
-    font-family: Dubai-Regular;
-    src: url('../font/Dubai-Regular.ttf');
-    font-weight: 400;
-}
 
 .fontWeightBoldDubai{
     font-weight: 600;
 }
 
 /* 
+
 Navbar
+
 */
+
+.ctaHome{
+    padding: 15px 80px 15px 80px !important;
+}
+
+.navBlack{
+    color: black;
+}
 
 .navbar{
     font-size: 0.95em;
@@ -481,12 +492,37 @@ Navbar
 
 .dropdownStyleFix button{
     background-color: transparent;
-    color: white;
+    color: rgb(70,70,70);
     border: none;
 }
 .navbar-brand{
     width: 80px;
 }
+
+/* 
+
+Footer
+
+ */
+
+footer{
+    margin-top: 10vh;
+    padding-bottom: 20px;
+}
+
+footer a{
+    color: rgb(40,40,40);
+    transition: 0.3s;
+}
+
+footer a:hover{
+    color: rgb(255,90,90);
+}
+
+.linkMarginBottomFooter{
+    margin-top: 12px;
+}
+
 
 /* 
 HomePage premier 100vh
@@ -993,4 +1029,85 @@ Notre stratégie
 .borderArticle
 {
     border-bottom: 1px solid lightgrey;
+}
+
+/* 
+
+Page Contactez nous
+
+*/
+
+
+.btn-width {
+  width: 80%;
+  height: 50%;
+}
+
+.btn-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.btn-legal {
+  border: none;
+}
+
+.btn-legal:hover {
+  background-color: transparent;
+}
+
+.alignTitleContact{
+    margin-top: 6vh;
+}
+
+.formContact textarea,
+.formContact input{
+    padding: 10px 5px 10px 0px;
+}
+
+.formContact label[for="exampleInputPassword1"],
+.formContact label[for="exampleTextarea"]{
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 6vh;
+}
+
+/* 
+
+Page 404 
+
+*/
+
+.page404 h1{
+    margin-top: 7vh;
+    font-size: 3.5em;
+    color: #fa575d;
+}
+
+.page404 h3{
+    margin-top: 2vh;
+    font-size: 2.3em;
+    color: #fa575d;
+}
+
+.page404 p{
+    margin-top: 2vh;
+    font-size: 1.5em;
+    color: rgb(40,40,40);
+}
+
+.marginTop404{
+    margin-top: 20vh;
+}
+
+.button404{
+    padding: 15px 70px 15px 70px;
 }

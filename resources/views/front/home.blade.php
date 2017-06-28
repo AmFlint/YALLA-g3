@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-xs-12 col-md-12">
         <h2 class="text-center">{!! Lang::get('home.school') !!}</h2>
-        <button>{{Lang::get('home.donate')}}</button>
+        <button class="ctaHome">{{Lang::get('home.donate')}}</button>
       </div>
     </div>
   </div>

@@ -2,22 +2,22 @@
 
 @section('content')
     <link rel="stylesheet" href="{{asset('css/screen-2.css')}}">
-    <h1 class="h1 text-center">Contactez-nous !</h1>
-  <form>
+    <h1 class="h1 text-center alignTitleContact">Contactez-nous !</h1>
+  <form class="formContact">
     <div class="row">
-      <div class="col-md-8 offset-md-2">
+      <div class="col-md-8 offset-md-2 col-xs-10">
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label for="exampleTextarea">Chère Yalla! pour les enfants,</label>
+              <label for="exampleTextarea">On vous écoute :</label>
               <textarea class="form-control border-top-0 border-left-0 border-right-0" id="exampleTextarea" rows="3" placeholder="Votre question, idée, mot doux.."></textarea>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6 col-xs-8">
             <div class="form-group">
-              <label for="exampleInputPassword1">Bien à vous,</label>
+              <label for="exampleInputPassword1">Bien à vous :</label>
               <input type="password" class="form-control border-top-0 border-left-0 border-right-0" id="exampleInputPassword1" placeholder="Votre nom">
             </div>
 
