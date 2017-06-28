@@ -21,7 +21,7 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-5 offset-md-1">
 			<div class="containerImgPageWhoAreYou displayNone">
-				<img class="imgRotatePageWhoAreYou positionnement" src="" alt="">
+				<img class="imgRotatePageWhoAreYou positionnement" src="{{asset('img-content/front/quiSommesNous9.png')}}" alt="">
 				<div class="rectImgColorRed"></div>
 			</div>
 		</div>

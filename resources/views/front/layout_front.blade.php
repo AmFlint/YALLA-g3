@@ -50,10 +50,8 @@
 
 <footer>
     <div class="row">
-        <div class="col-xs-1 offset-md-5 col-md-1">
+        <div class="col-xs-2 offset-md-5 text-center col-md-2">
             <img src="{{asset('img-layout/twitter.svg')}}" alt="">
-        </div>
-        <div class="col-xs-1 col-md-1">
             <img src="{{asset('img-layout/facebook.svg')}}" alt="">
         </div>
     </div>
