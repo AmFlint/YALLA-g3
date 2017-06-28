@@ -790,7 +790,6 @@ page qui sommes nous ?
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: #D8D8D8;
     z-index: 3;
     border-radius: 10px;
 }
