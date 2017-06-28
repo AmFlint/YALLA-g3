@@ -157,6 +157,67 @@ img {
     color: inherit;
 }
 
+/* PAGE ARTICLE */
+
+.h1-article {
+    line-height: 150%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.img-center {
+    display: block;
+    margin: 0 auto;
+}
+
+
+.text-article {
+    width: 90%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.tags {
+    margin-top: 20%;
+}
+
+.date-article {
+    margin-top: 20%;
+}
+
+.btn-event {
+    margin-bottom: 10%;
+}
+
+@media screen and (max-width: 770px) {
+    .text-article {
+        width: 100%;
+        padding: 8%;
+    }
+
+    .h1-article {
+        text-align: center;
+        margin-bottom: 13%;
+    }
+
+    .tags {
+        margin-top: 5%;
+    }
+
+    .inline {
+        display: inline-block;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .btn-event {
+        margin-left: 5%;
+        margin-bottom: 0;
+    }
+}
+
 .pointer{
     cursor: pointer;
 }

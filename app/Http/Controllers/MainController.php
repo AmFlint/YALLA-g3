@@ -30,6 +30,7 @@ class MainController extends Controller
         if (!$post) {
             dd('Need to abort(404) in the future');
         }
+        return view('front.article_single', compact('post'));
     }
 
     public function listPost()
@@ -57,5 +58,10 @@ class MainController extends Controller
     public function quotidien()
     {
         return view('front.quotidien');
+    }
+
+    public function partners()
+    {
+        return view('front.partners');
     }
 }
