@@ -1294,3 +1294,11 @@ Page Partners
 .pagePartners img{
     width: auto;
 }
+
+#Logo
+{
+    max-width: none;
+    width: 6em;
+    margin-top: -0.5em;
+    margin-right: 3em ;
+}
