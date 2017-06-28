@@ -32,27 +32,27 @@
                         <img src="logo.png" alt="">
                     </li>
                     <a class="decorationNone marginTopNavAside" href="{{route('admin.dashboard')}}">
-                        <li class="decorationNone list-group-item justify-content-between active">
+                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('admin.dashboard')}}">
                             Dashboard
                         </li>
                     </a>
                     <a class="decorationNone" href="{{route('admin.history')}}">
-                        <li class="decorationNone list-group-item justify-content-between">
+                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('admin.history')}}">
                             Historique
                         </li>
                     </a>
                     <a class="decorationNone" href="{{route('admin.posts')}}">
-                        <li class="decorationNone list-group-item justify-content-between">
+                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('admin.posts')}}">
                             Posts
                         </li>
                     </a>
                     <a class="decorationNone" href="{{route('admin.tags')}}">
-                        <li class="decorationNone list-group-item justify-content-between">
+                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('admin.tags')}}">
                             Tags
                         </li>
                     </a>
                     <a class="decorationNone" href="{{route('admin.categories')}}">
-                        <li class="decorationNone list-group-item justify-content-between">
+                        <li class="decorationNone list-group-item justify-content-between {{getCurrentNavPosition('admin.categories')}}">
                             Categories
                         </li>
                     </a>

@@ -86,7 +86,7 @@ app.controller('TacosCtrl', function ($scope, $http)
         }
     };
     // initiating language selected option
-    $scope.languages = $scope.locales[$scope.getLocale(post)];
+    $scope.languages = $scope.locales[$scope.getLocale($scope.post)];
     // intiating category selected option in admin/posts/create.blade.php
     $scope.category_id = $scope.categories[0];
     // add a tag in DataBase based on language selected --> AJAX call to admin api

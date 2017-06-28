@@ -26,4 +26,9 @@ class Controller extends BaseController
     {
         dd($locale);
     }
+
+    protected function getEmbedUrl($url)
+    {
+        return str_replace('watch?v=', 'embed/', $url);
+    }
 }
