@@ -1270,3 +1270,27 @@ Page quotidien
     height: 90px;
     margin-bottom: 5vh;
 }
+
+/* 
+
+Page Partners 
+
+*/
+
+.pagePartners{
+    margin-top: 10vh;
+}
+
+.pagePartners h1,
+.pagePartners h2{
+    color: #FA575D;
+}
+
+.pagePartners h2{
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+.pagePartners img{
+    width: auto;
+}
