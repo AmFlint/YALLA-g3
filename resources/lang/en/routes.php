@@ -19,5 +19,6 @@ return [
     'donate' => 'donate',
     'contact' => 'contact-us',
     'terms' => 'terms-of-use',
+    'quotidien' => 'day-to-day-efforts',
 
 ];

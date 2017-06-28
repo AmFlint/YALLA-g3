@@ -27,7 +27,7 @@
             <tbody>
                 <tr>
                     <td>{{$post->id}}</td>
-                    <td>
+                    <td width="30%">
                         <a href="{{route('admin.post_details', $post->id)}}">
                             {{$post->title}}
                         </a>

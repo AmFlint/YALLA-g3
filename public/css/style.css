@@ -3,7 +3,6 @@
 Déclaration des classes globale 
 
 */
-
 ::selection {
     background-color: #1a1c1f;
     color: #fff;
@@ -24,6 +23,16 @@ Déclaration des classes globale
 {
 background-color: rgb(255,90,90);
 }
+
+
+@media screen and (max-width: 400px) {
+    ::-webkit-scrollbar
+{
+    width: 0px;
+    height: 0px; /* for horizontal scrollbars */
+}
+}
+
 
 @font-face {
     font-family: Dubai-Bold;
@@ -110,7 +119,6 @@ h1.h1 {
 }
 
 img {
-    display: block;
     max-width: 100%;
     margin: 0 auto;
 }
@@ -173,6 +181,11 @@ nav ul{
 
 .nav-link{
     color: white;
+}
+
+.navbar-light .navWhite .navbar-nav .nav-link,
+.navbar-light .navWhite.navbar-nav .nav-link:hover{
+    color: #fff;
 }
 
 .backgroundNav{
@@ -782,7 +795,6 @@ page qui sommes nous ?
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: #D8D8D8;
     z-index: 3;
     border-radius: 10px;
 }
@@ -1147,3 +1159,23 @@ Page 404
     }
 }
 
+.button404{
+    padding: 15px 70px 15px 70px;
+}
+
+ /*
+
+CONNEXION
+
+*/
+
+.h1-co {
+  margin-top: 10vh;
+  margin-bottom: 5%;
+  text-transform: uppercase;
+  font-size: 2.250em;
+}
+
+.btn-co {
+  margin-top: 10%;
+}

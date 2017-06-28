@@ -2,8 +2,9 @@
 @section('title', Lang::get('about.title'))
 @section('body_class', 'site')
 @section('nav')
-<div class="quiSommesNousBg">
-	@endsection
+    <div class="quiSommesNousBg">
+@endsection
+@section('navClass', 'navWhite')
 	@section('content')
 	<!-- Début du contenu au dessus de la ligne de flotaison -->
 	<div class="homePage">
@@ -20,7 +21,7 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-5 offset-md-1">
 			<div class="containerImgPageWhoAreYou displayNone">
-				<img class="imgRotatePageWhoAreYou positionnement" src="" alt="">
+				<img class="imgRotatePageWhoAreYou positionnement" src="{{asset('img-content/front/quiSommesNous9.png')}}" alt="">
 				<div class="rectImgColorRed"></div>
 			</div>
 		</div>

@@ -15,7 +15,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="{{route('home')}}"><img src="{{asset('img-layout/logo.png')}}" alt="Logo"></a>
-    <div class="navBlack collapse navbar-collapse text-uppercase justify-content-end" id="navbarNavDropdown">
+    <div class="@yield('navClass') collapse navbar-collapse text-uppercase justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="{{route('about')}}">{{Lang::get('nav.about')}}</a>
@@ -50,10 +50,8 @@
 
 <footer>
     <div class="row">
-        <div class="col-xs-1 offset-md-5 col-md-1">
+        <div class="col-xs-2 offset-md-5 text-center col-md-2">
             <img src="{{asset('img-layout/twitter.svg')}}" alt="">
-        </div>
-        <div class="col-xs-1 col-md-1">
             <img src="{{asset('img-layout/facebook.svg')}}" alt="">
         </div>
     </div>
@@ -64,7 +62,8 @@
         <a href="">13, rue René Villerme – 75011 PARIS</a>
     </div>
     <div class="col-xs-12 col-md-12 text-center linkMarginBottomFooter">
-        <a href="">Mentions légales | Nous contacter</a>
+        <a href="{{route('terms')}}">Mentions légales</a> |
+        <a href="{{route('contact')}}">Nous contacter</a>
     </div>
 </footer>
 <!-- jQuery first, then Tether, then Bootstrap JS. -->

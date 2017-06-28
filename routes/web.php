@@ -120,6 +120,8 @@ Route::prefix(App::getLocale())->group(function() {
 
     Route::get(Lang::get('routes.about'), ['as' => 'about', 'uses' => 'MainController@about']);
 
+    Route::get(Lang::get('routes.quotidien'), ['as' => 'quotidien', 'uses' => 'MainController@quotidien']);
+
     Route::get(Lang::get('routes.welcome'), function() {
         return 'tu es sur la page' . App::getLocale();
     });
