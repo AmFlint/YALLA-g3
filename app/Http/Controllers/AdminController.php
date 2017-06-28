@@ -6,6 +6,7 @@ use App\Category;
 use App\Http\Requests\PostRequest;
 use App\Http\Requests\PostRequestEdit;
 use App\Media;
+use App\Message;
 use App\Post;
 use App\PostSave;
 use App\Tag;
@@ -424,5 +425,32 @@ class AdminController extends Controller
             $post->update(["view" => 0]);
         }
         return redirect(route('admin.dashboard'));
+    }
+
+    public function listMessages()
+    {
+        $messages = Message::all();
+        return view ('admin.messages.listing', compact('messages'));
+    }
+
+    public function viewMessage($id)
+    {
+        $message = Message::find($id);
+        if (!$this->checkIfEntityExists($message, 'Impossible de voir le message: l\'id demandée n\'existe pas.', 'danger')) {
+            return redirect()->route('admin.messages');
+        }
+        return view('admin.messages.details', compact('message'));
+    }
+
+    public function deleteMessage($id)
+    {
+        $message = Message::find($id);
+        if (!$this->checkIfEntityExists($message, 'Impossible de supprimer le message: l\'id demandée n\'existe pas.', 'danger')) {
+            return redirect()->route('admin.messages');
+        }
+        $message->delete();
+        Session::flash('error', 'Le message a bien été supprimé, bravo.');
+        Session::flash('errorClass', 'success');
+        return redirect()->route('admin.messages');
     }
 }
