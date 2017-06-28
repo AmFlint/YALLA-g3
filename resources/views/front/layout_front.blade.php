@@ -14,12 +14,9 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    {{--<a class="nav-link" href="{{route('home')}}"><img src="{{asset('img-layout/logo.svg')}}" alt="Logo" id="Logo"></a>--}}
+    <a class="navbar-brand" href="{{route('home')}}"><img src="{{asset('img-layout/logo.svg')}}" alt="Logo" id="Logo"></a>
     <div class="@yield('navClass') collapse navbar-collapse text-uppercase justify-content-end" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('home')}}"><img src="{{asset('img-layout/logo.svg')}}" alt="Logo" id="Logo"></a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('about')}}">{{Lang::get('nav.about')}}</a>
             </li>

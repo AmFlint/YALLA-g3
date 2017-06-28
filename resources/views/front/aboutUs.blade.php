@@ -18,8 +18,7 @@
 	<div class="homePage container">
 		<div class="row">
 			<div class="col-xs-12 col-md-8 offset-md-2">
-				<h2 class="text-center"><span class="fontWeightBoldDubai">{{Lang::get('about.title')}}</span></h2>
-				<p>{{Lang::get('about.heading_p')}}</p>
+				<h2 class="text-center alignTopTitleAboutUS"><span class="fontWeightBoldDubai">Yalla !</span> qui sommes nous ?</h2>
 			</div>
 		</div>
 	</div>
@@ -29,11 +28,11 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-5 offset-md-1">
 			<div class="containerImgPageWhoAreYou displayNone">
-				{{--<img class="imgRotatePageWhoAreYou positionnement" src="{{asset('img-content/front/quiSommesNous9.png')}}" alt="">--}}
+				<img class="imgRotatePageWhoAreYou positionnement" src="{{asset('img-content/front/quiSommesNous9.jpg')}}" alt="">
 				<div class="rectImgColorRed"></div>
 			</div>
 		</div>
-		<div class="col-xs-12 col-md-5">
+		<div class="col-xs-12 offset-md-1 col-md-4">
 			<p>{{Lang::get('about.composition')}}</p>
 		</div>				
 	</div>
@@ -42,7 +41,7 @@
 			<p class="">{{Lang::get('about.volunteer')}}</p>
 		</div>
 		<div class="col-xs-12 col-md-5 offset-md-1">
-			<div>
+			<div class="responsiveAlignHomePageImg">
 				<img class="positionnement widthImgSectionTwo" src="{{asset('img-content/front/quiSommesNous2.jpg')}}" alt="">
 				<div class="rectImgColorPink"></div>
 			</div>
@@ -50,7 +49,9 @@
 	</div>
 	<div>
 		<div class="bannerPageWhoAreYouFirstPosition">
-			<div class="bannerPageWhoAreYouFirst"></div>
+			<div class="bannerPageWhoAreYouFirst text-center">
+				<p class="marginTopBannerAboutUs"><span class="fontWeightBoldDubai">L'éducation</span> est un droit pour <span class="fontWeightBoldDubai">tous</span></p>
+			</div>
 			<div class="rectImgColorYellowBanner"></div>
 		</div>
 	</div>
