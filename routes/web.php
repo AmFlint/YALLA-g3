@@ -30,6 +30,8 @@ Route::prefix('admin')->group(function() {
     Route::get('rollback/{id}', ['as' => 'admin.rollback', 'uses' => 'AdminController@rollBackPost'])
     ->where('id', '[0-9]+');
 
+    Route::get('migrate', ['as' => 'admin.migrate_views', 'uses' => 'AdminController@migrateViews']);
+
     Route::prefix('posts')->group(function() {
 
         Route::get('/', ['as' => 'admin.posts', 'uses' => 'AdminController@listPosts']);
