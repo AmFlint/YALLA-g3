@@ -57,7 +57,7 @@ class ApiController extends Controller
             $to_send[] = $view;
             $to_send[count($to_send) - 1]['month'] = $view->created_at->format('F');
         }
-        $to_send[] = ['views' => $post->view, "month" => $post->created_at->format('F')];
+        $to_send[] = ['views' => $post->view, "month" => Carbon::now()->format('F')];
         // send different month's count views for concerned post
         return response($to_send);
     }

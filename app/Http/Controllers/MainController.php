@@ -30,6 +30,7 @@ class MainController extends Controller
         if (!$post) {
             dd('Need to abort(404) in the future');
         }
+        $post->increment('view');
         return view('front.article_single', compact('post'));
     }
 

@@ -9,6 +9,7 @@ use App\Media;
 use App\Post;
 use App\PostSave;
 use App\Tag;
+use App\View;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -198,7 +199,7 @@ class AdminController extends Controller
         if (!$this->checkIfEntityExists($post, 'Impossible de prévisualiser: l\'article demandé n\'existe pas !', 'danger')) {
             return redirect(route('admin.posts'));
         }
-        return view('admin.posts.previsualize', compact('post'));
+        return view('front.article_single', compact('post'));
     }
 
     public function history()
@@ -412,5 +413,16 @@ class AdminController extends Controller
     public function login()
     {
         return view('front.connexion');
+    }
+
+    public function migrateViews()
+    {
+        $posts = Post::all();
+        foreach($posts as $post) {
+            $view = View::create(['views' => $post->view]);
+            $post->views()->attach($view->id);
+            $post->update(["view" => 0]);
+        }
+        return redirect(route('admin.dashboard'));
     }
 }

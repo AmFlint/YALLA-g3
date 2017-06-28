@@ -1,5 +1,5 @@
 @extends('front.layout_front')
-@section('title', Lang::get('about.title'))
+@section('title', Lang::get('quotidien.title'))
 @section('body_class', 'site')
 @section('nav')
     <div class="backgroundPageNotreQuotidien">
@@ -38,15 +38,15 @@
 			<div class="text-center">
 				<img src="{{asset('img-layout/palette.svg')}}" alt="">
 			</div>
-			<h2>Plusieurs ateliers artistiques</h2>
-			<p>Les enfants ont bénéficié d’activités psycho-pédagogiques, animés par des bénévoles syriens, qui leur ont permis de se développer dans un environnement serein. Chaque jour, des ateliers de dessins et de chants ont participé à leur épanouissement.</p>
+			<h2>{{Lang::get('quotidien.artistic')}}</h2>
+			<p>{{Lang::get('quotidien.artistic_p')}}</p>
 		</div>
 		<div class="col-md-4">
 			<div class="text-center">
 				<img src="{{asset('img-layout/ping-pong.svg')}}" alt="">
 			</div>
-			<h2>Des activités sportives</h2>
-			<p>Les enfants bénéficient de plusieurs activités sportive, animés par nos bénévoles, ce qui leur permet de se défouler et de s’épanouir.</p>
+			<h2>{{Lang::get('quotidien.activities')}}</h2>
+			<p>{{Lang::get('quotidien.activities_p')}}</p>
 		</div>
 	</div>
 </div>
