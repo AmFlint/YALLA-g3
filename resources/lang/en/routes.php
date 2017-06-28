@@ -20,5 +20,5 @@ return [
     'contact' => 'contact-us',
     'terms' => 'terms-of-use',
     'quotidien' => 'day-to-day-efforts',
-
+    'partners' => 'partners'
 ];
