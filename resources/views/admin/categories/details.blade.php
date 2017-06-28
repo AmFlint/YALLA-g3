@@ -20,7 +20,7 @@
             </div>
         </article>
         <div class="col-md-12 text-center">
-            <a href="{{route('admin.tag_edit', $category->id)}}" class="btn btn-success">Editer le tag</a>
+            <a href="{{route('admin.category_edit', $category->id)}}" class="btn btn-success">Editer la catégorie</a>
         </div>
     </section>
 @endsection

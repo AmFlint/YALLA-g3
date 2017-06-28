@@ -1,5 +1,13 @@
 @extends('front.layout_front')
-
+@section('title', Lang::get('donate.title'))
+@section('meta')
+  <meta name="description" content="{{Lang::get('donate.meta_description')}}">
+  <meta property="og:title" content="{{Lang::get('donate.title')}}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{route('donate')}}">
+  <meta property="og:image" content="{{asset('img-content/front/don-2.png')}}">
+  <meta name="twitter:card" content="summary" />
+@endsection
 @section('content')
     <link rel="stylesheet" href="{{asset('css/screen-2.css')}}">
   <h1 class="text-center h1-don">Nous soutenir</h1>

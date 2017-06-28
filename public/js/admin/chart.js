@@ -8,7 +8,7 @@ var data =
         labels : ["mai", "mars", 'février'],
         datasets :
             [{
-                label: "Nombres de vues",
+                label: "Nombre de vues",
                 backgroundColor: ['rgba(255, 0, 0, 0.4)',
                                   'rgba(0, 200, 100, 0.4)',
                                   'rgba(0, 0, 255, 0.4)',

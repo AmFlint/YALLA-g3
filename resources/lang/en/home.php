@@ -2,7 +2,7 @@
 
 return [
     'title' => 'Yalla! Join the campaign to support Syrian children and world peace',
-    'school' => 'One School to claim <span class="fontWeightBoldDubai">Peace</span>',
+    'school' => 'A School to claim <span class="fontWeightBoldDubai">Peace</span>',
     'donate' => 'Donate',
     'humanitary' => 'Proximity Humanitarian help',
     'humanitary_p' => 'Our goal is to develop international solidarity by creating a bridge between societies in order to help those who need it most.',

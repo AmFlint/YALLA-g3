@@ -1,18 +1,7 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('home');
 });
 
 Route::get('/admin/espace-connexion', ['as' => 'admin.login', 'uses' => 'AdminController@login']);
@@ -120,6 +109,8 @@ Route::prefix(App::getLocale())->group(function() {
 
     Route::get(Lang::get('routes.contact'), ['as' => 'contact', 'uses' => 'MainController@contact']);
 
+    Route::post(Lang::get('routes.contact'), ['as' => 'post_message', 'uses' => 'MainController@postMessage']);
+
     Route::get(Lang::get('routes.about'), ['as' => 'about', 'uses' => 'MainController@about']);
 
     Route::get(Lang::get('routes.quotidien'), ['as' => 'quotidien', 'uses' => 'MainController@quotidien']);
@@ -136,4 +127,10 @@ Route::prefix(App::getLocale())->group(function() {
     ->where('slug', '[a-z0-9\-]+');
 
     Route::get('posts', ['as' => "posts", 'uses' => 'MainController@listPosts']);
+
+    Route::get('tags/{slug}', ['as' => 'posts_by_tag', 'uses' => 'MainController@viewPostByTag'])
+    ->where('slug', '[a-z0-9\-]+');
+
+    Route::get('categories/{slug}', ['as' => 'posts_by_category', 'uses' => 'MainController@viewPostByCategory'])
+        ->where('slug', '[a-z0-9\-]+');
 });

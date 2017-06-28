@@ -1,4 +1,13 @@
 @extends('front.layout_front')
+@section('title', Lang::get('partners.title'))
+@section('meta')
+  <meta name="description" content="{{Lang::get('posts.meta_description')}}">
+  <meta property="og:title" content="{{Lang::get('posts.title')}}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{route('posts')}}">
+  <meta property="og:image" content="{{asset('img-content/front/homePage1.jpg')}}">
+  <meta name="twitter:card" content="summary" />
+@endsection
 @section('content')
   {{-- A virer --}}
   <link rel="stylesheet" href="{{asset('css/screen-2.css')}}">

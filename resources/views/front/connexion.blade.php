@@ -1,5 +1,7 @@
 @extends('front.layout_front')
-
+@section('meta')
+  <meta name="robots" content="noindex, nofollow">
+@endsection
 @section('content')
     <h1 class="text-center h1-co">Connexion</h1>
   <div class="row">

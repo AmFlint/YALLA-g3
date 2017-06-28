@@ -64,9 +64,9 @@
       <h3 class="text-center">{{Lang::get('home.actualities')}}</h3>
     </div>
     <div class="col-md-5 col-xs-12 text-center">
-      <img src="{{asset('img-content/front/homePage4.jpg')}}" alt="">
-      <h4 class="marginTopAddTag">Fest-noz solidaire le 29 octobre à Poullaouen</h4>
-      <p class="marginTopAddTag">Yalla! Pour les Enfants vous convie le samedi 29 octobre à un fest-noz de levée de fonds dont les entiers bénéfices reviendront à son école d’Aley, située au Liban, à quelques kilomètres</p>
+      <img src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="">
+      <h4 class="marginTopAddTag">{{$post->title}}</h4>
+      <p class="marginTopAddTag">{!! $post->summary !!}</p>
       <div class="">
         <button class="text-uppercase">{{Lang::get('home.read_article')}}</button>
       </div>

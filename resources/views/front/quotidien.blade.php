@@ -1,5 +1,13 @@
 @extends('front.layout_front')
 @section('title', Lang::get('quotidien.title'))
+@section('meta')
+	<meta name="description" content="{{Lang::get('quotidien.meta_description')}}">
+	<meta property="og:title" content="{{Lang::get('quotidien.title')}}">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="{{route('quotidien')}}">
+	<meta property="og:image" content="{{asset('img-content/front/backgroundPageNotreQuotidien.jpg')}}">
+	<meta name="twitter:card" content="summary" />
+@endsection
 @section('body_class', 'site')
 @section('nav')
     <div class="backgroundPageNotreQuotidien">

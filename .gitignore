@@ -99,3 +99,4 @@ $RECYCLE.BIN/
 
 !/app/Http/Controllers/AdminController.php
 !/public/
+!/app/Http/Controllers/MainController.php
