@@ -4,7 +4,7 @@ Déclaration des classes globale
 
 */
 ::selection {
-    background-color: #1a1c1f;
+    background-color: #06D6A0;
     color: #fff;
 }
 
@@ -574,7 +574,10 @@ background suivant les pages
     background-size: cover;
 }
 
-
+.backgroundPageNotreQuotidien{
+    background-image: url('../img-content/front/backgroundPageNotreQuotidien.jpg');
+    background-size: cover;
+}
 /* 
 HomePage reste du contenu
 */
@@ -1196,10 +1199,13 @@ Page quotidien
     font-size: 1.150em;
 }
 
-.quotidientRowMarginTop{
-    margin-top: 15vh;
-}
-
 .quotidientRowMarginTop h2{
     margin-bottom: 10vh;
+}
+
+.contentQuotidien img{
+    margin-top: 15vh;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 5vh;
 }
