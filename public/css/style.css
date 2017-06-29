@@ -229,6 +229,10 @@ img {
         margin-left: 5%;
         margin-bottom: 0;
     }
+
+    ::-webkit-scrollbar {
+        background: transparent;
+    }
 }
 
 .pointer{
