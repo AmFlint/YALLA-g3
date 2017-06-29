@@ -42,7 +42,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <button><a class="btn-link" href="{{route('donate')}}">{{Lang::get('home.donate')}}</a></button>
+                <a class="btn-link" href="{{route('donate')}}"><button>{{Lang::get('home.donate')}}</button></a>
             </li>
         </ul>
     </div>
