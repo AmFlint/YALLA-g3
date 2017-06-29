@@ -3,6 +3,7 @@
 Déclaration des classes globale 
 
 */
+
 ::selection {
     background-color: #06D6A0;
     color: #fff;
@@ -146,15 +147,15 @@ img {
 }
 
 .tag_red {
-    background: #cd3d41;
+    background: #FA575B;
 }
 
 .tag_blue {
-    background: #62ccff;
+    background: #06D6A0;
 }
 
 .tag_yellow {
-    background: #ffdf4d;
+    background: #FFC145;
 }
 
 .tag_pink {

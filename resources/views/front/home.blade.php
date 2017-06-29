@@ -66,13 +66,15 @@
     <h3 class="text-center">{{Lang::get('home.actualities')}}</h3>
   </div>
   <div class="col-md-5 col-xs-12 text-center">
-    <img src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="">
-    <h4 class="marginTopAddTag">{{$post->title}}</h4>
-    <p class="marginTopAddTag">{!! $post->summary !!}</p>
-    <div class="">
-      <button class="text-uppercase">{{Lang::get('home.read_article')}}</button>
-    </div>
-    <a class="marginTopAddTag hoverFix navBlack" href="">Voir tous nos articles</a>
+    <a href="{{route('post_single', $post->slug)}}" class="hoverFix navBlack">
+      <img src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="">
+      <h4 class="marginTopAddTag">{{$post->title}}</h4>
+      <p class="marginTopAddTag">{!! $post->summary !!}</p>
+      <div class="">
+        <button class="text-uppercase">{{Lang::get('home.read_article')}}</button>
+      </div>
+      <a class="marginTopAddTag hoverFix navBlack" href="{{route('post_single', $post->slug)}}">Voir tous nos articles</a>
+    </a>
   </div>
 </div>
 <div class="row text-center rowMarginTopFixCallToAction">

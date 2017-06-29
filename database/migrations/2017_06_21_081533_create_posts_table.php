@@ -26,6 +26,7 @@ class CreatePostsTable extends Migration
             $table->integer('media_id')->unsigned()->index()->nullable();
             $table->string('card', 100);
             $table->string('meta_robots', 30)->nullable();
+            $table->string('meta_description', 200);
             $table->integer('category_id')->unsigned()->index();
             $table->integer('view')->default(0);
             $table->timestamps();
