@@ -12,7 +12,7 @@
   {{-- A virer --}}
     <link rel="stylesheet" href="{{asset('css/screen-2.css')}}">
   {{-- --}}
-    <h2 class="text-center" style="margin: 5% auto">Nos informations</h2>
+    <h1 class="text-center fontWeightBoldDubai title-actualities">Nos informations</h1>
 
 <div class="container clearfix">
     @foreach($posts as $post)
@@ -20,14 +20,15 @@
       <a href="{{route('post_single', $post->slug)}}">
       <div class="artImg">
           <img class="img-fluid center-block" src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="{{$post->alt}}">
-          <div class="square-width actuContent" id="actuContent">
+          <div class="square-width" id="actuContent">
               <h3 class="h3-articles">{{$post->title}}</h3>
-              <a href="{{route('posts_by_category', $post->category->slug)}}" class="btn btn-info">{{$post->category->name}}</a>
               @foreach($post->tags as $tag)
                   <a href="{{route('posts_by_tag', $tag->slug)}}" class="btn tag_{{$tag->color}}">{{$tag->name}}</a>
               @endforeach
-              <p class="p-articles col-xs-10 col-md-10 col-lg-10">{!! $post->summary !!}</p>
-              <button type="button" class="btn btn-secondary btn-articles"><a href="{{route('post_single', $post->slug)}}">Lire l'article</a></button>
+              <p class="p-articles col-xs-10 col-md-10 col-lg-10">{!! $post->summary !!}
+                  <a href="{{route('post_single', $post->slug)}}" style="font-weight: 600">Lire l'article</a>
+              </p>
+              <a href="{{route('posts_by_category', $post->category->slug)}}" class="btn tag_yellow float-right" id="actuCat">{{$post->category->name}}</a>
           </div>
           <div id="rectActuYellow"></div>
       </div>

@@ -12,26 +12,28 @@ Déclaration des classes globale
 ::-webkit-scrollbar
 {
     width: 12px;
-    height: 12px; /* for horizontal scrollbars */
+    height: 12px;
+    /* for horizontal scrollbars */
 }
+
 
 ::-webkit-scrollbar-track
 {
-  background: transparent;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb
 {
-background-color: rgb(255,90,90);
+    background-color: rgb(255,90,90);
 }
 
 
-@media screen and (max-width: 750px) {
-::-webkit-scrollbar
-{
-    width: 0px;
-    height: 0px; /* for horizontal scrollbars */
-}
+@media screen and (max-width: 1090px) {
+    ::-webkit-scrollbar
+    {
+        width: 0px;
+        height: 0px; /* for horizontal scrollbars */
+    }
 }
 
 
@@ -58,6 +60,13 @@ background-color: rgb(255,90,90);
 
 body{
     overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+h3
+{
+    font-family: Dubai-Regular, sans-serif;
 }
 
 th {
@@ -551,6 +560,7 @@ Home page
 
 .fontWeightBoldDubai{
     font-weight: 600;
+    font-family: "Dubai-Bold", sans-serif;
 }
 
 /* 
@@ -567,6 +577,10 @@ Navbar
     color: black;
 }
 
+.navWhite{
+    color: white !important;
+}
+
 .navbar{
     font-size: 0.95em;
     height: 8vh;
@@ -579,7 +593,7 @@ Navbar
 }
 
 .navbar-collapse ul li:last-child{
-    margin-right: 100px;
+    margin-right: 50px;
 }
 
 .dropdownStyleFix button{
@@ -591,11 +605,120 @@ Navbar
     width: 80px;
 }
 
+.btn-secondary.active, 
+.btn-secondary:active, 
+.show>.btn-secondary.dropdown-toggle {
+    color: #292b2c;
+    background-color: #FA575D;
+    background-image: none;
+    border-color: #adadad;
+}
+
+@media screen and (max-width: 1090px) {
+    #Logo
+    {
+        margin-left: 5px;
+
+    }
+    .navbar-brand {
+        width: 110px;
+    }
+}
+
+
+/* 
+
+Menu burger 
+
+*/
+
+.menuBurger ul{
+    display: none;
+}
+
+.displayBlock{
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+
+.menuBurger ul.displayBlock{
+    display: block;
+}
+
+.menuBurger{
+    position: absolute;
+    z-index: 5;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    right: 0px;
+    background-color: #FA575D;
+    cursor: pointer;
+    -webkit-box-shadow: 5px 7px 18px 0px rgba(0,0,0,0.09);
+    -moz-box-shadow: 5px 7px 18px 0px rgba(0,0,0,0.09);
+    box-shadow: 5px 7px 18px 0px rgba(0,0,0,0.09);
+    text-align: center;
+
+}
+.menuBurger ul{
+    list-style: none;
+    display: none;
+    padding-top: 15vh;
+}
+.menuBurger ul li{
+    color: white;
+    font-size: 1.5em;
+    margin-top: 5vh;
+}
+.menuBurgerOff{
+    animation-name: DeBurgerIt;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}
+@keyframes DeBurgerIt{
+    0%{height: 100vh; width: 100%;}
+    50%{height: 50px;width: 100%;}
+    80%{}
+    100%{height: 50px; width: 50px;}
+} 
+.menuBurgerOn{
+    animation-name: BurgerIt;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}
+@keyframes BurgerIt{
+    20%{}
+    50%{width: 100%;height: 50px;}
+    100%{height: 100vh; width: 100%;}
+}
+.stripe{
+    position: absolute;
+    width: 31px;
+    margin-left: 9px;
+    height: 3px;
+    border-radius: 5px;
+    background-color: white;
+    transition: 0.4s;
+}
+.stripe:nth-child(1){
+    top: 14px;
+    right: 10px;
+}
+.stripe:nth-child(2){
+    top: 22px;
+    right: 10px;
+}
+.stripe:nth-child(3){
+    top: 30px;
+    right: 10px;
+}
+}
 /* 
 
 Footer
 
- */
+*/
 
 footer{
     margin-top: 10vh;
@@ -609,6 +732,10 @@ footer a{
 
 footer a:hover{
     color: rgb(255,90,90);
+}
+
+footer img{
+    width: 40px;
 }
 
 .linkMarginBottomFooter{
@@ -804,8 +931,8 @@ Responsive home page
 @media screen and (max-width: 767px) {
 
     .rectImgColorGreen,
-      .rectImgColorRed,
-      .rectImgColorYellow{
+    .rectImgColorRed,
+    .rectImgColorYellow{
         display: none;
     }
     .row{
@@ -865,6 +992,8 @@ page qui sommes nous ?
 
 .alignTopTitleAboutUS{
     margin-top: 35vh !important;
+    font-family: "Open Sans", sans-serif;
+
 }
 
 .marginTopBannerAboutUs{
@@ -927,6 +1056,10 @@ page qui sommes nous ?
 .widthImgSectionTwo{
     width: 25em;
     height: 25em;
+}
+
+.title-actualities {
+    margin: 5% auto;
 }
 
 .bannerPageWhoAreYou{
@@ -1143,28 +1276,28 @@ Page Contactez nous
 
 
 .btn-width {
-  width: 80%;
-  height: 50%;
+    width: 80%;
+    height: 50%;
 }
 
 .btn-right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
 }
 
 .btn-legal {
-  border: none;
+    border: none;
 }
 
 .btn-legal:hover {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .alignTitleContact{
@@ -1244,6 +1377,10 @@ Page 404
 
 @media screen and (min-width: 300px) and (max-width: 700px)
 {
+    .title-actualities {
+        margin: 15% auto 25%
+    }
+
     #content404
     {
         width: 100%;
@@ -1254,21 +1391,21 @@ Page 404
     padding: 15px 70px 15px 70px;
 }
 
- /*
+/*
 
 CONNEXION
 
 */
 
 .h1-co {
-  margin-top: 10vh;
-  margin-bottom: 5%;
-  text-transform: uppercase;
-  font-size: 2.250em;
+    margin-top: 10vh;
+    margin-bottom: 5%;
+    text-transform: uppercase;
+    font-size: 2.250em;
 }
 
 .btn-co {
-  margin-top: 10%;
+    margin-top: 10%;
 }
 
 /* 
@@ -1326,43 +1463,41 @@ Page Partners
     width: auto;
 }
 
-#Logo
-{
-    max-width: none;
-    width: 5em;
-    margin-top: 0em;
-    margin-right: 3em ;
-}
-
 .artImg
 {
-    margin-bottom: 20%;
+    margin-bottom: 17%;
+
+}
+#actuCat
+{
+    position: absolute;
+    top: -5%;
+    left: 5%;
 }
 
 .artImg img
 {
     width: 60%;
     position: relative;
+    overflow: hidden;
+    height: 25em;
+
 }
 #actuContent
 {
     position: absolute;
-    top: 42%;
+    top: 20%;
     left: 46%;
     width: 50%;
     background: white;
     padding: 3%;
     box-shadow: 0px 19px 67px -30px rgba(0,0,0,0.75);
-    border-bottom: 10px solid #ffc100;
 }
-
-
-
 #actuContent p
 {
     color: #000;
     width: 90%;
-    margin: 0 auto;
+    margin: 5% auto 0 auto;
     line-height: 150%;
 }
 #actuContent h3
@@ -1376,23 +1511,18 @@ Page Partners
     background-color: #ffc100;
     border-radius: 10px;
     position: absolute;
-    top: -20px;
-    left: -10px;
+    top: -2%;
+    left: 0.5%;
     z-index: -1;
     width: 42%;
-    height: 20em;
+    height: 16em;
 }
 
-#rectActuRed
+.h1-don
 {
-    background-color: #cd3d41;
-    border-radius: 10px;
-    position: absolute;
-    bottom: -5%;
-    left: 0;
-    z-index: -1;
-    width: 42%;
-    height: 20em;
+    font-family: Dubai-Regular, sans-serif;
+    font-size: 48px;
+    margin: 5% 0;
 }
 
 @media screen and (max-width: 991px)
@@ -1419,3 +1549,6 @@ Page Partners
 
     }
 }
+
+
+

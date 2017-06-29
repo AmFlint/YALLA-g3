@@ -12,15 +12,6 @@
             <nav>
                 <ul>
                     <li>Dashboard</li>
-                    <li class="liNavBar">
-                        <div class="form-wrapper">
-                            <input type="text" name="searchBar" placeholder="Search">
-                            <div class="underline"></div>
-                            <button>
-                                <img src="{{asset('img-content/admin/ic_search_black_24dp_2x.png')}}" alt="">
-                            </button>
-                        </div>
-                    </li>
                 </ul>
             </nav>
         </div>
