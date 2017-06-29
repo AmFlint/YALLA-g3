@@ -1,11 +1,13 @@
 <?php
 
 return [
-    'title' => 'Who are We ?',
+    'meta_title' => 'Yalla! Who are we ?',
+    'title' => '<span class="fontWeightBoldDubai">Yalla!</span> Who are We ?',
     'heading_p' => 'Yalla! is an associative campaign working in order to help Syrian children psychologically as well as give them an access to education.',
     'composition' => 'The project is directed by a Desk composed of 4 members, who give news of Yalla!\'s actions to the members of the campaign through many activities reports concerning every projects and during Assembly taken once a year in Paris.',
     'volunteer' => 'Volunteers from Paris and on the field have accepted and adopted the values of the campaign and act in accordance to its principles. They report their activites in a regular manner to the Control Desk in charge of the conformity of the actions taken on the fields.',
     'strategy' => 'Our Strategy',
+    'education_for_all' => '<span class="fontWeightBoldDubai">Education</span>,  a right for <span class="fontWeightBoldDubai">everyone</span>',
     'benefit' => 'We propose an integration of the beneficiary',
     'benefit_p' => 'and the hosting community at every phases of the project\'s development in order to guarantee a mutual understanding of the issues and objectives of the campaign, and contribute to the mission\'s overall success',
     'creation' => 'Creation of a dynamic link between donors and receivers',

@@ -42,9 +42,8 @@ class MainController extends Controller
 
     public function listPost()
     {
-//        $posts = Post::where('locale', App::getLocale())->get();
-//        return view('front.articles', compact('posts'));
-        return view('front.articles');
+        $posts = Post::with('tags', 'category')->orderBy('created_at', 'desc')->where('locale', App::getLocale())->where('published', 1)->paginate(4);
+        return view('front.articles', compact('posts'));
     }
 
     public function donate()
@@ -78,6 +77,7 @@ class MainController extends Controller
         if (!$tag) {
             abort(404);
         }
+        $tag->increment('view');
         $posts = $tag->posts()->where('published', 1)->get();
         dd($posts);
     }
@@ -88,6 +88,7 @@ class MainController extends Controller
         if (!$category) {
             abort(404);
         }
+        $category->increment('view');
         $posts = $category->posts()->where('published', 1)->get();
         dd($posts);
     }
