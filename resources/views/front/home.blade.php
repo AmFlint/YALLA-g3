@@ -19,7 +19,7 @@
     <div class="col-xs-12 col-md-12">
       <h2 class="text-center">{!! Lang::get('home.school') !!}</h2>
       <a class="btn-link" href="{{route('donate')}}">
-        <button class="ctaHome">{{Lang::get('home.donate')}}</button>
+        <button class="ctaHome text-uppercase">{{Lang::get('home.donate')}}</button>
       </a>
     </div>
   </div>

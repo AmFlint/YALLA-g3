@@ -57,6 +57,7 @@ background-color: rgb(255,90,90);
 
 body{
     overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
 }
 
 th {
@@ -252,6 +253,15 @@ img {
 Barre de nav top
 
 */
+
+#Logo
+{
+    max-width: none;
+    width: 5em;
+    margin-top: 0em;
+    margin-right: 3em;
+    margin-left: 50px;
+}
 
 nav ul{
     list-style: none;
@@ -578,7 +588,7 @@ Navbar
 }
 
 .navbar-collapse ul li:last-child{
-    margin-right: 100px;
+    margin-right: 50px;
 }
 
 .dropdownStyleFix button{
@@ -608,6 +618,10 @@ footer a{
 
 footer a:hover{
     color: rgb(255,90,90);
+}
+
+footer img{
+    width: 40px;
 }
 
 .linkMarginBottomFooter{
@@ -1323,14 +1337,6 @@ Page Partners
 
 .pagePartners img{
     width: auto;
-}
-
-#Logo
-{
-    max-width: none;
-    width: 5em;
-    margin-top: 0em;
-    margin-right: 3em ;
 }
 
 .artImg

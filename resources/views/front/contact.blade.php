@@ -23,7 +23,7 @@
             </ul>
         </div>
     @endif
-  {!! Form::open(['url' => route('post_message')]) !!}
+  {!! Form::open(['url' => route('post_message'), "class" => "formContact"]) !!}
     <div class="row">
       <div class="col-md-8 offset-md-2 col-xs-10">
         <div class="row">
