@@ -25,7 +25,8 @@
               @foreach($post->tags as $tag)
                   <a href="{{route('posts_by_tag', $tag->slug)}}" class="btn tag_{{$tag->color}}">{{$tag->name}}</a>
               @endforeach
-              <p class="p-articles col-xs-10 col-md-10 col-lg-10">{!! $post->summary !!}
+
+              <p class="p-articles col-xs-12 col-md-12 col-lg-12 paddingFix ">{!! $post->summary !!}
                   <a href="{{route('post_single', $post->slug)}}" style="font-weight: 600">{{Lang::get('home.read_article')}}</a>
               </p>
               <a href="{{route('posts_by_category', $post->category->slug)}}" class="btn tag_yellow float-right" id="actuCat">{{$post->category->name}}</a>

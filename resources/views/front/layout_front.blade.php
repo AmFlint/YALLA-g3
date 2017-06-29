@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     @yield('meta')
+    <link rel="icon" type="image/png" href="{{asset('img-layout/logo-favicon.png')}}" />
     <meta name="viewport"
     content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -73,8 +74,8 @@
     <footer>
         <div class="row">
             <div class="col-xs-2 offset-md-5 text-center col-md-2">
-                <a href="https://twitter.com/4Yalla?lang=fr"><img src="{{asset('img-layout/twitter.svg')}} " alt=""></a>
-                <a href="https://www.facebook.com/yalla.enfants.syriens/"><img src="{{asset('img-layout/facebook.svg')}}" alt=""></a>
+                <a href="https://twitter.com/4Yalla?lang=fr"><img src="{{asset('img-layout/twitter.svg')}} " alt="logo twitter"></a>
+                <a href="https://www.facebook.com/yalla.enfants.syriens/"><img src="{{asset('img-layout/facebook.svg')}}" alt="logo facebook"></a>
             </div>
         </div>
         <div class="col-xs-12 col-md-12 text-center linkMarginBottomFooter">

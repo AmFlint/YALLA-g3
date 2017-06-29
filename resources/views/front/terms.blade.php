@@ -3,7 +3,7 @@
 @section('content')
     <link rel="stylesheet" href="{{asset('css/screen-2.css')}}">
     <div class="margin-legal">
-    <h1 class="text-center">Mentions légales</h1>
+    <h1 class="text-center fontWeightRegularDubai">Mentions légales</h1>
     <div class="row">
       <div class="col-md-10 offset-md-1">
         <h2 class="red-title">1. Présentation du site</h2>

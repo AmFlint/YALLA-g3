@@ -29,7 +29,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="form-group">
-              <label for="exampleTextarea">{{Lang::get('contact.listen')}}</label>
+              <label class="fontWeightRegularDubai" for="exampleTextarea">{{Lang::get('contact.listen')}}</label>
               <textarea name="content" class="form-control border-top-0 border-left-0 border-right-0" id="exampleTextarea" rows="3" placeholder="{{Lang::get('contact.question')}}"></textarea>
             </div>
           </div>
@@ -37,7 +37,7 @@
         <div class="row">
           <div class="col-md-6 col-xs-8">
             <div class="form-group">
-              <label for="exampleInputPassword1">{{Lang::get('contact.greetings')}}</label>
+              <label class="fontWeightRegularDubai" for="exampleInputPassword1">{{Lang::get('contact.greetings')}}</label>
               <input type="text" class="form-control border-top-0 border-left-0 border-right-0" id="exampleInputPassword1" name="name" placeholder="{{Lang::get('contact.name')}}">
             </div>
 
@@ -47,7 +47,7 @@
           </div>
           <div class="col-md-2 offset-md-4 btn-right">
             <div class="">
-              <button class="btn btn-secondary btn-legal" type="submit"><img class="btn-width" src="{{asset('img-layout/right-arrow.svg')}}" alt=""></button>
+              <button class="btn btn-secondary btn-legal" type="submit"><img class="btn-width" src="{{asset('img-layout/right-arrow.svg')}}" alt="logo envois de formulaire"></button>
             </div>
           </div>
         </div>

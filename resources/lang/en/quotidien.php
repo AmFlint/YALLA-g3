@@ -3,7 +3,7 @@
 return [
     'title' => 'Our day to day efforts at Yalla!',
     'meta_description' => 'Everyday, we strife to preserve children\'s right to education',
-    'main_title' => '<span class="fontWeightBoldDubai">Routine</span>, <span class="fontWeightBoldDubai">Objectives, Projects</span>',
+    'main_title' => '<span class="fontWeightBoldDubai">Routine</span>, <span class="fontWeightBoldDubai">Objectives</span>,<span class="fontWeightBoldDubai"> Projects</span>',
     'education' => 'The Right to education',
     'education_lis' => '<li>- Offer to the child the possibility to learn</li>
                 <li>- Allow the child to join a classical scolary system so he develops the tools to obtain a diploma and grow every chances to succeed in his future life</li>
