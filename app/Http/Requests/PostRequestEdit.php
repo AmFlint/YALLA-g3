@@ -28,7 +28,8 @@ class PostRequestEdit extends FormRequest
             'category_id' => 'required',
             'summary' => 'required|max:300',
             'card' => 'required',
-            'locale' => 'required'
+            'locale' => 'required',
+            'meta_description' => 'required|max:250'
         ];
     }
 
@@ -39,7 +40,9 @@ class PostRequestEdit extends FormRequest
             'category_id.required'  => 'Vous devez associer une catégorie à votre article',
             'summary.required' => 'Vous devez indiquer un résumé de l\'Article',
             'summary.max' => 'Votre résumé ne doit pas comprendre plus de 300 caractères.',
-            'title.max' => 'Votre titre ne doit pas comprendre plus de 100 caractères.'
+            'title.max' => 'Votre titre ne doit pas comprendre plus de 100 caractères.',
+            'meta_description.required' => 'La description (référencement) est requise pour le bon référencement par les moteurs de recherches de votre site.',
+            'meta_description.max' => 'La description (référencement) ne doit pas excéder 250 caractères',
         ];
     }
 }

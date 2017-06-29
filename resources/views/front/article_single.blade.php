@@ -11,12 +11,12 @@
     <div class="col-md-1 offset-md-1 btn-tags">
       <div class="col-md-12">
         <p class="inline"><b>Catégorie</b></p>
-        <button type="button" class="btn btn-danger btn-event">{{$post->category->name}}</button>
+        <a href="{{route('posts_by_category', $post->category->slug)}}" class="btn tag_yellow">{{$post->category->name}}</a>
       </div>
       <div class="col-md-12">
         <p class="inline tags"><b>Tags</b></p>
           @foreach($post->tags->all() as $tag)
-            <a href="{{route('admin.tags')}}" class="marginBottomAjoutArticle btn tag_{{$tag->color}}">{{$tag->name}}</a>
+            <a href="{{route('posts_by_tag', $tag->slug)}}" class="marginBottomAjoutArticle btn tag_{{$tag->color}}">{{$tag->name}}</a>
           @endforeach
       </div>
       <div class="col-md-12">

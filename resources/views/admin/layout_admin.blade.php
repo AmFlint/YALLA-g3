@@ -5,7 +5,6 @@
     <title>Admin</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="backoffice">
     <main>
@@ -13,15 +12,6 @@
             <nav>
                 <ul>
                     <li>Dashboard</li>
-                    <li class="liNavBar">
-                        <div class="form-wrapper">
-                            <input type="text" name="searchBar" placeholder="Search">
-                            <div class="underline"></div>
-                            <button>
-                                <img src="{{asset('img-content/admin/ic_search_black_24dp_2x.png')}}" alt="">
-                            </button>
-                        </div>
-                    </li>
                 </ul>
             </nav>
         </div>
@@ -71,7 +61,7 @@
             @yield('content')
         </div>
     </main>
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
     <script>
         var root_route = 'http://localhost:8888';
     </script>

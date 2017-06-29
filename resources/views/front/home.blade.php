@@ -19,7 +19,7 @@
     <div class="col-xs-12 col-md-12">
       <h2 class="text-center">{!! Lang::get('home.school') !!}</h2>
       <a class="btn-link" href="{{route('donate')}}">
-        <button class="ctaHome">{{Lang::get('home.donate')}}</button>
+        <button class="ctaHome text-uppercase">{{Lang::get('home.donate')}}</button>
       </a>
     </div>
   </div>
@@ -33,14 +33,13 @@
     <div class="col-xs-12 col-md-5 alignContainerTextHomePageRight desktopText">
       <h3>{{Lang::get('home.humanitary')}}</h3>
       <p>{{Lang::get('home.humanitary_p')}}</p>
-      <img src="{{asset('img-layout/picto-plus-copy.svg')}}" alt="">
-    </div>
+     </div>
   </div>
+
   <div class="row rowMarginTopFix">
     <div class="col-xs-12 col-md-5 offset-md-1 alignContainerTextHomePageLeft">
       <h3>{{Lang::get('home.children_rights')}}</h3>
       <p>{{Lang::get('home.children_rights_p')}}</p>
-      <img src="{{asset('img-layout/picto-plus-copy.svg')}}" alt="">
     </div>
     <div class="col-xs-12 col-md-5 paddingFix orderContentHomePage">
       <img src="{{asset('img-content/front/homePage2.jpg')}}" alt="">
@@ -57,7 +56,6 @@
     <div class="col-xs-12 col-md-5 alignContainerTextHomePageRight desktopText">
       <h3>{{Lang::get('home.our_story')}}</h3>
       <p>{{Lang::get('home.our_story_p')}}</p>
-      <img src="{{asset('img-layout/picto-plus-copy.svg')}}" alt="">
     </div>
   </div>
 </div> 
@@ -66,13 +64,19 @@
     <h3 class="text-center">{{Lang::get('home.actualities')}}</h3>
   </div>
   <div class="col-md-5 col-xs-12 text-center">
-    <img src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="">
-    <h4 class="marginTopAddTag">{{$post->title}}</h4>
-    <p class="marginTopAddTag">{!! $post->summary !!}</p>
-    <div class="">
-      <button class="text-uppercase">{{Lang::get('home.read_article')}}</button>
-    </div>
-    <a class="marginTopAddTag hoverFix navBlack" href="">Voir tous nos articles</a>
+      <a href="{{route('post_single', $post->slug)}}" class="hoverFix navBlack">
+        <a href="{{route('posts_by_category', $post->category->slug)}}" class="btn tag_yellow float-right" id="actuCat">{{$post->category->name}}</a>
+        <img src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="">
+        @foreach($post->tags as $tag)
+            <a href="{{route('posts_by_tag', $tag->slug)}}" class=" marginTopAddTag btn tag_{{$tag->color}}">{{$tag->name}}</a>
+        @endforeach
+      <h4 class="marginTopAddTag">{{$post->title}}</h4>
+      <p class="marginTopAddTag">{!! $post->summary !!}</p>
+      <div class="">
+        <button class="text-uppercase">{{Lang::get('home.read_article')}}</button>
+      </div>
+      <a class="marginTopAddTag hoverFix navBlack" href="{{route('post_single', $post->slug)}}">Voir tous nos articles</a>
+    </a>
   </div>
 </div>
 <div class="row text-center rowMarginTopFixCallToAction">

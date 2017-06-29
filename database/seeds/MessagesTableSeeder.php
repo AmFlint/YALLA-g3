@@ -33,7 +33,7 @@ class MessagesTableSeeder extends Seeder
         \App\Message::create([
             'name' => 'Ugo Degioanni',
             'email' => 'ugo.degioanni@hetic.net',
-            'content' => 'Hello there! I wanted to know if you guys need any help sometimes ? I volunteer !',
+            'content' => 'مرحبا، أريد أن أهنئكم على عملكم',
             'viewed' => 1
         ]);
 

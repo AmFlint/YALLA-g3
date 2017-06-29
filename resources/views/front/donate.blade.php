@@ -10,7 +10,7 @@
 @endsection
 @section('content')
     <link rel="stylesheet" href="{{asset('css/screen-2.css')}}">
-  <h1 class="text-center h1-don">{{Lang::get('donate.support')}}</h1>
+  <h1 class="text-center fontWeightBoldDubai" style="margin: 5% 0">{{Lang::get('donate.support')}}</h1>
   <div class="offset-md-1">
   <h2>{{Lang::get('donate.donate-to-yalla')}}</h2>
 </div>
@@ -28,14 +28,14 @@
       <div class="rectImgColorYellowDonate"></div>
     </div>
   </div>
-    <h2 class="h3-don text-center" style="font-size: 2.5em">{{Lang::get('donate.importance')}}</h2>
+    <h2 class="h3-don text-center fontWeightBoldDubai" style="font-size: 2.5em; margin: 5% 0">{{Lang::get('donate.importance')}}</h2>
 
     <div class="container">
       <div class="col-md-12 col-xs-12 col-lg-12 row">
         <img class="img-fluid rounded" src="{{asset('img-content/front/don-2.png')}}" alt="" style="position: relative">
         <div class="rectImgColorGreenDonate"></div>
       </div>
-      <div class="col-md-12 col-xs-12 col-lg-12 row">
+      <div class="col-md-12 col-xs-12 col-lg-12 row offset-md-1 margin">
         <ul class="col-md-6 margin" style="border-right: 1px solid lightgrey; line-height: 200%">
           <li>{{Lang::get('donate.regular-donation')}}</li>
           <li class="margin">{{Lang::get('donate.automatic-payement')}}</li>

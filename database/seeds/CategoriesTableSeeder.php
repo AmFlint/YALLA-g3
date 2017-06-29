@@ -33,8 +33,8 @@ class CategoriesTableSeeder extends Seeder
         ]);
 
         \App\Category::create([
-            'name' => 'Non classified',
-            'slug' => 'non-classif',
+            'name' => 'غير مصنفة',
+            'slug' => 'non-classified',
             'locale' => 'ar',
             'parent_id' => null
         ]);
