@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->tinyInteger('published')->default(0);
             $table->string('locale', 10);
             $table->string('image', 50);
-            $table->string('alt', 30);
+            $table->string('alt', 100);
             $table->string('title', 100);
             $table->text('content');
             $table->string('slug', 150);

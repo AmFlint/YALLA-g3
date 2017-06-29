@@ -92,4 +92,10 @@ In case of Disaster Recovery Plan, you will have to make sure the server and web
 - To import last save from database (explained Deployment.2) in case of Data loss or corrupt data in the Database.
 - To follow the Installation / deployment points as you may have to reupload the project structure and install dependencies/database connection again.
 
+## Translations 
 
+To customize translations, go to resources/view/lang and the language folder you want your content to be translated.
+Inside of this folder, you'll be able to find different php files holding every key content to translate, juste change the keys you'd like to edit.
+Change will appear automatically.
+
+## All references (technical, graphic and presentation) are inside the "references" folder
