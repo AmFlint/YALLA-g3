@@ -8,7 +8,7 @@
     </div>
     <ul class="container">
     @foreach($post->tags->all() as $tag)
-        <li class=" pull-right alignLeftTag"><a class="btn tag_{{$tag->color}}" href="{{route('admin.tags_assoc_posts', $tag->id)}}">{{$tag->name}}</a></li>
+        <li class=" pull-right alignLeftTag"><a class="btn hoverFixWhite tag_{{$tag->color}}" href="{{route('admin.tags_assoc_posts', $tag->id)}}">{{$tag->name}}</a></li>
     @endforeach
     </ul>
     <article class="borderArticle">
@@ -47,6 +47,10 @@
         <div class="col-md-4">
             <h2>Meta robots</h2>
             <p>{!! $post->meta_robots !!}</p>
+        </div>
+        <div class="col-md-12">
+            <h2>Meta Description (référencement)</h2>
+            <p>{{$post->meta_description}}</p>
         </div>
     <div class="jumbotron" style="padding: 0">
         <img src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="">

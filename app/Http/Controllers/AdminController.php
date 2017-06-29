@@ -57,7 +57,7 @@ class AdminController extends Controller
         } else if ($request->url) { // if admin chose to upload image/youtube video from external site
             $propertiesMedia = $request->all();
             $propertiesMedia['url'] = $this->getEmbedUrl($propertiesMedia['url']);
-            $media = Media::create($request->all()); // create media
+            $media = Media::create($propertiesMedia); // create media
         }
         $props = $request->all();
         $props['media_id'] = $media->id ?? null; // if admin uploaded media, attach it properties
@@ -598,6 +598,13 @@ class AdminController extends Controller
         $message = Message::find($id);
         if (!$this->checkIfEntityExists($message, 'Impossible de voir le message: l\'id demandée n\'existe pas.', 'danger')) {
             return redirect()->route('admin.messages');
+        }
+        if ($message->viewed == 1) {
+            $message->viewed = 0;
+            $message->save();
+        } else {
+            $message->viewed = 1;
+            $message->save();
         }
         return view('admin.messages.details', compact('message'));
     }

@@ -92,6 +92,10 @@ button,
     color: #014c8c;
 }
 
+.backoffice a.btn:hover {
+    color: #fff;
+}
+
 .btn-link,
 .btn-link:hover {
     color: #fff;
