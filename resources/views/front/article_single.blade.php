@@ -1,5 +1,16 @@
 @extends('front.layout_front')
-
+@section('title', \Illuminate\Support\Str::words($post->title, 20, '...'))
+@section('meta')
+    <meta name="description" content="{{$post->meta_description}}">
+    <meta property="og:title" content="{{\Illuminate\Support\Str::words($post->title, 20, '...')}}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{route('post_single', $post->slug)}}">
+    <meta property="og:image" content="{{asset('img-content/uploads' . '/' . $post->image)}}">
+    <meta name="twitter:card" content="{{$post->card}}" />
+    @if($post->meta_robots)
+        <meta name="robots" content="{{strtolower($post->meta_robots)}}">
+    @endif
+@endsection
 @section('content')
   <div class="row">
     <div class="col-md-9 offset-md-3">

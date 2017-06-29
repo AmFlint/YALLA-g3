@@ -137,7 +137,7 @@ class AdminController extends Controller
 	{
 		$posts = Post::orderBy('created_at', 'desc')->get(); // get posts to see stats
 		$totalView = Post::sum('view') + View::sum('views'); // sum of visites on all posts from all times
-		$totalMessage = Message::count(); // count of messages in DB
+		$totalMessage = Message::where('viewed', 0)->count(); // count of messages in DB
 		return view('admin.dashboard.dashboard', compact('posts', 'totalView', 'totalMessage'));
     }
 
