@@ -72,7 +72,7 @@
     <div class="">
       <button class="text-uppercase">{{Lang::get('home.read_article')}}</button>
     </div>
-    <a class="marginTopAddTag hoverFix" href="">Voir tous nos articles</a>
+    <a class="marginTopAddTag hoverFix navBlack" href="">Voir tous nos articles</a>
   </div>
 </div>
 <div class="row text-center rowMarginTopFixCallToAction">
