@@ -61,7 +61,7 @@
 </div> 
 <div class="row rowMarginTopFixCallToAction justify-content-center derniereActu">
   <div class="col-md-12 offset-md-12">
-    <h3 class="text-center">{{Lang::get('home.actualities')}}</h3>
+    <h3 class="text-center" style="margin: 5% 0; font-size: 42px">{{Lang::get('home.actualities')}}</h3>
   </div>
   <div class="col-md-5 col-xs-12 text-center">
     <a href="{{route('posts_by_category', $post->category->slug)}}" class="btn btn-info float-right" id="actuCat">{{$post->category->name}}</a>
@@ -74,7 +74,7 @@
     <div class="">
       <button class="text-uppercase">{{Lang::get('home.read_article')}}</button>
     </div>
-    <a class="marginTopAddTag hoverFix navBlack" href="">Voir tous nos articles</a>
+    <a class="marginTopAddTag hoverFix navBlack" style="text-decoration: underline " href="">Voir tous nos articles</a>
   </div>
 </div>
 <div class="row text-center rowMarginTopFixCallToAction">

@@ -3,25 +3,25 @@
 @section('content')
   <div class="row">
     <div class="col-md-9 offset-md-3">
-      <h1 class="h1-article">{{$post->title}}</h1>
+      <h1 class="h1-article fontWeightRegularDubai">{{$post->title}}</h1>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-1 offset-md-1 btn-tags">
       <div class="col-md-12">
-        <p class="inline"><b>Catégorie</b></p>
+        <p class="inline fontWeightRegularDubai"><b>Catégorie</b></p>
         <button type="button" class="btn btn-danger btn-event">{{$post->category->name}}</button>
       </div>
       <div class="col-md-12">
-        <p class="inline tags"><b>Tags</b></p>
+        <p class="inline fontWeightRegularDubai tags"><b>Tags</b></p>
           @foreach($post->tags->all() as $tag)
             <a href="{{route('admin.tags')}}" class="marginBottomAjoutArticle btn tag_{{$tag->color}}">{{$tag->name}}</a>
           @endforeach
       </div>
       <div class="col-md-12">
-        <p class="tags"><b>Date</b> : {{$post->created_at->format('d/m/y')}}</p>
-        <p class="hidden font-weight-bold">Partager</p>
+        <p class="tags"><b class="fontWeightRegularDubai">Date</b>  {{$post->created_at->format('d/m/y')}}</p>
+        <p class="hidden font-weight-bold fontWeightRegularDubai">Partager</p>
           <a class="twitter-share-button"
              href="https://twitter.com/intent/tweet" data-size="large">
               Tweet</a>

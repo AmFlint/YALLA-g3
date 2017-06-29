@@ -62,17 +62,17 @@
 
 		<div class="col-xs-12 col-md-3 text-center">
 			<img class="alignBottomClassic" src="{{asset('img-layout/class-group-of-students-and-professor-in-front.svg')}}" alt="">
-			<h5 class="text-center">{{Lang::get('about.benefit')}}</h5>
+			<h5 class="text-center fontWeightRegularDubai">{{Lang::get('about.benefit')}}</h5>
 			<p class="paddingTopFix text-center"> {{Lang::get('about.benefit_p')}}</p>
 		</div>
 		<div class="col-xs-12 col-md-3 text-center">
 			<img class="alignBottomClassic" src="{{asset('img-layout/world.svg')}}" alt="">
-			<h5 class="text-center">{{Lang::get('about.creation')}}</h5>
+			<h5 class="text-center fontWeightRegularDubai">{{Lang::get('about.creation')}}</h5>
 			<p class="paddingTopFix text-center">{{Lang::get('about.creation_p')}}</p>
 		</div>
 		<div class="col-xs-12 col-md-3 text-center">
 			<img class="alignBottomClassic" src="{{asset('img-layout/link.svg')}}" alt="">
-			<h5 class="text-center">{{Lang::get('about.respect')}}</h5>
+			<h5 class="text-center fontWeightRegularDubai">{{Lang::get('about.respect')}}</h5>
 			<p class="paddingTopFix text-center">{{Lang::get('about.respect_p')}}</p>
 		</div>
 	</div>

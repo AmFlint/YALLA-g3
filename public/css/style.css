@@ -562,6 +562,12 @@ Home page
     font-family: "Dubai-Bold", sans-serif;
 }
 
+.fontWeightRegularDubai{
+    font-weight: 600;
+    font-family: "Dubai-Regular", sans-serif;
+    line-height: 150%;
+}
+
 /* 
 
 Navbar
@@ -613,6 +619,11 @@ Navbar
     border-color: #adadad;
 }
 
+#Logo
+{
+    max-width: 150%;
+}
+
 @media screen and (max-width: 1090px) {
     #Logo
     {
@@ -644,7 +655,10 @@ Menu burger
 .menuBurger ul.displayBlock{
     display: block;
 }
+#aboutUsResp img
+{
 
+}
 .menuBurger{
     position: absolute;
     z-index: 5;
@@ -1112,7 +1126,6 @@ Notre stratégie
 }
 
 .styleTitleLequipeBureau{
-    padding-top: 10vh;
     margin-bottom: 10vh;
     font-size: 3em;
     font-weight: bold;
@@ -1477,7 +1490,7 @@ Page Partners
 #actuContent
 {
     position: absolute;
-    top: 20%;
+    top: 42%;
     left: 46%;
     width: 50%;
     background: white;
