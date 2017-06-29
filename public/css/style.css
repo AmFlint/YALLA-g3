@@ -167,7 +167,7 @@ img {
 }
 
 .tag_pink {
-    background: #fb9cff;
+    background: #0275D8;
 }
 
 .mg-top {
@@ -215,6 +215,11 @@ img {
     margin-bottom: 10%;
 }
 
+.bannerMobileHome img
+{
+    display: none;
+}
+
 @media screen and (max-width: 770px) {
     .text-article {
         width: 100%;
@@ -245,6 +250,19 @@ img {
 
     ::-webkit-scrollbar {
         background: transparent;
+    }
+
+    .bannerMobileHome img
+    {
+        display: block;
+        position: absolute; right: 0; bottom: 0;
+        min-width: 100%; min-height: 100%;
+        width: 20em; height: auto; z-index: -1;
+    }
+    video
+    {
+        visibility: hidden;
+        display: none;
     }
 }
 
@@ -530,7 +548,7 @@ Page add
 
 a:hover,
 .btn a{
-    color: white;
+    color: grey;
     text-decoration: none;
 }
 

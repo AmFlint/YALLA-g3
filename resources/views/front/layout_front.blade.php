@@ -22,7 +22,10 @@
         <div class="stripe"></div>
         <div class="stripe"></div>
     </div>
-        <ul>    
+        <ul>
+            <li class="nav-item text-left">
+                <a class="nav-link" href="{{route('home')}}">Accueil</a>
+            </li>
             <li class="nav-item text-left">
                 <a class="nav-link" href="{{route('about')}}">{{Lang::get('nav.about')}}</a>
             </li>
@@ -110,7 +113,7 @@
         var listBurger = document.querySelector('.menuBurger ul');
         var timerList = 800;
         var body = document.querySelector('body');
-        var clickBurger = document.querySelector('.clickBurger')
+        var clickBurger = document.querySelector('.clickBurger');
 
         
         clickBurger.addEventListener('click', function toggleBurger() {
