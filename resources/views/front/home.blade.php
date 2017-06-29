@@ -33,14 +33,12 @@
     <div class="col-xs-12 col-md-5 alignContainerTextHomePageRight desktopText">
       <h3>{{Lang::get('home.humanitary')}}</h3>
       <p>{{Lang::get('home.humanitary_p')}}</p>
-      <img src="{{asset('img-layout/picto-plus-copy.svg')}}" alt="">
     </div>
   </div>
   <div class="row rowMarginTopFix">
     <div class="col-xs-12 col-md-5 offset-md-1 alignContainerTextHomePageLeft">
       <h3>{{Lang::get('home.children_rights')}}</h3>
-      <p>{{Lang::get('home.children_rights_p')}}</p>
-      <img src="{{asset('img-layout/picto-plus-copy.svg')}}" alt="">
+      <p>{{Lang::get('home.children_rights_p')}}</p> 
     </div>
     <div class="col-xs-12 col-md-5 paddingFix orderContentHomePage">
       <img src="{{asset('img-content/front/homePage2.jpg')}}" alt="">
@@ -57,7 +55,6 @@
     <div class="col-xs-12 col-md-5 alignContainerTextHomePageRight desktopText">
       <h3>{{Lang::get('home.our_story')}}</h3>
       <p>{{Lang::get('home.our_story_p')}}</p>
-      <img src="{{asset('img-layout/picto-plus-copy.svg')}}" alt="">
     </div>
   </div>
 </div> 

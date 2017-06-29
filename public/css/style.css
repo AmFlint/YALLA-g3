@@ -576,6 +576,10 @@ Navbar
     color: black;
 }
 
+.navWhite{
+    color: white !important;
+}
+
 .navbar{
     font-size: 0.95em;
     height: 8vh;
@@ -598,6 +602,15 @@ Navbar
 }
 .navbar-brand{
     width: 80px;
+}
+
+.btn-secondary.active, 
+.btn-secondary:active, 
+.show>.btn-secondary.dropdown-toggle {
+    color: #292b2c;
+    background-color: #FA575D;
+    background-image: none;
+    border-color: #adadad;
 }
 
 /* 

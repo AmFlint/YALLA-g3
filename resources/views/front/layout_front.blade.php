@@ -36,7 +36,7 @@
                 </li>
                 <li class="nav-item">
                     <div class="dropdown dropdownStyleFix">
-                        <button class="btn btn-secondary dropdown-toggle" style="color: #000;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle navWhite" style="color: #000;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ucfirst(App::getLocale())}}
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
