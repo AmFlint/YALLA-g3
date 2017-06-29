@@ -5,7 +5,7 @@ Déclaration des classes globale
 */
 
 ::selection {
-    background-color: #06D6A0;
+    background-color: #ffc145;;
     color: #fff;
 }
 
@@ -86,7 +86,6 @@ button,
     border: none;
     color: white;
     font-size: 0.9em;
-    text-transform: lowercase;
 }
 
 .backoffice a:hover {
@@ -269,6 +268,14 @@ nav ul{
 
 .nav-link{
     color: white;
+}
+#dropdownMenuButton {
+    color: #000000 !important;
+}
+
+.navWhite #dropdownMenuButton
+{
+    color: #fff!important;
 }
 
 .navbar-light .navWhite .navbar-nav .nav-link,
@@ -620,11 +627,6 @@ Navbar
     border-color: #adadad;
 }
 
-#Logo
-{
-    max-width: 150%;
-}
-
 @media screen and (max-width: 1090px) {
     #Logo
     {
@@ -673,7 +675,15 @@ Menu burger
     -moz-box-shadow: 5px 7px 18px 0px rgba(0,0,0,0.09);
     box-shadow: 5px 7px 18px 0px rgba(0,0,0,0.09);
     text-align: center;
-
+}
+.clickBurger{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #FA575D;
 }
 .menuBurger ul{
     list-style: none;
@@ -726,6 +736,22 @@ Menu burger
 .stripe:nth-child(3){
     top: 30px;
     right: 10px;
+}
+
+.menuBurgerOn .stripe:nth-child(1){
+    top: 22px;
+    right: 10px;
+    transform: rotate(-45deg);
+}
+.menuBurgerOn .stripe:nth-child(2){
+    top: 22px;
+    right: 10px;
+    display: none;
+}
+.menuBurgerOn .stripe:nth-child(3){
+    top: 22px;
+    right: 10px;
+    transform: rotate(45deg);
 }
 }
 /* 
@@ -1503,14 +1529,13 @@ Page Partners
     left: 46%;
     width: 50%;
     background: white;
-    padding: 3%;
+    padding: 3% 3% 0 3%;
     box-shadow: 0px 19px 67px -30px rgba(0,0,0,0.75);
 }
 #actuContent p
 {
     color: #000;
-    width: 90%;
-    margin: 5% auto 0 auto;
+    width: 100%;
     line-height: 150%;
 }
 #actuContent h3
@@ -1548,11 +1573,12 @@ Page Partners
     .artImg img
     {
         width: 100%;
+        height: auto;
     }
 
     .artImg
     {
-        margin-bottom: 10%;
+        margin-bottom: 20%;
     }
 
     #actuContent
@@ -1563,5 +1589,25 @@ Page Partners
     }
 }
 
+/* PAGE ARTICLES */
 
+.h3-articles {
+    font-size: 24px;
+    color: white;
+}
 
+.p-articles {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: white;
+}
+
+[class*="square"] a {
+    text-decoration: none;
+}
+
+.btn-articles {
+    background-color: #f1575d;
+    border-color: #f1575d;
+    margin-top: 5%;
+}

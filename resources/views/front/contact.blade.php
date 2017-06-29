@@ -47,7 +47,7 @@
           </div>
           <div class="col-md-2 offset-md-4 btn-right">
             <div class="">
-              <button class="btn btn-secondary btn-legal" type="submit"><img class="btn-width" src="{{asset('img-layout/right-arrow.svg')}}" alt=""></button>
+              <button class="btn btn-secondary btn-legal" type="submit"><img class="btn-width" src="{{asset('img-layout/right-arrow.svg')}}" alt="logo envois de formulaire"></button>
             </div>
           </div>
         </div>

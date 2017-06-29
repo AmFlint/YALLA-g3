@@ -52,9 +52,9 @@
           </div>
           <div class="col-md-8">
           @elseif($post->media->type == 'image')
-              <img src="{{$post->media->url}}" alt="" class="img-fluid">
+              <img src="{{$post->media->url}}" alt="visuel article 1" class="img-fluid">
           @else
-              <img src="{{asset('img-content/uploads') . '/' . $post->media->url}}" alt="" class="img-fluid">
+              <img src="{{asset('img-content/uploads') . '/' . $post->media->url}}" alt="visuel article 2" class="img-fluid">
           @endif
           </div>
         @endif
