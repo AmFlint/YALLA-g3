@@ -75,7 +75,7 @@
       <a href="{{route('post_single', $post->slug)}}"><h4 class="marginTopAddTag navBlack">{{$post->title}}</h4></a>
       <a href="{{route('post_single', $post->slug)}}"><p class="marginTopAddTag navBlack">{!! $post->summary !!}</p></a>
     <div class="">
-      <button class="text-uppercase">{{Lang::get('home.read_article')}}</button>
+        <a href="{{route('post_single', $post->slug)}}"><button class="text-uppercase">{{Lang::get('home.read_article')}}</button></a>
     </div>
     <a class="marginTopAddTag hoverFix navBlack" style="text-decoration: underline " href="{{route('post_listing')}}">Voir tous nos articles</a>
   </div>

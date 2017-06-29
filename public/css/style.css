@@ -1058,6 +1058,10 @@ page qui sommes nous ?
     margin-top: 16vh;
 }
 
+.hoverFixWhite:hover {
+    color: #fff;
+}
+
 .contentPageWhoAreYou{
     margin-top: 15vh;
 }
