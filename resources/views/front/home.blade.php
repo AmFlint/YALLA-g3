@@ -33,7 +33,7 @@
     <div class="col-xs-12 col-md-5 alignContainerTextHomePageRight desktopText">
       <h3>{{Lang::get('home.humanitary')}}</h3>
       <p>{{Lang::get('home.humanitary_p')}}</p>
-    </div>
+     </div>
   </div>
 
   <div class="row rowMarginTopFix">
