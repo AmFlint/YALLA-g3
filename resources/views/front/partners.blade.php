@@ -10,7 +10,7 @@
 @endsection
 @section('content')
 <div class="pagePartners">
-	<h1 class="text-center">Nos partenaires</h1>
+	<h1 class="text-center fontWeightBoldDubai">Nos partenaires</h1>
 	<h2 class="text-center">Que nous tenons à remercier</h2>	
 </div>
 <div class="row justify-content-around text-center pagePartners">

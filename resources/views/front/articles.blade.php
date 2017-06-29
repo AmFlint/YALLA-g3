@@ -12,7 +12,7 @@
   {{-- A virer --}}
     <link rel="stylesheet" href="{{asset('css/screen-2.css')}}">
   {{-- --}}
-    <h2 class="text-center" style="margin: 5% auto">Nos informations</h2>
+    <h1 class="text-center fontWeightBoldDubai" style="margin: 5% auto">Nos informations</h1>
 
 <div class="container clearfix">
     @foreach($posts as $post)

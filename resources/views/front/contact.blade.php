@@ -10,7 +10,7 @@
 @endsection
 @section('content')
     <link rel="stylesheet" href="{{asset('css/screen-2.css')}}">
-    <h1 class="h1 text-center alignTitleContact">{{Lang::get('contact.title')}}</h1>
+    <h1 class="h1 text-center alignTitleContact fontWeightBoldDubai">{{Lang::get('contact.title')}}</h1>
     @if(\Illuminate\Support\Facades\Session::has('error'))
         <div class="alert alert-{{\Illuminate\Support\Facades\Session::get('errorClass')}}">{{\Illuminate\Support\Facades\Session::get('error')}}</div>
     @endif
