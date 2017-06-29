@@ -28,7 +28,7 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-5 offset-md-1">
 			<div class="containerImgPageWhoAreYou displayNone">
-				<img class="imgRotatePageWhoAreYou positionnement" src="{{asset('img-content/front/quiSommesNous9.jpg')}}" alt="">
+				<img class="imgRotatePageWhoAreYou positionnement" src="{{asset('img-content/front/quiSommesNous9.jpg')}}" alt="vusual-Paris">
 				<div class="rectImgColorRed"></div>
 			</div>
 		</div>
@@ -42,7 +42,7 @@
 		</div>
 		<div class="col-xs-12 col-md-5 offset-md-1">
 			<div class="responsiveAlignHomePageImg">
-				<img class="positionnement widthImgSectionTwo" src="{{asset('img-content/front/quiSommesNous2.jpg')}}" alt="">
+				<img class="positionnement widthImgSectionTwo" src="{{asset('img-content/front/quiSommesNous2.jpg')}}" alt="Syrian family">
 				<div class="rectImgColorPink"></div>
 			</div>
 		</div>				
@@ -61,17 +61,17 @@
 		</div>
 
 		<div class="col-xs-12 col-md-3 text-center">
-			<img class="alignBottomClassic" src="{{asset('img-layout/class-group-of-students-and-professor-in-front.svg')}}" alt="">
+			<img class="alignBottomClassic" src="{{asset('img-layout/class-group-of-students-and-professor-in-front.svg')}}" alt="class picto">
 			<h5 class="text-center fontWeightRegularDubai">{{Lang::get('about.benefit')}}</h5>
 			<p class="paddingTopFix text-center"> {{Lang::get('about.benefit_p')}}</p>
 		</div>
 		<div class="col-xs-12 col-md-3 text-center">
-			<img class="alignBottomClassic" src="{{asset('img-layout/world.svg')}}" alt="">
+			<img class="alignBottomClassic" src="{{asset('img-layout/world.svg')}}" alt="world picto">
 			<h5 class="text-center fontWeightRegularDubai">{{Lang::get('about.creation')}}</h5>
 			<p class="paddingTopFix text-center">{{Lang::get('about.creation_p')}}</p>
 		</div>
 		<div class="col-xs-12 col-md-3 text-center">
-			<img class="alignBottomClassic" src="{{asset('img-layout/link.svg')}}" alt="">
+			<img class="alignBottomClassic" src="{{asset('img-layout/link.svg')}}" alt="chain picto">
 			<h5 class="text-center fontWeightRegularDubai">{{Lang::get('about.respect')}}</h5>
 			<p class="paddingTopFix text-center">{{Lang::get('about.respect_p')}}</p>
 		</div>
@@ -79,24 +79,24 @@
 	<h3 class="col-xs-12 col-md-12 text-center marginTopContentPageWhoAreYou styleTitleLequipeBureau">{{Lang::get('about.team')}}</h3>
 	<div class="row text-center">
 		<div class="col-xs-12 offset-xs-0 col-md-3 offset-md-2 containerImgNotreStrategie">
-			<img class="" src="{{asset('img-content/front/quiSommesNous4.jpg')}}" alt="">
+			<img class="" src="{{asset('img-content/front/quiSommesNous4.jpg')}}" alt="Presidente association">
 			<div class="rectImgColorRedStrategieOne"></div>
 			<p>Mary LEMELAND-MELLIONEC, Présidente de l’association</p>
 		</div>
 		<div class="col-xs-12 offset-xs-0 col-md-3 offset-md-2 containerImgNotreStrategie">
-			<img src="{{asset('img-content/front/quiSommesNous5.jpg')}}" alt="">
+			<img src="{{asset('img-content/front/quiSommesNous5.jpg')}}" alt="Presidente association">
 			<div class="rectImgColorRedStrategieTwo"></div>
 			<p>Mary LEMELAND-MELLIONEC, Présidente de l’association</p>
 		</div>
 	</div>
 	<div class="row text-center marginTopContentPageWhoAreYou">
 		<div class="col-xs-10 offset-xs-0 col-md-3 offset-md-2 containerImgNotreStrategie">
-			<img class="" src="{{asset('img-content/front/quiSommesNous6.jpg')}}" alt="">
+			<img class="" src="{{asset('img-content/front/quiSommesNous6.jpg')}}" alt="secretaire association">
 			<div class="rectImgColorRedStrategieThree"></div>
 			<p>Sophie FANUCCHI, Secrétaire et référente juridique</p>
 		</div>
 		<div class="col-xs-12 offset-xs-0 col-md-3 offset-md-2 containerImgNotreStrategie">
-			<img class="" src="{{asset('img-content/front/quiSommesNous7.jpg')}}" alt="">
+			<img class="" src="{{asset('img-content/front/quiSommesNous7.jpg')}}" alt="Trésorier">
 			<div class="rectImgColorRedStrategieFour"></div>
 			<p> Pierre LEMELAND, Trésorier </p>
 		</div>
