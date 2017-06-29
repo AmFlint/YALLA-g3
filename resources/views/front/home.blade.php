@@ -12,7 +12,10 @@
 @section('navClass', 'navWhite')
 @section('content')
 <!-- header -->
-<video src="{{asset('video/backgroundHomePage.mp4')}}" autoplay="1" loop="1"></video>
+<video src="{{asset('video/backgroundHomePage.mp4')}}" autoplay="1" loop="1" class="bannerVideoHome"></video>
+<div class="bannerMobileHome">
+    <img src="{{asset('img-content/front/bannerMobileHome.jpg')}}" alt="visual banner home mobile">
+</div>
 <!-- Début du contenu au dessus de la ligne de flotaison -->
 <div class="homePage">
   <div class="row">
@@ -64,17 +67,17 @@
     <h3 class="text-center" style="margin: 5% 0; font-size: 42px">{{Lang::get('home.actualities')}}</h3>
   </div>
   <div class="col-md-5 col-xs-12 text-center">
-    <a href="{{route('posts_by_category', $post->category->slug)}}" class="btn btn-info float-right" id="actuCat">{{$post->category->name}}</a>
-    <img src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="visuel notre derniere actualité">
+    <a href="{{route('posts_by_category', $post->category->slug)}}" class="btn tag_yellow float-right" id="actuCat">{{$post->category->name}}</a>
+      <a href="{{route('post_single', $post->slug)}}"><img src="{{asset('img-content/uploads') . '/' . $post->image}}" style="display: block" alt="visuel notre derniere actualité"></a>
     @foreach($post->tags as $tag)
       <a href="{{route('posts_by_tag', $tag->slug)}}" class=" marginTopAddTag btn tag_{{$tag->color}}">{{$tag->name}}</a>
     @endforeach
-    <h4 class="marginTopAddTag">{{$post->title}}</h4>
-    <p class="marginTopAddTag">{!! $post->summary !!}</p>
+      <a href="{{route('post_single', $post->slug)}}"><h4 class="marginTopAddTag navBlack">{{$post->title}}</h4></a>
+      <a href="{{route('post_single', $post->slug)}}"><p class="marginTopAddTag navBlack">{!! $post->summary !!}</p></a>
     <div class="">
       <button class="text-uppercase">{{Lang::get('home.read_article')}}</button>
     </div>
-    <a class="marginTopAddTag hoverFix navBlack" style="text-decoration: underline " href="">Voir tous nos articles</a>
+    <a class="marginTopAddTag hoverFix navBlack" style="text-decoration: underline " href="{{route('post_listing')}}">Voir tous nos articles</a>
   </div>
 </div>
 <div class="row text-center rowMarginTopFixCallToAction">
@@ -88,8 +91,7 @@
 <div class="row text-center">
   <div class="col-xs-12 col-md-12 buttonCTA backgroundBannerHommePage2">
     <p style="margin-top: 15vh;">{!! Lang::get('home.join_project') !!}</p>
-    <button>{{Lang::get('home.join_us')}}</button>
+      <a href="{{route('contact')}}"><button>{{Lang::get('home.join_us')}}</button></a>
   </div>
-</div>
 </div>
 @endsection
