@@ -1,5 +1,5 @@
 @extends('front.layout_front')
-@section('title', Lang::get('about.title'))
+@section('title', Lang::get('about.meta_title'))
 @section('meta')
     <meta name="description" content="{{Lang::get('about.meta_description')}}">
     <meta property="og:title" content="{{Lang::get('about.title')}}">
@@ -18,7 +18,7 @@
 	<div class="homePage container">
 		<div class="row">
 			<div class="col-xs-12 col-md-8 offset-md-2">
-				<h2 class="text-center alignTopTitleAboutUS"><span class="fontWeightBoldDubai">Yalla !</span> qui sommes nous ?</h2>
+				<h2 class="text-center alignTopTitleAboutUS">{!!  Lang::get('about.title') !!}</h2>
 			</div>
 		</div>
 	</div>
@@ -50,7 +50,7 @@
 	<div>
 		<div class="bannerPageWhoAreYouFirstPosition">
 			<div class="bannerPageWhoAreYouFirst text-center">
-				<p class="marginTopBannerAboutUs"><span class="fontWeightBoldDubai">L'éducation</span> est un droit pour <span class="fontWeightBoldDubai">tous</span></p>
+				<p class="marginTopBannerAboutUs">{!! Lang::get('about.education_for_all') !!}</p>
 			</div>
 			<div class="rectImgColorYellowBanner"></div>
 		</div>
