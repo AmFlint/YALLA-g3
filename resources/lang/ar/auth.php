@@ -13,12 +13,7 @@ return [
     |
     */
 
-    'welcome' => 'welcome',
-    'about' => 'about-us',
-    'actu' => 'actualities',
-    'donate' => 'donate',
-    'contact' => 'contact-us',
-    'terms' => 'terms-of-use',
-    'quotidien' => 'day-to-day-efforts',
-    'partners' => 'partners'
+    'failed' => 'These credentials do not match our records.',
+    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+
 ];
