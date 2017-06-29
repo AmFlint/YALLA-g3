@@ -28,7 +28,7 @@
 			<div class="text-center">
 				<img src="{{asset('img-layout/mortarboard.svg')}}" alt="">
 			</div>
-			<h2>{{Lang::get('quotidien.education')}}</h2>
+			<h2 class="fontWeightRegularDubai">{{Lang::get('quotidien.education')}}</h2>
 			<ul>
 				{!! Lang::get('quotidien.education_lis') !!}
 			</ul>
@@ -37,7 +37,7 @@
 			<div class="text-center">
 				<img src="{{asset('img-layout/idea.svg')}}" alt="">
 			</div>
-			<h2>{{Lang::get('quotidien.personal')}}</h2>
+			<h2 class="fontWeightRegularDubai">{{Lang::get('quotidien.personal')}}</h2>
 			<p>{{Lang::get('quotidien.personal_lis')}}</p>
 		</div>
 	</div>
@@ -46,14 +46,14 @@
 			<div class="text-center">
 				<img src="{{asset('img-layout/palette.svg')}}" alt="">
 			</div>
-			<h2>{{Lang::get('quotidien.artistic')}}</h2>
+			<h2 class="fontWeightRegularDubai">{{Lang::get('quotidien.artistic')}}</h2>
 			<p>{{Lang::get('quotidien.artistic_p')}}</p>
 		</div>
 		<div class="col-md-4">
 			<div class="text-center">
 				<img src="{{asset('img-layout/ping-pong.svg')}}" alt="">
 			</div>
-			<h2>{{Lang::get('quotidien.activities')}}</h2>
+			<h2 class="fontWeightRegularDubai">{{Lang::get('quotidien.activities')}}</h2>
 			<p>{{Lang::get('quotidien.activities_p')}}</p>
 		</div>
 	</div>

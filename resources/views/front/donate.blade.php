@@ -10,14 +10,14 @@
 @endsection
 @section('content')
     <link rel="stylesheet" href="{{asset('css/screen-2.css')}}">
-  <h1 class="text-center fontWeightBoldDubai" style="margin: 5% 0">{{Lang::get('donate.support')}}</h1>
+  <h1 class="text-center fontWeightRegularDubai" style="margin: 5% 0">{{Lang::get('donate.support')}}</h1>
   <div class="offset-md-1">
-  <h2>{{Lang::get('donate.donate-to-yalla')}}</h2>
+  <h2 class="fontWeightRegularDubai">{{Lang::get('donate.donate-to-yalla')}}</h2>
 </div>
   <div class="row margin">
     <div class="col-md-3 col-xs-12 col-lg-3 offset-md-1">
       <ul>
-        <li class="font-bold">{{Lang::get('donate.donate-any-time')}}</li>
+        <li class="fontWeightRegularDubai" style="font-size: 1.2em">{{Lang::get('donate.donate-any-time')}}</li>
         <li class="margin">{{Lang::get('donate.bank-check')}}</li>
         <li class="margin">{{Lang::get('donate.bank-transfer')}}</li>
         <li class="margin">{{Lang::get('donate.online-donation')}}</li>
@@ -28,7 +28,7 @@
       <div class="rectImgColorYellowDonate"></div>
     </div>
   </div>
-    <h2 class="h3-don text-center fontWeightBoldDubai" style="font-size: 2.5em; margin: 5% 0">{{Lang::get('donate.importance')}}</h2>
+    <h2 class="h3-don text-center fontWeightRegularDubai" style="margin: 5% 0">{{Lang::get('donate.importance')}}</h2>
 
     <div class="container">
       <div class="col-md-12 col-xs-12 col-lg-12 row">
@@ -41,7 +41,7 @@
           <li class="margin">{{Lang::get('donate.automatic-payement')}}</li>
         </ul>
 
-        <ul class="font-bold col-md-6 margin col-lg-6 col-xs-12">
+        <ul class="font-bold col-md-6 margin col-lg-6 col-xs-12 fontWeightRegularDubai" style="font-size: 1.2em">
           <li>{{Lang::get('donate.bank-details')}}</li>
           <li class="margin">{{Lang::get('donate.credit')}}</li>
           <li class="margin">{{Lang::get('donate.RIB')}}</li>
