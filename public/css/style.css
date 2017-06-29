@@ -86,7 +86,6 @@ button,
     border: none;
     color: white;
     font-size: 0.9em;
-    text-transform: lowercase;
 }
 
 .backoffice a:hover {
@@ -269,6 +268,14 @@ nav ul{
 
 .nav-link{
     color: white;
+}
+#dropdownMenuButton {
+    color: #000000 !important;
+}
+
+.navWhite #dropdownMenuButton
+{
+    color: #fff!important;
 }
 
 .navbar-light .navWhite .navbar-nav .nav-link,
@@ -618,11 +625,6 @@ Navbar
     background-color: #FA575D;
     background-image: none;
     border-color: #adadad;
-}
-
-#Logo
-{
-    max-width: 150%;
 }
 
 @media screen and (max-width: 1090px) {
@@ -1547,11 +1549,12 @@ Page Partners
     .artImg img
     {
         width: 100%;
+        height: auto;
     }
 
     .artImg
     {
-        margin-bottom: 10%;
+        margin-bottom: 20%;
     }
 
     #actuContent
