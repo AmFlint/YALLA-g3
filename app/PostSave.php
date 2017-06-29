@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PostSave extends Model
 {
-    protected $fillable = ['published', 'image', 'card', 'meta_robots', 'category_id', 'locale', 'title', 'slug', 'content', 'summary', 'post_id', 'view', 'action', 'meta_robots', 'media_id', 'alt'];
+    protected $fillable = ['meta_description', 'published', 'image', 'card', 'meta_robots', 'category_id', 'locale', 'title', 'slug', 'content', 'summary', 'post_id', 'view', 'action', 'meta_robots', 'media_id', 'alt'];
 
     public function tags()
     {

@@ -47,17 +47,24 @@ class TagsTableSeeder extends Seeder
         ]);
 
         \App\Tag::create([
-            'name' => 'help',
+            'name' => 'مساعدة',
             'slug' => 'help',
             'locale' => 'ar',
             'color' => 'pink'
         ]);
 
         \App\Tag::create([
-            'name' => 'is on the way',
-            'slug' => 'is-on-the-way',
+            'name' => 'مدرسة',
+            'slug' => 'school',
             'locale' => 'ar',
             'color' => 'blue'
+        ]);
+
+        \App\Tag::create([
+            'name' => 'الأطفال',
+            'slug' => 'children',
+            'locale' => 'ar',
+            'color' => 'pink'
         ]);
     }
 }
