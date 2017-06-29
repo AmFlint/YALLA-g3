@@ -12,7 +12,7 @@
   {{-- A virer --}}
     <link rel="stylesheet" href="{{asset('css/screen-2.css')}}">
   {{-- --}}
-    <h1 class="text-center fontWeightBoldDubai title-actualities">{{Lang::get('posts.title-actualities')}}</h1>
+  <h1 class="text-center fontWeightBoldDubai title-actualities">{{Lang::get('posts.title-actualities')}} <small style="color: #1490ff;">@if(isset($category)) pour la catégorie : {{$category->name}} @elseif(isset($tag)) pour le tag : {{$tag->name}} @endif</small></h1>
 
 <div class="container clearfix">
     @foreach($posts as $post)

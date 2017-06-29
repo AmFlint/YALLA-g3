@@ -33,6 +33,18 @@
             <li class="nav-item text-left">
                 <a href="{{route('contact')}}" class="nav-link">{{Lang::get('nav.contact')}}</a>
             </li>
+            <li class="nav-item text-left">
+                <div class="dropdown dropdownStyleFix">
+                    <button class="btn btn-secondary dropdown-toggle navWhite nav-link" style="color: #000;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ucfirst(App::getLocale())}}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/en">En</a>
+                        <a class="dropdown-item" href="/ar">العربية</a>
+                        <a class="dropdown-item" href="/fr">Fr</a>
+                    </div>
+                </div>
+            </li>
         </ul>
     </div>
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">

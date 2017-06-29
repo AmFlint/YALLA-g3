@@ -103,7 +103,7 @@
 	</div>
 	<div class="bannerPageWhoAreYou text-center">
 		<p class="bannerPageWhoAreYouAlignTop">{!! Lang::get('home.help') !!}</p>
-		<button>{{Lang::get('home.donate')}}</button>
+		<a href="{{route('donate')}}"><button>{{Lang::get('home.donate')}}</button></a>
 	</div>
 </div>
 @endsection

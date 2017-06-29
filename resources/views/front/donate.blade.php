@@ -13,6 +13,7 @@
   <h1 class="text-center fontWeightRegularDubai" style="margin: 5% 0">{{Lang::get('donate.support')}}</h1>
   <div class="offset-md-1">
   <h2 class="fontWeightRegularDubai">{{Lang::get('donate.donate-to-yalla')}}</h2>
+      <a style="color: white" href="https://www.w4.org/fr/project/empecher-la-descolarisation-des-enfants-syriens-refugies/"><button>{{Lang::get('donate.online')}}</button></a>
 </div>
   <div class="row margin">
     <div class="col-md-3 col-xs-12 col-lg-3 offset-md-1">
