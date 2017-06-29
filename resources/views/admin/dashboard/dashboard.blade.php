@@ -6,22 +6,16 @@
         <div class="row">
             <div class="col-md-9 col-xs-8 col-md-12 col-lg-12 col-xl-12">
                 <div class="row alignTop">
-                    <div class="col-md-4 col-xs-4 col-md-4 col-lg-4 col-xl-4">
+                    <div class="col-md-6 col-xs-6 col-md-6 col-lg-6 col-xl-6">
                         <div class="card">
                             <img src="{{asset('img-content/admin/ic_message_black_48px.svg')}}" alt="">
-                            <p class="descriptionCard"><span class="strong">125</span> nouveaux messages</p>
+                            <p class="descriptionCard"><span class="strong">{{$totalMessage}}</span> nouveaux messages</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-xs-4 col-md-4 col-lg-4 col-xl-4">
+                    <div class="col-md-6  col-xs-6 col-md-6 col-lg-6 col-xl-6 ">
                         <div class="card">
                             <img src="{{asset('img-content/admin/ic_filter_none_black_48px.svg')}}" alt="">
-                            <p class="descriptionCard"><span class="strong">54%</span> unique visiteur</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4  col-xs-4 col-md-4 col-lg-4 col-xl-4 ">
-                        <div class="card">
-                            <img src="{{asset('img-content/admin/ic_filter_none_black_48px.svg')}}" alt="">
-                            <p class="descriptionCard"><span class="strong">154</span> pages views</p>
+                            <p class="descriptionCard"><span class="strong">{{$totalView}}</span>  articles visitées au total</p>
                         </div>
                     </div>
                 </div>
@@ -111,6 +105,7 @@
     <script src="{{asset('js/angular.js')}}"></script>
     <script src="{{asset('js/laroute.js')}}"></script>
     <script src="{{asset('js/admin/listing.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="{{ asset('js/Chart.min.js' )}}"></script>

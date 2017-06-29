@@ -3,6 +3,7 @@
 Déclaration des classes globale 
 
 */
+
 ::selection {
     background-color: #06D6A0;
     color: #fff;
@@ -155,15 +156,15 @@ img {
 }
 
 .tag_red {
-    background: #cd3d41;
+    background: #FA575B;
 }
 
 .tag_blue {
-    background: #62ccff;
+    background: #06D6A0;
 }
 
 .tag_yellow {
-    background: #ffdf4d;
+    background: #FFC145;
 }
 
 .tag_pink {
@@ -1057,6 +1058,10 @@ page qui sommes nous ?
     height: 25em;
 }
 
+.title-actualities {
+    margin: 5% auto;
+}
+
 .bannerPageWhoAreYou{
     width: 100%;
     height: 60vh;
@@ -1372,6 +1377,10 @@ Page 404
 
 @media screen and (min-width: 300px) and (max-width: 700px)
 {
+    .title-actualities {
+        margin: 15% auto 25%
+    }
+
     #content404
     {
         width: 100%;

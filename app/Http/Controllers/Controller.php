@@ -12,21 +12,29 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    /**
+     * @param $entity
+     * @param $msg
+     * @param $errorType
+     * @return bool
+     * Checking if entity exists --> if not, set session flash variables for errors and errorClass to display
+     * to admin
+     */
     public function checkIfEntityExists($entity, $msg, $errorType)
     {
-        if (!$entity) {
-            Session::flash('error', $msg);
-            Session::flash('errorClass', $errorType);
-            return false;
+        if (!$entity) { // if entity is null or false
+            Session::flash('error', $msg); // set message for error
+            Session::flash('errorClass', $errorType); // set class for error display
+            return false; // return true or false for redirection
         }
         return true;
     }
 
-    public function setLocale($locale)
-    {
-        dd($locale);
-    }
-
+    /**
+     * @param $url
+     * @return mixed
+     * get embed url from youtube video in media uploading --> edit/add post backoffice
+     */
     protected function getEmbedUrl($url)
     {
         return str_replace('watch?v=', 'embed/', $url);

@@ -40,12 +40,10 @@
                             {!! Form::text('summary', null,['class' => 'form-control']) !!}
                         </div>
                     </div>
-                    <div class="invisible">
-                        {!! Form::label('slug', 'Slug de l\'Article') !!}
-                        {!! Form::text('slug', null,['class' => 'form-control']) !!}
-                    </div>
                     <div class="col-md-8 col-xs-8 col-md-8 col-lg-8 col-xl-8 paddingFix">
                         <div class="styleForm">
+                            {!! Form::label('slug', 'Slug de l\'Article (facultatif)') !!}
+                            {!! Form::text('slug', null,['class' => 'form-control']) !!}
                             {!! Form::label('card', 'Type de carte au partage sur twitter :') !!}
                         </div>
                         {!! Form::select('card', ['summary' => 'Résumé', 'summary_large_image' => 'Résumé avec image large', 'app' => 'Optimisé Mobile', 'player' => 'Lecteur vidéo'], null, ['class' => 'form-control']) !!}
@@ -60,6 +58,8 @@
                                 ng-options="category.id as category.name for category in categories track by category.id"></select>
                         <input type="hidden" ng-init="published = 0" name="published" ng-model="published"
                                value="@{{ published }}">
+                        {!! Form::label('meta_robots', 'Description (référencement moteur de recherche)') !!}
+                        {!! Form::text('meta_description', null, ['class' => 'form-control']) !!}
                         {!! Form::label('meta_robots', 'Règles de référencement') !!}
                         {!! Form::select('meta_robots', ['' => 'Indexer normalement', 'noindex, follow' => 'NOINDEX, FOLLOW', 'index, nofollow' => "INDEX, NOFOLLOW", 'noindex, nofollow' => 'NOINDEX, NOFOLLOW'], '', ['class' => 'form-control']) !!}
                     </div>

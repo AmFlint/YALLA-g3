@@ -64,17 +64,19 @@
     <h3 class="text-center">{{Lang::get('home.actualities')}}</h3>
   </div>
   <div class="col-md-5 col-xs-12 text-center">
-    <a href="{{route('posts_by_category', $post->category->slug)}}" class="btn btn-info float-right" id="actuCat">{{$post->category->name}}</a>
-    <img src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="">
-    @foreach($post->tags as $tag)
-      <a href="{{route('posts_by_tag', $tag->slug)}}" class=" marginTopAddTag btn tag_{{$tag->color}}">{{$tag->name}}</a>
-    @endforeach
-    <h4 class="marginTopAddTag">{{$post->title}}</h4>
-    <p class="marginTopAddTag">{!! $post->summary !!}</p>
-    <div class="">
-      <button class="text-uppercase">{{Lang::get('home.read_article')}}</button>
-    </div>
-    <a class="marginTopAddTag hoverFix navBlack" href="">Voir tous nos articles</a>
+      <a href="{{route('post_single', $post->slug)}}" class="hoverFix navBlack">
+        <a href="{{route('posts_by_category', $post->category->slug)}}" class="btn tag_yellow float-right" id="actuCat">{{$post->category->name}}</a>
+        <img src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="">
+        @foreach($post->tags as $tag)
+            <a href="{{route('posts_by_tag', $tag->slug)}}" class=" marginTopAddTag btn tag_{{$tag->color}}">{{$tag->name}}</a>
+        @endforeach
+      <h4 class="marginTopAddTag">{{$post->title}}</h4>
+      <p class="marginTopAddTag">{!! $post->summary !!}</p>
+      <div class="">
+        <button class="text-uppercase">{{Lang::get('home.read_article')}}</button>
+      </div>
+      <a class="marginTopAddTag hoverFix navBlack" href="{{route('post_single', $post->slug)}}">Voir tous nos articles</a>
+    </a>
   </div>
 </div>
 <div class="row text-center rowMarginTopFixCallToAction">
