@@ -79,15 +79,15 @@
             </div>
         </div>
         <div class="col-xs-12 col-md-12 text-center linkMarginBottomFooter">
-            <a href="">© Yalla! pour les enfants | une école pour la paix</a>
+            <a href="">{{Lang::get('footer.title-footer')}}</a>
         </div>
         <div class="col-xs-12 col-md-12 text-center linkMarginBottomFooter">
             <a href="">13, rue René Villerme – 75011 PARIS</a>
         </div>
         <div class="col-xs-12 col-md-12 text-center linkMarginBottomFooter">
-            <a href="{{route('terms')}}">Mentions légales</a> |
-            <a href="{{route('contact')}}">Nous contacter</a> |
-            <a href="{{route('partners')}}">Nos partenaires</a>
+            <a href="{{route('terms')}}">{{Lang::get('footer.ecole-paix')}}</a> |
+            <a href="{{route('contact')}}">{{Lang::get('footer.contact')}}</a> |
+            <a href="{{route('partners')}}">{{Lang::get('footer.partners')}}</a>
         </div>
     </footer>
     <script>
