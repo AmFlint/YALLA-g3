@@ -17,10 +17,12 @@
 <body class="@yield('body_class')">
     @yield('nav')
     <div class="menuBurger">
+    <div class="clickBurger">
         <div class="stripe"></div>
         <div class="stripe"></div>
         <div class="stripe"></div>
-        <ul>
+    </div>
+        <ul>    
             <li class="nav-item text-left">
                 <a class="nav-link" href="{{route('about')}}">{{Lang::get('nav.about')}}</a>
             </li>
@@ -108,9 +110,10 @@
         var listBurger = document.querySelector('.menuBurger ul');
         var timerList = 800;
         var body = document.querySelector('body');
+        var clickBurger = document.querySelector('.clickBurger')
 
         
-        menuBurger.addEventListener('click', function toggleBurger() {
+        clickBurger.addEventListener('click', function toggleBurger() {
             menuBurger.classList.toggle('menuBurgerOn');
             menuBurger.classList.toggle('menuBurgerOff',true);
             if (menuBurger.classList.contains('menuBurgerOn')) {
