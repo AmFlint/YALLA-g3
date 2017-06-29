@@ -234,6 +234,10 @@ img {
         margin-left: 5%;
         margin-bottom: 0;
     }
+
+    ::-webkit-scrollbar {
+        background: transparent;
+    }
 }
 
 .pointer{
@@ -1332,33 +1336,39 @@ Page Partners
 
 .artImg
 {
-    margin-bottom: 20%;
+    margin-bottom: 17%;
+
+}
+#actuCat
+{
+    position: absolute;
+    top: -5%;
+    left: 5%;
 }
 
 .artImg img
 {
     width: 60%;
     position: relative;
+    overflow: hidden;
+    height: 25em;
+
 }
 #actuContent
 {
     position: absolute;
-    top: 42%;
+    top: 20%;
     left: 46%;
     width: 50%;
     background: white;
     padding: 3%;
     box-shadow: 0px 19px 67px -30px rgba(0,0,0,0.75);
-    border-bottom: 10px solid #ffc100;
 }
-
-
-
 #actuContent p
 {
     color: #000;
     width: 90%;
-    margin: 0 auto;
+    margin: 5% auto 0 auto;
     line-height: 150%;
 }
 #actuContent h3
@@ -1372,24 +1382,13 @@ Page Partners
     background-color: #ffc100;
     border-radius: 10px;
     position: absolute;
-    top: -20px;
-    left: -10px;
+    top: -2%;
+    left: 0.5%;
     z-index: -1;
     width: 42%;
-    height: 20em;
+    height: 16em;
 }
 
-#rectActuRed
-{
-    background-color: #cd3d41;
-    border-radius: 10px;
-    position: absolute;
-    bottom: -5%;
-    left: 0;
-    z-index: -1;
-    width: 42%;
-    height: 20em;
-}
 
 @media screen and (max-width: 991px)
 {

@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="col-md-8 offset-md-1">
-      <img class="img-fluid img-center" src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="">
+      <img class="img-fluid img-center" src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="{{$post->alt}}">
       <section class="text-article">
         {!! $post->content !!}
       </section>
