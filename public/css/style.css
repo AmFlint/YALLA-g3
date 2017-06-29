@@ -229,6 +229,10 @@ img {
         margin-left: 5%;
         margin-bottom: 0;
     }
+
+    ::-webkit-scrollbar {
+        background: transparent;
+    }
 }
 
 .pointer{
@@ -839,6 +843,9 @@ Responsive home page
         padding: 10px;
         height: 300px;
     }
+    .responsiveAlignHomePageImg{
+        text-align: center;
+    }
 }
 
 /* 
@@ -851,6 +858,14 @@ page qui sommes nous ?
     font-size: 1.250em;
 }
 
+.alignTopTitleAboutUS{
+    margin-top: 35vh !important;
+}
+
+.marginTopBannerAboutUs{
+    margin-top: 16vh;
+}
+
 .contentPageWhoAreYou{
     margin-top: 15vh;
 }
@@ -861,7 +876,7 @@ page qui sommes nous ?
     padding-top: 70px;
 }
 .containerImgPageWhoAreYou{
-    width: 20em;
+    width: 30em;
     height: 20em;
     position: relative;
 }
@@ -874,20 +889,18 @@ page qui sommes nous ?
 }
 
 .imgRotatePageWhoAreYou{
-    transform: rotate(45deg);
-    width: 20em;
+    width: 30em;
     height: 20em;
 }
 
 .contentPageWhoAreYou .rectImgColorRed{
     background-color: #fa575b;
-    transform: rotate(45deg);
     border-radius: 10px;
     position: absolute;
-    top: -0px;
+    top: -10px;
     right: -15px;
     z-index: 2;
-    width: 20em;
+    width: 30em;
     height: 20em;
 }
 
@@ -936,7 +949,7 @@ page qui sommes nous ?
     font-size: 1.5em;
     z-index: 3;
     position: absolute;
-    background-image: url('../img-content/front/quiSommesNous3.jpg');
+    background-image: url('../img-content/front/bannerHomePage2.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -1311,8 +1324,8 @@ Page Partners
 #Logo
 {
     max-width: none;
-    width: 6em;
-    margin-top: -0.5em;
+    width: 5em;
+    margin-top: 0em;
     margin-right: 3em ;
 }
 
