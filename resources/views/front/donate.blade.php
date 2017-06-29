@@ -24,7 +24,7 @@
       </ul>
     </div>
     <div class="col-md-6 col-xs-12 col-lg-6 offset-md-1">
-      <img class="img-fluid rounded" src="{{asset('img-content/front/don-1.png')}}" alt="">
+      <img class="img-fluid rounded" src="{{asset('img-content/front/don-1.png')}}" alt="don yalla aide enfant">
       <div class="rectImgColorYellowDonate"></div>
     </div>
   </div>
@@ -32,7 +32,7 @@
 
     <div class="container">
       <div class="col-md-12 col-xs-12 col-lg-12 row">
-        <img class="img-fluid rounded" src="{{asset('img-content/front/don-2.png')}}" alt="" style="position: relative">
+        <img class="img-fluid rounded" src="{{asset('img-content/front/don-2.png')}}" alt="don yalla aide enfants communauté" style="position: relative">
         <div class="rectImgColorGreenDonate"></div>
       </div>
       <div class="col-md-12 col-xs-12 col-lg-12 row offset-md-1 margin">

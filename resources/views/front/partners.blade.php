@@ -16,51 +16,51 @@
 <div class="row justify-content-around text-center pagePartners">
 	<div class="col-md-3">
 		<a href="">
-			<img src="{{asset('img-content/front/partenaire-01.png')}}" alt="">
+			<img src="{{asset('img-content/front/partenaire-01.png')}}" alt="institut francais du liban">
 		</a>
 	</div>
 	<div class="col-md-3">
 		<a href="">
-			<img src="{{asset('img-content/front/partenaire-02.png')}}" alt="">
+			<img src="{{asset('img-content/front/partenaire-02.png')}}" alt="women's worldwide web">
 		</a>
 	</div>
 	<div class="col-md-3">
 		<a href="">
-			<img src="{{asset('img-content/front/partenaire-03.png')}}" alt="">
-		</a>
-	</div>
-</div>
-<div class="row justify-content-around text-center pagePartners">
-	<div class="col-md-3">
-		<a href="">
-			<img src="{{asset('img-content/front/partenaire-04.png')}}" alt="">
-		</a>
-	</div>
-	<div class="col-md-3">
-		<a href="">
-			<img src="{{asset('img-content/front/partenaire-05.png')}}" alt="">
-		</a>
-	</div>
-	<div class="col-md-3">
-		<a href="">
-			<img src="{{asset('img-content/front/partenaire-06.png')}}" alt="">
+			<img src="{{asset('img-content/front/partenaire-03.png')}}" alt="kitabna">
 		</a>
 	</div>
 </div>
 <div class="row justify-content-around text-center pagePartners">
 	<div class="col-md-3">
 		<a href="">
-			<img src="{{asset('img-content/front/partenaire-07.png')}}" alt="">
+			<img src="{{asset('img-content/front/partenaire-04.png')}}" alt="collectif de develloppement et secours syrien">
 		</a>
 	</div>
 	<div class="col-md-3">
 		<a href="">
-			<img src="{{asset('img-content/front/partenaire-08.png')}}" alt="">
+			<img src="{{asset('img-content/front/partenaire-05.png')}}" alt="le bistro syrien">
 		</a>
 	</div>
 	<div class="col-md-3">
 		<a href="">
-			<img src="{{asset('img-content/front/partenaire-09.png')}}" alt="">
+			<img src="{{asset('img-content/front/partenaire-06.png')}}" alt="offra">
+		</a>
+	</div>
+</div>
+<div class="row justify-content-around text-center pagePartners">
+	<div class="col-md-3">
+		<a href="">
+			<img src="{{asset('img-content/front/partenaire-07.png')}}" alt="offra">
+		</a>
+	</div>
+	<div class="col-md-3">
+		<a href="">
+			<img src="{{asset('img-content/front/partenaire-08.png')}}" alt="microdon donnez un peu plus souvent">
+		</a>
+	</div>
+	<div class="col-md-3">
+		<a href="">
+			<img src="{{asset('img-content/front/partenaire-09.png')}}" alt="rotary">
 		</a>
 	</div>
 </div>
