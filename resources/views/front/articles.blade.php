@@ -19,7 +19,7 @@
   <div class="col-md-12">
       <a href="{{route('post_single', $post->slug)}}">
       <div class="artImg">
-          <img class="img-fluid center-block" src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="">
+          <img class="img-fluid center-block" src="{{asset('img-content/uploads') . '/' . $post->image}}" alt="{{$post->alt}}">
           <div class="square-width" id="actuContent">
               <h3 class="h3-articles">{{$post->title}}</h3>
               @foreach($post->tags as $tag)
@@ -28,7 +28,6 @@
               <p class="p-articles col-xs-10 col-md-10 col-lg-10">{!! $post->summary !!}
                   <a href="{{route('post_single', $post->slug)}}" style="font-weight: 600">Lire l'article</a>
               </p>
-
               <a href="{{route('posts_by_category', $post->category->slug)}}" class="btn btn-info float-right" id="actuCat">{{$post->category->name}}</a>
           </div>
           <div id="rectActuYellow"></div>
