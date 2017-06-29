@@ -17,4 +17,5 @@ return [
     'RIB' => 'RIB : 42559 00005 41020040979 04',
     'IBAN' => 'IBAN : FR76 4255 9000 0541 0200 4097 904',
     'BIC' => 'BIC : CCOPFRPPXXX',
+	'online' => 'Don en ligne'
 ];

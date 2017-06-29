@@ -9,7 +9,7 @@
                     <div class="col-md-6 col-xs-6 col-md-6 col-lg-6 col-xl-6">
                         <div class="card">
                             <img src="{{asset('img-content/admin/ic_message_black_48px.svg')}}" alt="">
-                            <p class="descriptionCard"><span class="strong">{{$totalMessage}}</span> nouveaux messages</p>
+                            <p class="descriptionCard"><span class="strong">{{$totalMessage}}</span> messages non lu</p>
                         </div>
                     </div>
                     <div class="col-md-6  col-xs-6 col-md-6 col-lg-6 col-xl-6 ">

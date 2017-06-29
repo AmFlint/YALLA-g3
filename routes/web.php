@@ -4,9 +4,14 @@ Route::get('/', function () {
     return redirect()->route('home');
 });
 
-Route::get('/admin/espace-connexion', ['as' => 'admin.login', 'uses' => 'AdminController@login']);
+Route::get('/admin/espace-connexion', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
 
-Route::prefix('admin')->group(function() {
+Route::post('/admin/espace-connexion', ['as' => 'login_verif', 'uses' => 'Auth\LoginController@login']);
+
+Route::post('/admin/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
+
+
+Route::prefix('admin')->middleware(['auth'])->group(function() {
 
     Route::get('tags', 'AdminController@tag');
 
@@ -65,7 +70,7 @@ Route::prefix('admin')->group(function() {
         Route::get('{id}', ['as' => 'admin.tag_details', 'uses' => 'AdminController@viewTag'])
             ->where('id', '[0-9]+');
 
-        Route::get('{id}/posts', ['as' => 'admin.tags_assoc_posts', 'uses' => 'AdminController@viewPostsByTag'])
+        Route::get('{id}/post', ['as' => 'admin.tags_assoc_posts', 'uses' => 'AdminController@viewPostsByTag'])
             ->where('id', '[0-9]+');
     });
 
@@ -86,7 +91,7 @@ Route::prefix('admin')->group(function() {
         Route::put('edit/{id}', ['as' => 'admin.category_update', 'uses' => 'AdminController@updateCategory'])
             ->where('id', '[0-9]+');
 
-        Route::get('{id}/posts', ['as' => 'admin.categories_assoc_posts', 'uses' => 'AdminController@viewPostsByCategory'])
+        Route::get('{id}/post', ['as' => 'admin.categories_assoc_posts', 'uses' => 'AdminController@viewPostsByCategory'])
             ->where('id', '[0-9]+');
     });
 
@@ -144,3 +149,4 @@ Route::prefix(App::getLocale())->group(function() {
     Route::get('categories/{slug}', ['as' => 'posts_by_category', 'uses' => 'MainController@viewPostByCategory'])
         ->where('slug', '[a-z0-9\-]+');
 });
+

@@ -12,7 +12,7 @@
   {{-- A virer --}}
     <link rel="stylesheet" href="{{asset('css/screen-2.css')}}">
   {{-- --}}
-    <h1 class="text-center fontWeightBoldDubai title-actualities">Nos informations</h1>
+  <h1 class="text-center fontWeightBoldDubai title-actualities">{{Lang::get('posts.title-actualities')}} <small style="color: #1490ff;">@if(isset($category)) pour la catégorie : {{$category->name}} @elseif(isset($tag)) pour le tag : {{$tag->name}} @endif</small></h1>
 
 <div class="container clearfix">
     @foreach($posts as $post)
@@ -25,8 +25,9 @@
               @foreach($post->tags as $tag)
                   <a href="{{route('posts_by_tag', $tag->slug)}}" class="btn tag_{{$tag->color}}">{{$tag->name}}</a>
               @endforeach
-              <p class="p-articles col-xs-10 col-md-10 col-lg-10">{!! $post->summary !!}
-                  <a href="{{route('post_single', $post->slug)}}" style="font-weight: 600">Lire l'article</a>
+
+              <p class="p-articles col-xs-12 col-md-12 col-lg-12 paddingFix ">{!! $post->summary !!}
+                  <a href="{{route('post_single', $post->slug)}}" style="font-weight: 600">{{Lang::get('home.read_article')}}</a>
               </p>
               <a href="{{route('posts_by_category', $post->category->slug)}}" class="btn tag_yellow float-right" id="actuCat">{{$post->category->name}}</a>
           </div>

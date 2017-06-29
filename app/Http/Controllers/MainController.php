@@ -124,8 +124,8 @@ class MainController extends Controller
             abort(404);
         }
         $tag->increment('view');
-        $posts = $tag->posts()->where('published', 1)->get();
-        dd($posts);
+        $posts = $tag->posts()->where('published', 1)->paginate(4);
+        return view('front.articles', compact('posts', 'tag'));
     }
 
     /**
@@ -139,8 +139,8 @@ class MainController extends Controller
             abort(404);
         }
         $category->increment('view'); // increment category's current views
-        $posts = $category->posts()->where('published', 1)->get();
-        dd($posts);
+        $posts = $category->posts()->where('published', 1)->paginate(4);
+        return view('front.articles', compact('posts', 'category'));
     }
 
     /**

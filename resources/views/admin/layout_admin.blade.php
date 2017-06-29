@@ -2,6 +2,7 @@
 <html lang="{{ config('app.locale') }}">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="{{asset('img-layout/logo-favicon.png')}}" />
     <title>Admin</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
@@ -10,8 +11,13 @@
     <main>
         <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 paddingFix backgroundNav">
             <nav>
-                <ul>
+                <ul class="clearfix" style="padding-top: 5px; height: 10px">
                     <li>Dashboard</li>
+                    <li class="pull-right align-top">
+                        {!! Form::open(['url' => route('logout'), 'method' => 'POST']) !!}
+                            <button class="btn tag_red">Se déconnecter</button>
+                        {!! Form::close() !!}
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -19,7 +25,7 @@
             <div class="col-xs-12 col-md-12 col-lg-12 col-xl-12 paddingFix">
                 <ul class="list-group">
                     <li class="list-group-item justify-content-between">
-                        <a href="{{route('home')}}">
+                        <a href="{{route('home')}}" style="display: block; margin: 0 auto;">
                             <img style="width: 130px;" src="{{asset('img-layout/logo.svg')}}" alt="">
                         </a>
                     </li>
