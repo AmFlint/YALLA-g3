@@ -6,6 +6,7 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
     @yield('style')
 </head>
 <body class="@yield('body_class')">
@@ -52,8 +53,8 @@
     <footer>
         <div class="row">
             <div class="col-xs-2 offset-md-5 text-center col-md-2">
-                <a href=""><img src="{{asset('img-layout/twitter.svg')}}" alt=""></a>
-                <a href=""><img src="{{asset('img-layout/facebook.svg')}}" alt=""></a>
+                <a href="https://www.facebook.com/yalla.enfants.syriens/"><img src="{{asset('img-layout/twitter.svg')}} " alt=""></a>
+                <a href="https://twitter.com/4Yalla?lang=fr "><img src="{{asset('img-layout/facebook.svg')}}" alt=""></a>
             </div>
         </div>
         <div class="col-xs-12 col-md-12 text-center linkMarginBottomFooter">
