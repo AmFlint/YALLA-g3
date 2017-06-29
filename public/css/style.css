@@ -11,8 +11,10 @@ Déclaration des classes globale
 ::-webkit-scrollbar
 {
     width: 12px;
-    height: 12px; /* for horizontal scrollbars */
+    height: 12px;
+    /* for horizontal scrollbars */
 }
+
 
 ::-webkit-scrollbar-track
 {
@@ -58,6 +60,12 @@ Déclaration des classes globale
 body{
     overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+h3
+{
+    font-family: Dubai-Regular, sans-serif;
 }
 
 th {
@@ -551,6 +559,7 @@ Home page
 
 .fontWeightBoldDubai{
     font-weight: 600;
+    font-family: "Dubai-Bold", sans-serif;
 }
 
 /* 
@@ -982,6 +991,8 @@ page qui sommes nous ?
 
 .alignTopTitleAboutUS{
     margin-top: 35vh !important;
+    font-family: "Open Sans", sans-serif;
+
 }
 
 .marginTopBannerAboutUs{
@@ -1498,6 +1509,12 @@ Page Partners
     height: 16em;
 }
 
+.h1-don
+{
+    font-family: Dubai-Regular, sans-serif;
+    font-size: 48px;
+    margin: 5% 0;
+}
 
 @media screen and (max-width: 991px)
 {
@@ -1523,3 +1540,6 @@ Page Partners
 
     }
 }
+
+
+
