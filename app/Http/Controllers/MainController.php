@@ -124,7 +124,7 @@ class MainController extends Controller
             abort(404);
         }
         $tag->increment('view');
-        $posts = $tag->posts()->where('published', 1)->paginate(4);
+        $posts = $tag->posts()->orderBy('created_at', 'desc')->where('published', 1)->paginate(4);
         return view('front.articles', compact('posts', 'tag'));
     }
 
@@ -139,7 +139,7 @@ class MainController extends Controller
             abort(404);
         }
         $category->increment('view'); // increment category's current views
-        $posts = $category->posts()->where('published', 1)->paginate(4);
+        $posts = $category->posts()->orderBy('created_at', 'desc')->where('published', 1)->paginate(4);
         return view('front.articles', compact('posts', 'category'));
     }
 

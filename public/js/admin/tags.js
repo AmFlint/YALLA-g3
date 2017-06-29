@@ -102,7 +102,8 @@ app.controller('TacosCtrl', function ($scope, $http)
         // Prevent submission
         event.preventDefault();
         // if a value is inserted into tag input (in Modal)
-        if (this.inputTag.trim() == '' || $scope.colorTag == '') {
+        console.log($scope.colorTag);
+        if (this.inputTag.trim() == '' || $scope.colorTag == '' || typeof $scope.colorTag == 'undefined') {
             return;
         }
         var req = {
