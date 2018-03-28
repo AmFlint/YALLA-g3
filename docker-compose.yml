@@ -1,0 +1,29 @@
+version: "2"
+
+services:
+  application:
+    image: nginx
+    volumes:
+      - .:/application
+    ports:
+      - "80:80"
+    networks:
+      - backend
+
+  database:
+    image: mysql
+    environment:
+      - MYSQL_DATABASE=yalla
+      - MYSQL_ROOT_PASSWORD=yolémek
+      - MYSQL_USER=yallamasselot
+      - MYSQL_PASSWORD=yolémektonz
+    volumes:
+      - data:/var/lib/mysql
+    networks:
+      - backend
+
+volumes:
+  data:
+
+networks:
+  backend:
